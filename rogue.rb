@@ -85,7 +85,9 @@ puts "HOST IP #{hostip}"
 @proxy.save
 
 puts "About to Run Swift"
+
 Swiftcore::Swiftiply.run(config)
+
 puts "Exiting"
 
 @proxy.destroy if @proxy
