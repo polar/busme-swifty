@@ -18,7 +18,7 @@ GEM
       bson (~> 1.8.3)
     builder (3.0.4)
     eventmachine (1.0.3)
-    i18n (0.6.4)
+    i18n (0.6.1)
     mongo (1.8.3)
       bson (~> 1.8.3)
     mongo_mapper (0.12.0)
@@ -34,5 +34,6 @@ PLATFORMS
 
 DEPENDENCIES
   bson_ext
+  i18n (= 0.6.1)
   mongo_mapper
   swiftiply!
