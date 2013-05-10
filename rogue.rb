@@ -70,13 +70,10 @@ config[Cmap][0][Cdefault] = true
 config[Cmap][0][Ckey] = ENV["SWIFT_KEY"]
 
 slug = ENV["MASTER_SLUG"] || "all"
+hostip = Net::HTTP.get(URI.parse('http://ipecho.net/plain'))
 
-@proxy = Backend.new(:master_slug => slug, :host => ENV["HOST"], :port => 30010)
+@proxy = Backend.new(:master_slug => slug, :host => hostip, :port => 30010)
 @proxy.save
-
-p config
-
-p ENV
 
 Swiftcore::Swiftiply.run(config)
 
