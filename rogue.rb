@@ -8,6 +8,7 @@ require 'logger'
 require 'uri'
 require 'mongo'
 require 'mongo_mapper'
+require 'net/http'
 
 require "swiftcore/Swiftiply"
 
