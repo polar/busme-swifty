@@ -8,6 +8,10 @@ require "./aa_creds" if File.exists?("./aa_creds")
 puts "Loading Compoents"
 require 'logger'
 
+logger = Logger.new(STDOUT)
+
+logger.info "Starting Port #{ENV["PORT"]}"
+
 require 'uri'
 require 'mongo'
 require 'mongo_mapper'
@@ -65,13 +69,14 @@ trap("HUP") { stop_proxy }
 trap("INT") { stop_proxy }
 trap("TERM") { stop_proxy }
 
+backendport = 12345
 
 config = {}
 config[Ccluster_address] = "0.0.0.0"
 config[Ccluster_port] = ENV["PORT"].to_i
 config[Cmap] = [{}]
 config[Cmap][0][Cincoming] = [""]
-config[Cmap][0][Coutgoing] = ["0.0.0.0:12345"]
+config[Cmap][0][Coutgoing] = ["0.0.0.0:#{backendport}"]
 config[Cmap][0][Ckeepalive] = true
 config[Cmap][0][Cdefault] = true
 config[Cmap][0][Ckey] = ENV["SWIFT_KEY"]
@@ -81,7 +86,7 @@ slug = ENV["MASTER_SLUG"] || "all"
 hostip = Net::HTTP.get(URI.parse('http://ipecho.net/plain'))
 
 puts "HOST IP #{hostip}"
-@proxy = Backend.new(:master_slug => slug, :host => hostip, :port => 30010)
+@proxy = Backend.new(:master_slug => slug, :host => hostip, :port => backendport)
 @proxy.save
 
 puts "About to Run Swift"
