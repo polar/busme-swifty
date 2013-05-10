@@ -1,5 +1,7 @@
 puts "Starting Port #{ENV["PORT"]}"
 
+sleep 3500
+
 require 'rubygems'
 require 'bundler'
 
