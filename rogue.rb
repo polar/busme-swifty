@@ -114,10 +114,12 @@ puts "About to Run Swift"
 logger.add "About to Run Swift"
 
 begin
+  logger.add "Int to Run Swift"
 Swiftcore::Swiftiply.run(config)
+  logger.add "Out Swift"
 rescue Exception => boom
   puts "#{boom}"
-
+  logger.add "#{boom}"
 end
 
 puts "Exiting"
