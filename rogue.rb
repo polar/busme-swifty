@@ -8,13 +8,19 @@ require "./aa_creds" if File.exists?("./aa_creds")
 puts "Loading Compoents"
 require 'logger'
 
-logger = Logger.new(STDOUT)
-
-logger.info "Starting Port #{ENV["PORT"]}"
-
 require 'uri'
 require 'mongo'
 require 'mongo_mapper'
+
+class MyLog
+  include MongoMapper::Document
+  key :log, Array, :default => []
+  def add(s)
+    self.push(:log => s)
+  end
+end
+
+
 require 'net/http'
 
 require "swiftcore/Swiftiply"
@@ -38,8 +44,12 @@ else
   MongoMapper.database = "#Busme-development"
 
 end
+logger = MyLog.new
+
+logger.add("Loaded DB")
 
 puts "Loading Models"
+logger.add("Loading Models")
 require "./app/models/backend"
 
 Ccluster_address = 'cluster_address'.freeze
@@ -80,21 +90,21 @@ config[Cmap][0][Coutgoing] = ["0.0.0.0:#{backendport}"]
 config[Cmap][0][Ckeepalive] = true
 config[Cmap][0][Cdefault] = true
 config[Cmap][0][Ckey] = ENV["SWIFT_KEY"]
-puts "Getting  IP"
+
+logger.add "#{config.inspect}"
+logger.add "Getting  IP"
 
 slug = ENV["MASTER_SLUG"] || "all"
 hostip = Net::HTTP.get(URI.parse('http://ipecho.net/plain'))
 
-puts "HOST IP #{hostip}"
+logger.add "HOST IP #{hostip}"
 @proxy = Backend.new(:master_slug => slug, :host => hostip, :port => backendport)
 @proxy.save
 
-puts "About to Run Swift"
+logger.add "About to Run Swift"
 
 Swiftcore::Swiftiply.run(config)
 
-sleep 343443423432
-
-puts "Exiting"
+logger.add "Exiting"
 
 @proxy.destroy if @proxy
