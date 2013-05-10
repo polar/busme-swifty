@@ -51,6 +51,8 @@ logger.add("Loaded DB")
 puts "Loading Models"
 logger.add("Loading Models")
 require "./app/models/backend"
+puts "Done Loading Models"
+logger.add("Done Loading Models")
 
 Ccluster_address = 'cluster_address'.freeze
 Ccluster_port    = 'cluster_port'.freeze
