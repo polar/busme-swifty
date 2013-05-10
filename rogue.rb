@@ -112,7 +112,12 @@ logger.add "HOST IP #{hostip}"
 puts "About to Run Swift"
 logger.add "About to Run Swift"
 
+begin
 Swiftcore::Swiftiply.run(config)
+rescue Exception => boom
+  puts "#{boom}"
+
+end
 
 puts "Exiting"
 logger.add "Exiting"
