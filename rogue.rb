@@ -1,4 +1,4 @@
-puts "Starting"
+puts "Starting Port #{ENV["PORT"]}"
 
 require 'rubygems'
 require 'bundler'

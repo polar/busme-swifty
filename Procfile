@@ -1,1 +1,1 @@
-web: bundle exec ruby rogue.rb
+web: bundle exec ruby ./rogue.rb
