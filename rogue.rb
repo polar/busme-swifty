@@ -1,7 +1,5 @@
 puts "Starting Port #{ENV["PORT"]}"
 
-sleep 3500
-
 require 'rubygems'
 require 'bundler'
 
@@ -89,6 +87,8 @@ puts "HOST IP #{hostip}"
 puts "About to Run Swift"
 
 Swiftcore::Swiftiply.run(config)
+
+sleep 343443423432
 
 puts "Exiting"
 
