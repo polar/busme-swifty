@@ -74,6 +74,9 @@ slug = ENV["MASTER_SLUG"] || "all"
 @proxy = Backend.new(:master_slug => slug, :host => ENV["HOST"], :port => 30010)
 @proxy.save
 
+p config
+
+p ENV
 
 Swiftcore::Swiftiply.run(config)
 
