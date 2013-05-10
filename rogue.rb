@@ -17,6 +17,7 @@ if ENV['MONGOLAB_URI']
   # We are on Heroku and using MONGOLAB for a MongoDB
 
   uri = URI.parse(ENV['MONGOLAB_URI'])
+  puts "Connected to #{ENV["MONGOLAB_URI"]}"
 
   MongoMapper.connection = conn = Mongo::Connection.from_uri(ENV['MONGOLAB_URI'])
   MongoMapper.database = (uri.path.gsub(/^\//, ''))
@@ -73,9 +74,12 @@ config[Cmap][0][Ckey] = ENV["SWIFT_KEY"]
 slug = ENV["MASTER_SLUG"] || "all"
 hostip = Net::HTTP.get(URI.parse('http://ipecho.net/plain'))
 
+puts "HOST IP #{hostip}"
 @proxy = Backend.new(:master_slug => slug, :host => hostip, :port => 30010)
 @proxy.save
 
+puts "About to Run Swift"
 Swiftcore::Swiftiply.run(config)
+puts "Exiting"
 
 @proxy.destroy if @proxy
