@@ -103,7 +103,14 @@ logger.add "Getting  IP"
 puts "GEtting IP"
 
 slug = ENV["MASTER_SLUG"] || "all"
-hostip = Net::HTTP.get(URI.parse('http://ipecho.net/plain'))
+begin
+  hostip = Net::HTTP.get(URI.parse('http://myexternalip.com/raw'))
+rescue Exception => boom1
+  puts "No IP"
+  logger.add "No IP"
+  exit 1
+end
+
 
 puts  "HOST IP #{hostip}"
 logger.add "HOST IP #{hostip}"
@@ -115,7 +122,7 @@ logger.add "About to Run Swift"
 
 begin
   logger.add "Int to Run Swift"
-Swiftcore::Swiftiply.run(config)
+  Swiftcore::Swiftiply.run(config)
   logger.add "Out Swift"
 rescue Exception => boom
   puts "#{boom}"
