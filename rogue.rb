@@ -72,7 +72,10 @@ Cport            = 'port'.freeze
 Ctimeout         = 'timeout'.freeze
 Cdefault         = 'default'.freeze
 Ckey             = 'key'.freeze
+Clogger = 'logger'.freeze
 
+Ctype = 'type'.freeze
+Clevel = 'level'.freeze
 
 
 def stop_proxy
@@ -89,7 +92,7 @@ backendport = 12345
 config = {}
 config[Ccluster_address] = "0.0.0.0"
 config[Ccluster_port] = ENV["PORT"].to_i
-config[:logger] = { :type => "stderror", :level => 3}
+config[Clogger] = { Ctype => "stderror", Clevel => 3}
 config[Cmap] = [{}]
 config[Cmap][0][Cincoming] = [""]
 config[Cmap][0][Coutgoing] = ["0.0.0.0:#{backendport}"]
