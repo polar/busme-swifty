@@ -3,7 +3,7 @@ puts "Starting Port #{ENV["PORT"]}"
 require 'rubygems'
 require 'bundler'
 
-require "./aa_creds" if File.exists?("./aa_creds")
+require "./aa_creds" if File.exists?("./aa_creds.rb")
 
 puts "Loading Compoents"
 require 'logger'
@@ -20,6 +20,7 @@ class MyLog
   end
 end
 
+p ENV
 
 require 'net/http'
 
@@ -93,20 +94,27 @@ config[Cmap][0][Ckeepalive] = true
 config[Cmap][0][Cdefault] = true
 config[Cmap][0][Ckey] = ENV["SWIFT_KEY"]
 
+puts "Eatme 1"
+
 logger.add "#{config.inspect}"
 logger.add "Getting  IP"
+
+puts "GEtting IP"
 
 slug = ENV["MASTER_SLUG"] || "all"
 hostip = Net::HTTP.get(URI.parse('http://ipecho.net/plain'))
 
+puts  "HOST IP #{hostip}"
 logger.add "HOST IP #{hostip}"
 @proxy = Backend.new(:master_slug => slug, :host => hostip, :port => backendport)
 @proxy.save
 
+puts "About to Run Swift"
 logger.add "About to Run Swift"
 
 Swiftcore::Swiftiply.run(config)
 
+puts "Exiting"
 logger.add "Exiting"
 
 @proxy.destroy if @proxy
