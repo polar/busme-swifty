@@ -1,0 +1,38 @@
+GIT
+  remote: git://github.com/polar/swiftiply.git
+  revision: f617a58a88f89466ae887496cff40ed5b7fbde93
+  specs:
+    swiftiply (0.6.4)
+      eventmachine (>= 0.8.1)
+
+GEM
+  specs:
+    activemodel (3.2.11)
+      activesupport (= 3.2.11)
+      builder (~> 3.0.0)
+    activesupport (3.2.11)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
+    bson (1.8.3)
+    bson_ext (1.8.3)
+      bson (~> 1.8.3)
+    builder (3.0.4)
+    eventmachine (1.0.3)
+    i18n (0.6.4)
+    mongo (1.8.3)
+      bson (~> 1.8.3)
+    mongo_mapper (0.12.0)
+      activemodel (~> 3.0)
+      activesupport (~> 3.0)
+      plucky (~> 0.5.2)
+    multi_json (1.7.3)
+    plucky (0.5.2)
+      mongo (~> 1.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bson_ext
+  mongo_mapper
+  swiftiply!
