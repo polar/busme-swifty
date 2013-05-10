@@ -1,8 +1,11 @@
+puts "Starting"
+
 require 'rubygems'
 require 'bundler'
 
 require "./aa_creds" if File.exists?("./aa_creds")
 
+puts "Loading Compoents"
 require 'logger'
 
 require 'uri'
@@ -11,6 +14,7 @@ require 'mongo_mapper'
 require 'net/http'
 
 require "swiftcore/Swiftiply"
+puts "Loading DB"
 
 if ENV['MONGOLAB_URI']
 
@@ -31,6 +35,7 @@ else
 
 end
 
+puts "Loading Models"
 require "./app/models/backend"
 
 Ccluster_address = 'cluster_address'.freeze
@@ -70,6 +75,7 @@ config[Cmap][0][Coutgoing] = ["0.0.0.0:12345"]
 config[Cmap][0][Ckeepalive] = true
 config[Cmap][0][Cdefault] = true
 config[Cmap][0][Ckey] = ENV["SWIFT_KEY"]
+puts "Getting  IP"
 
 slug = ENV["MASTER_SLUG"] || "all"
 hostip = Net::HTTP.get(URI.parse('http://ipecho.net/plain'))
