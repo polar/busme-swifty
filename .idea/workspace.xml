@@ -6,7 +6,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Gemfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368205738597" ignored="false" />
     <file path="/backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368204670502" ignored="false" />
-    <file path="/rogue.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368215236632" ignored="false" />
+    <file path="/rogue.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368215347886" ignored="false" />
     <file path="/swiftiply.yaml" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368200392339" ignored="false" />
     <file path="/aa_creds.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368201660289" ignored="false" />
     <file path="$PROJECT_DIR$/../centro-data/Gemfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368195760565" ignored="false" />
@@ -55,7 +55,7 @@
       <file leaf-file-name="rogue.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rogue.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="0" selection-start="2630" selection-end="2630" vertical-scroll-proportion="0.8660714">
+            <state line="19" column="27" selection-start="349" selection-end="349" vertical-scroll-proportion="0.49107143">
               <folding />
             </state>
           </provider>
@@ -636,7 +636,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rogue.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="0" selection-start="2630" selection-end="2630" vertical-scroll-proportion="0.8660714">
+        <state line="19" column="27" selection-start="349" selection-end="349" vertical-scroll-proportion="0.49107143">
           <folding />
         </state>
       </provider>

@@ -16,7 +16,8 @@ class MyLog
   include MongoMapper::Document
   key :log, Array, :default => []
   def add(s)
-    self.push(:log => s)
+    self.log << s
+    self.save
   end
 end
 
