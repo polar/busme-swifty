@@ -74,6 +74,7 @@ Cdefault         = 'default'.freeze
 Ckey             = 'key'.freeze
 
 
+
 def stop_proxy
   puts "Stopping"
   @proxy.destroy if @proxy
@@ -88,6 +89,7 @@ backendport = 12345
 config = {}
 config[Ccluster_address] = "0.0.0.0"
 config[Ccluster_port] = ENV["PORT"].to_i
+config[Clogger] = { :type => "stderror", :level => 3}
 config[Cmap] = [{}]
 config[Cmap][0][Cincoming] = [""]
 config[Cmap][0][Coutgoing] = ["0.0.0.0:#{backendport}"]
