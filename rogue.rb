@@ -121,7 +121,7 @@ logger.add "HOST IP #{hostip}"
 logger.add "About to Run Swift"
 begin
   logger.add "Int to Run Swift"
-  Swiftcore::Swiftiply.run(config)
+  #Swiftcore::Swiftiply.run(config)
   sleep 234234234234234
   logger.add "Out Swift"
 rescue Exception => boom
