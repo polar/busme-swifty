@@ -137,6 +137,9 @@ begin
   logger.add "Int to Run Swift"
   Swiftcore::Swiftiply.run(config)
   logger.add "Out Swift"
+  puts "Ending"
+    p ENV
+
 rescue Exception => boom
   puts "#{boom}"
   logger.add "#{boom}"
@@ -144,6 +147,9 @@ end
 
 puts "Exiting"
 logger.add "Exiting"
-puts
+p ENV
+
+p ENV
+
 
 @proxy.destroy if @proxy
