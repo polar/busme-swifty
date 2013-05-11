@@ -131,6 +131,7 @@ puts "About to Run Swift"
 logger.add "About to Run Swift"
 
 begin
+  puts "#{ENV.inspect}"
   logger.add "Int to Run Swift"
   Swiftcore::Swiftiply.run(config)
   logger.add "Out Swift"
