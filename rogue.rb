@@ -75,7 +75,7 @@ Clevel = 'level'.freeze
 
 
 def stop_proxy
-  logger.add "Stopping" if logger
+  logger.add "Stopping" if @logger
   @proxy.destroy if @proxy
 end
 
