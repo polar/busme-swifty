@@ -134,12 +134,12 @@ logger.add "About to Run Swift"
 p ENV
 p ENV
 begin
-  p "#{ENV.inspect}"
   p ENV
-  logger.add "Int to Run Swift"
+  p "Int to Run Swift"
+  p ENV
   Swiftcore::Swiftiply.run(config)
-  logger.add "Out Swift"
-  p "Ending
+  p "Out Swift"
+  p "Ending"
     p ENV
 
     p ENV
