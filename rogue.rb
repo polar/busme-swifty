@@ -116,6 +116,11 @@ rescue Exception => boom1
   exit 1
 end
 
+if hostip.nil?
+  puts "NO IP"
+  exit 1
+end
+
 
 puts  "HOST IP #{hostip}"
 logger.add "HOST IP #{hostip}"
@@ -136,5 +141,6 @@ end
 
 puts "Exiting"
 logger.add "Exiting"
+puts
 
 @proxy.destroy if @proxy
