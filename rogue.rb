@@ -12,6 +12,8 @@ require 'uri'
 require 'mongo'
 require 'mongo_mapper'
 
+logger = nil
+
 class MyLog
   include MongoMapper::Document
   key :log, Array, :default => []
