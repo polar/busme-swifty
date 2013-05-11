@@ -87,6 +87,7 @@ backendport = 12345
 
 config = {}
 config[Ccluster_address] = "0.0.0.0"
+config[Cdaemonize] = false
 config[Ccluster_port] = ENV["PORT"].to_i
 config[Clogger] = { Ctype => "stderror", Clevel => 3}
 config[Cmap] = [{}]
