@@ -132,17 +132,23 @@ puts "About to Run Swift"
 logger.add "About to Run Swift"
 
 p ENV
+p ENV
 begin
   puts "#{ENV.inspect}"
+  p ENV
   logger.add "Int to Run Swift"
   Swiftcore::Swiftiply.run(config)
   logger.add "Out Swift"
   puts "Ending"
     p ENV
 
+    p ENV
 rescue Exception => boom
   puts "#{boom}"
   logger.add "#{boom}"
+  p ENV
+  p ENV
+  p ENV
 end
 
 puts "Exiting"
