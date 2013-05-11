@@ -5,7 +5,7 @@ require 'bundler'
 
 require "./aa_creds" if File.exists?("./aa_creds.rb")
 
-puts "Loading Compoents"
+puts "Loading Components"
 require 'logger'
 
 require 'uri'
@@ -16,25 +16,23 @@ class MyLog
   include MongoMapper::Document
   key :log, Array, :default => []
   def add(s)
-    self.log << s
+    p s
+    self.log << s.to_s
     self.save
   end
 end
 
-p ENV
-
 require 'net/http'
 
 require "swiftcore/Swiftiply"
-puts "Loading DB"
+p "Loading DB"
 
 if ENV['MONGOLAB_URI']
 
   # We are on Heroku and using MONGOLAB for a MongoDB
 
   uri = URI.parse(ENV['MONGOLAB_URI'])
-  puts "Connected to #{ENV["MONGOLAB_URI"]}"
-p ENV
+  p "Connected to #{ENV["MONGOLAB_URI"]}"
   MongoMapper.connection = conn = Mongo::Connection.from_uri(ENV['MONGOLAB_URI'])
   MongoMapper.database = (uri.path.gsub(/^\//, ''))
 
@@ -48,12 +46,10 @@ else
 end
 logger = MyLog.new
 
-logger.add("Loaded DB")
 
-puts "Loading Models"
+logger.add "Connected to #{ENV["MONGOLAB_URI"]}"
 logger.add("Loading Models")
 require "./app/models/backend"
-puts "Done Loading Models"
 logger.add("Done Loading Models")
 
 Ccluster_address = 'cluster_address'.freeze
@@ -79,7 +75,7 @@ Clevel = 'level'.freeze
 
 
 def stop_proxy
-  puts "Stopping"
+  logger.add "Stopping" if logger
   @proxy.destroy if @proxy
 end
 
@@ -100,63 +96,35 @@ config[Cmap][0][Ckeepalive] = true
 config[Cmap][0][Cdefault] = true
 config[Cmap][0][Ckey] = ENV["SWIFT_KEY"]
 
-puts "Eatme 1"
-
 logger.add "#{config.inspect}"
 logger.add "Getting  IP"
-
-puts "GEtting IP"
-      p ENV
 
 slug = ENV["MASTER_SLUG"] || "all"
 begin
   hostip = Net::HTTP.get(URI.parse('http://myexternalip.com/raw'))
 rescue Exception => boom1
-  puts "No IP"
   logger.add "No IP"
   exit 1
 end
 
 if hostip.nil?
-  p "NO IP"
+  logger.add "NO IP"
   exit 1
 end
 
-
-p  "HOST IP #{hostip}"
 logger.add "HOST IP #{hostip}"
 @proxy = Backend.new(:master_slug => slug, :host => hostip, :port => backendport)
 @proxy.save
-
-p "About to Run Swift"
 logger.add "About to Run Swift"
-
-p ENV
-p ENV
 begin
-  p ENV
-  p "Int to Run Swift"
-  p ENV
+  logger.add "Int to Run Swift"
   Swiftcore::Swiftiply.run(config)
-  p "Out Swift"
-  p "Ending"
-    p ENV
-
-    p ENV
+  logger.add "Out Swift"
 rescue Exception => boom
-  p "#{boom}"
-  p boom.backtrace
-  logger.add "#{boom}"
-  p ENV
-  p ENV
-  p ENV
+ logger.add "#{boom}"
+ logger.add boom.backtrace
 end
 
-p "Exiting"
 logger.add "Exiting"
-p ENV
-
-p ENV
-
 
 @proxy.destroy if @proxy

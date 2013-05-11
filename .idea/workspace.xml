@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rogue.rb" afterPath="$PROJECT_DIR$/rogue.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Gemfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368287527416" ignored="false" />
     <file path="/backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368204670502" ignored="false" />
-    <file path="/rogue.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368290626288" ignored="false" />
+    <file path="/rogue.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368291137867" ignored="false" />
     <file path="/swiftiply.yaml" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368200392339" ignored="false" />
     <file path="/aa_creds.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368201660289" ignored="false" />
     <file path="$PROJECT_DIR$/../centro-data/Gemfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368195760565" ignored="false" />
@@ -66,7 +65,7 @@
       <file leaf-file-name="rogue.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rogue.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="15" selection-start="2959" selection-end="2959" vertical-scroll-proportion="0.77079797">
+            <state line="47" column="29" selection-start="906" selection-end="906" vertical-scroll-proportion="0.75042444">
               <folding />
             </state>
           </provider>
@@ -499,7 +498,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rogue.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="15" selection-start="2959" selection-end="2959" vertical-scroll-proportion="0.77079797">
+        <state line="47" column="29" selection-start="906" selection-end="906" vertical-scroll-proportion="0.75042444">
           <folding />
         </state>
       </provider>
