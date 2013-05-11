@@ -118,40 +118,41 @@ rescue Exception => boom1
 end
 
 if hostip.nil?
-  puts "NO IP"
+  p "NO IP"
   exit 1
 end
 
 
-puts  "HOST IP #{hostip}"
+p  "HOST IP #{hostip}"
 logger.add "HOST IP #{hostip}"
 @proxy = Backend.new(:master_slug => slug, :host => hostip, :port => backendport)
 @proxy.save
 
-puts "About to Run Swift"
+p "About to Run Swift"
 logger.add "About to Run Swift"
 
 p ENV
 p ENV
 begin
-  puts "#{ENV.inspect}"
+  p "#{ENV.inspect}"
   p ENV
   logger.add "Int to Run Swift"
   Swiftcore::Swiftiply.run(config)
   logger.add "Out Swift"
-  puts "Ending"
+  p "Ending
     p ENV
 
     p ENV
 rescue Exception => boom
-  puts "#{boom}"
+  p "#{boom}"
+  p boom.backtrace
   logger.add "#{boom}"
   p ENV
   p ENV
   p ENV
 end
 
-puts "Exiting"
+p "Exiting"
 logger.add "Exiting"
 p ENV
 
