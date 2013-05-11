@@ -34,7 +34,7 @@ if ENV['MONGOLAB_URI']
 
   uri = URI.parse(ENV['MONGOLAB_URI'])
   puts "Connected to #{ENV["MONGOLAB_URI"]}"
-
+p ENV
   MongoMapper.connection = conn = Mongo::Connection.from_uri(ENV['MONGOLAB_URI'])
   MongoMapper.database = (uri.path.gsub(/^\//, ''))
 
@@ -106,6 +106,7 @@ logger.add "#{config.inspect}"
 logger.add "Getting  IP"
 
 puts "GEtting IP"
+      p ENV
 
 slug = ENV["MASTER_SLUG"] || "all"
 begin
@@ -130,6 +131,7 @@ logger.add "HOST IP #{hostip}"
 puts "About to Run Swift"
 logger.add "About to Run Swift"
 
+p ENV
 begin
   puts "#{ENV.inspect}"
   logger.add "Int to Run Swift"
