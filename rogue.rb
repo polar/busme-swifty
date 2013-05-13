@@ -1,4 +1,4 @@
-puts "Starting Port #{ENV["PORT"]}"
+puts "Starting Port #{ENV["VCAP_APP_PORT"]}"
 
 require 'rubygems'
 require 'bundler'
@@ -85,15 +85,16 @@ trap("HUP") { stop_proxy }
 trap("INT") { stop_proxy }
 trap("TERM") { stop_proxy }
 
-backendport = 12345
+backendport = 8081  
 
+port = ENV["VCAP_APP_PORT"] || "8080"
 config = {}
 config[Ccluster_address] = "0.0.0.0"
 config[Cdaemonize] = false
-config[Ccluster_port] = ENV["PORT"].to_i
+config[Ccluster_port] = port.to_i
 config[Clogger] = { Ctype => "stderror", Clevel => 3}
 config[Cmap] = [{}]
-config[Cmap][0][Cincoming] = [""]
+config[Cmap][0][Cincoming] = ["busme.aws.af.cm"]
 config[Cmap][0][Coutgoing] = ["0.0.0.0:#{backendport}"]
 config[Cmap][0][Ckeepalive] = true
 config[Cmap][0][Cdefault] = true
