@@ -89,12 +89,12 @@ backendport = 8081
 
 port = ENV["VCAP_APP_PORT"] || "8080"
 config = {}
-config[Ccluster_address] = "0.0.0.0"
+config[Ccluster_address] = "127.0.0.1"
 config[Cdaemonize] = false
 config[Ccluster_port] = port.to_i
 config[Clogger] = { Ctype => "stderror", Clevel => 3}
 config[Cmap] = [{}]
-config[Cmap][0][Cincoming] = nil
+config[Cmap][0][Cincoming] = ["#{config[Ccluster_address]}:#{port}"]
 config[Cmap][0][Coutgoing] = ["0.0.0.0:#{backendport}"]
 config[Cmap][0][Ckeepalive] = true
 config[Cmap][0][Cdefault] = true
