@@ -103,7 +103,8 @@ config[Cmap][0][Ckey] = ENV["SWIFT_KEY"]
 logger.add "#{config.inspect}"
 logger.add "Getting  IP"
 
-slug = ENV["MASTER_SLUG"] || "all"
+slug = ENV["MASTER_SLUG"]
+slug = nil if slug.blank?
 begin
   hostip = Net::HTTP.get(URI.parse('http://myexternalip.com/raw'))
 rescue Exception => boom1
