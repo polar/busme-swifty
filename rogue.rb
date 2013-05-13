@@ -94,7 +94,7 @@ config[Cdaemonize] = false
 config[Ccluster_port] = port.to_i
 config[Clogger] = { Ctype => "stderror", Clevel => 3}
 config[Cmap] = [{}]
-config[Cmap][0][Cincoming] = ["busme.aws.af.cm"]
+config[Cmap][0][Cincoming] = nil
 config[Cmap][0][Coutgoing] = ["0.0.0.0:#{backendport}"]
 config[Cmap][0][Ckeepalive] = true
 config[Cmap][0][Cdefault] = true
