@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/polar/swiftiply.git
-  revision: 92d2038f9b748b91c88d3aa87e06fdf395c7b475
+  revision: 13a423b27da206354e4dcff1a2c07bfcb9f50094
   specs:
     swiftiply (0.6.4)
       eventmachine (>= 0.8.1)
