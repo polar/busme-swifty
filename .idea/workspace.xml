@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368459184531" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368210443953" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368549576853" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368549753894" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -62,7 +62,7 @@
     <file path="$PROJECT_DIR$/../buspass.web/Gemfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368538093297" ignored="false" />
     <file path="/*.regexp" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368542311585" ignored="false" />
     <file path="/fragment.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368542620613" ignored="false" />
-    <file path="/nginx.conf" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368549327344" ignored="false" />
+    <file path="/nginx.conf" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368549820489" ignored="false" />
     <file path="/creds" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368545462445" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +122,7 @@
       <file leaf-file-name="nginx.conf" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="45" selection-start="2899" selection-end="2899" vertical-scroll-proportion="2.0286884">
+            <state line="96" column="34" selection-start="2682" selection-end="2682" vertical-scroll-proportion="0.5778689">
               <folding />
             </state>
           </provider>
@@ -509,7 +509,11 @@
       <created>1368549585121</created>
       <updated>1368549585121</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <created>1368549756579</created>
+      <updated>1368549756579</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -705,7 +709,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="45" selection-start="2899" selection-end="2899" vertical-scroll-proportion="2.0286884">
+        <state line="96" column="34" selection-start="2682" selection-end="2682" vertical-scroll-proportion="0.5778689">
           <folding />
         </state>
       </provider>
