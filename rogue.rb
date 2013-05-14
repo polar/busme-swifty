@@ -60,7 +60,7 @@ trap("TERM") { stop_proxy("TERM") }
 
 backendport = ENV["SWIFTIPLY_BACKEND_PORT"] || "8081"
 
-port = ENV["SWIFTIPLY_CLUSTER_PORT"] || "8080"
+port = ENV["SWIFTIPLY_CLUSTER_PORT"] || "3000"
 config = {}
 config['cluster_address'] = "127.0.0.1"
 config['daemonize'] = false
