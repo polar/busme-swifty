@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/polar/swiftiply.git
-  revision: f617a58a88f89466ae887496cff40ed5b7fbde93
+  revision: 92d2038f9b748b91c88d3aa87e06fdf395c7b475
   specs:
     swiftiply (0.6.4)
       eventmachine (>= 0.8.1)
@@ -8,31 +8,18 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (3.2.11)
-      activesupport (= 3.2.11)
+    activemodel (3.2.13)
+      activesupport (= 3.2.13)
       builder (~> 3.0.0)
-    activesupport (3.2.11)
-      i18n (~> 0.6)
+    activesupport (3.2.13)
+      i18n (= 0.6.1)
       multi_json (~> 1.0)
-    addressable (2.2.8)
-    af (0.3.18.12)
-      addressable (~> 2.2.6)
-      interact (~> 0.4.0)
-      json_pure (>= 1.5.1, < 1.7.0)
-      rb-readline (~> 0.4.2)
-      rest-client (>= 1.6.1, < 1.7.0)
-      rubyzip (~> 0.9.4)
-      terminal-table (~> 1.4.2)
-      uuidtools (~> 2.1.0)
     bson (1.8.5)
     bson_ext (1.8.5)
       bson (~> 1.8.5)
     builder (3.0.4)
     eventmachine (1.0.3)
-    i18n (0.6.4)
-    interact (0.4.8)
-    json_pure (1.6.8)
-    mime-types (1.23)
+    i18n (0.6.1)
     mongo (1.8.5)
       bson (~> 1.8.5)
     mongo_mapper (0.12.0)
@@ -42,20 +29,11 @@ GEM
     multi_json (1.7.3)
     plucky (0.5.2)
       mongo (~> 1.5)
-    rack (1.4.5)
-    rb-readline (0.4.2)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
-    rubyzip (0.9.9)
-    terminal-table (1.4.5)
-    uuidtools (2.1.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  af
   bson_ext
   mongo_mapper
-  rack
   swiftiply!
