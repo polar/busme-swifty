@@ -16,7 +16,7 @@
     <orderEntry type="library" scope="PROVIDED" name="mongo_mapper (v0.12.0, RVM: ruby-1.9.3-p392 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.7.3, RVM: ruby-1.9.3-p392 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="plucky (v0.5.2, RVM: ruby-1.9.3-p392 [global]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="swiftiply (v0.6.4@13a423, RVM: ruby-1.9.3-p392 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="swiftiply (v0.6.4@07589d, RVM: ruby-1.9.3-p392 [global]) [gem]" level="application" />
   </component>
 </module>
 
