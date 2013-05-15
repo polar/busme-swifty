@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boot.sh" afterPath="$PROJECT_DIR$/boot.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start_rogues.sh" afterPath="$PROJECT_DIR$/start_rogues.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368459184531" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368632775149" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368648078121" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368648676206" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -72,7 +72,7 @@
     <file path="$PROJECT_DIR$/../swiftiply/src/swiftcore/Swiftiply/cluster_protocol.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368630960411" ignored="false" />
     <file path="/cluster_protocol.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368630959382" ignored="false" />
     <file path="/boot.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368648671167" ignored="false" />
-    <file path="/start_rogues.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368646824388" ignored="false" />
+    <file path="/start_rogues.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368648832609" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,19 +101,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boot.sh" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="boot.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/boot.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="17" selection-start="360" selection-end="360" vertical-scroll-proportion="0.41002277">
+            <state line="21" column="17" selection-start="360" selection-end="360" vertical-scroll-proportion="-8.4">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="start_rogues.sh" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="start_rogues.sh" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/start_rogues.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.084033616">
               <folding />
             </state>
           </provider>
@@ -210,8 +210,8 @@
         <option value="$PROJECT_DIR$/app/models/backend.rb" />
         <option value="$PROJECT_DIR$/rogue.rb" />
         <option value="$PROJECT_DIR$/nginx.conf" />
-        <option value="$PROJECT_DIR$/start_rogues.sh" />
         <option value="$PROJECT_DIR$/boot.sh" />
+        <option value="$PROJECT_DIR$/start_rogues.sh" />
       </list>
     </option>
   </component>
@@ -607,7 +607,11 @@
       <created>1368648080280</created>
       <updated>1368648080280</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="update">
+      <created>1368648678155</created>
+      <updated>1368648678155</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -796,16 +800,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/start_rogues.sh">
+    <entry file="file://$PROJECT_DIR$/boot.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
+        <state line="21" column="17" selection-start="360" selection-end="360" vertical-scroll-proportion="-8.4">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/boot.sh">
+    <entry file="file://$PROJECT_DIR$/start_rogues.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="17" selection-start="360" selection-end="360" vertical-scroll-proportion="0.41002277">
+        <state line="2" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.084033616">
           <folding />
         </state>
       </provider>
