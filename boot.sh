@@ -18,7 +18,7 @@ mkdir -p /var/run/swifty
 chown ec2-user:ec2-user /var/run/swifty
 cd /var/run/swifty
 for i in *.pid; do
-    kill -TERM `cat $i`
+    kill -HUP `cat $i`
 done
 sleep 5
 for i in *.pid; do
