@@ -20,16 +20,16 @@ cd ./busme-swifty
 bundle install
 
 # busme.us
-bundle exec ruby rogue.rb --port 3000 &> /var/log/swifty/busme.log &
+bundle exec ruby rogue.rb --cluster-port 3000 &> /var/log/swifty/busme.log &
 
 # sites.busme.us
-bundle exec ruby rogue.rb --port 3010 &> /var/log/swifty/sites.log &
+bundle exec ruby rogue.rb --cluster-port 3010 &> /var/log/swifty/sites.log &
 
 # lake-shore-limited.busme.us
-bundle exec ruby rogue.rb --port 3020 &> /var/log/swifty/lake-shore-limited.log &
+bundle exec ruby rogue.rb --cluster-port 3020 &> /var/log/swifty/lake-shore-limited.log &
 
 # syracuse-university.busme.us
-bundle exec ruby rogue.rb --port 3030 &> /var/log/swifty/syracuse-university.log &
+bundle exec ruby rogue.rb --cluster-port 3030 &> /var/log/swifty/syracuse-university.log &
 
 # apis.busme.us is currently hosted on Heroku due to the SSL validation issue.
 
