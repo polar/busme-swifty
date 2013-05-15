@@ -61,7 +61,7 @@ upgrade() {
     su - ec2-user <<EOF
     cd busme-swifty
     git pull
-    EOF
+EOF
 }
 
 case "$1" in

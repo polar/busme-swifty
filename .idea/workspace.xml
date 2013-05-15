@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368459184531" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368632775149" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368653205676" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368653270380" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -116,7 +116,7 @@
       <file leaf-file-name="init.sh" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/init.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="20" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.60940695">
+            <state line="65" column="30" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.7321063">
               <folding />
             </state>
           </provider>
@@ -657,7 +657,11 @@
       <created>1368653210438</created>
       <updated>1368653210438</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="update">
+      <created>1368653272619</created>
+      <updated>1368653272619</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -855,7 +859,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/init.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="20" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.60940695">
+        <state line="65" column="30" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.7321063">
           <folding />
         </state>
       </provider>
