@@ -6,4 +6,10 @@ cd ~ec2-user/busme-swifty
 cp init.sh /etc/init.d/swifty
 
 chmod 0755 /etc/init.d/swifty
-update-rc.d swifty defaults
+ln -s /etc/init.d/swifty /etc/rc.0/K20swifty
+ln -s /etc/init.d/swifty /etc/rc.1/K20swifty
+ln -s /etc/init.d/swifty /etc/rc.2/S20swifty
+ln -s /etc/init.d/swifty /etc/rc.3/S20swifty
+ln -s /etc/init.d/swifty /etc/rc.4/S20swifty
+ln -s /etc/init.d/swifty /etc/rc.5/S20swifty
+ln -s /etc/init.d/swifty /etc/rc.6/K20swifty
