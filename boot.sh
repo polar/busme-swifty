@@ -17,14 +17,14 @@ chown ec2-user:ec2-user /var/log/swifty
 mkdir -p /var/run/swifty
 chown ec2-user:ec2-user /var/run/swifty
 cd /var/run/swifty
-for i in *.pid do
+for i in *.pid; do
     kill -TERM `cat $i`
-end
+done
 sleep 5
-for i in *.pid do
+for i in *.pid; do
     kill -KILL `cat $i`
     rm $i
-end
+done
 
 su - ec2-user <<EOF
 source ~/.busme_creds
