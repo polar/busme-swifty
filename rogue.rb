@@ -8,7 +8,7 @@ require 'mongo_mapper'
 require 'optparse'
 
 
-# This exists for local testing.
+# This exists for local development. This file does not exist in production..
 require "./aa_creds" if File.exists?("./aa_creds.rb")
 
 logger = Logger.new(STDOUT)
@@ -18,31 +18,24 @@ require "swiftcore/Swiftiply"
 
 logger.info "Busme! Swifty Starting"
 
-logger.info "Loading DB"
-
 begin
+  logger.info "Loading DB"
   if ENV['MONGOLAB_URI']
-
     # We are on Heroku and using MONGOLAB for a MongoDB
-
     uri = URI.parse(ENV['MONGOLAB_URI'])
     MongoMapper.connection = conn = Mongo::Connection.from_uri(ENV['MONGOLAB_URI'])
     MongoMapper.database = (uri.path.gsub(/^\//, ''))
-
   else
-
     # Local Configuration for development/testing
-
     MongoMapper.connection = Mongo::Connection.new('localhost', 27017)
     MongoMapper.database = "#Busme-development"
-
   end
+  logger.info "Connected to DB #{MongoMapper.database.name}"
 rescue Exception => boom
   logger.error "Cannot establish connection to DB #{boom}"
   exit 1
 end
 
-logger.info "Connected to DB #{MongoMapper.database}"
 
 require "./app/models/backend"
 
@@ -79,6 +72,9 @@ OptionParser.new do |opts|
   opts.on('-m', '--master-slug [SLUG]', String, 'The Master that this Swifty is serving') do |slug|
     ENV["MASTER_SLUG"] = slug
   end
+  opts.on('-f', '--frontend [FQDN]', String, 'The Master that this Swifty is serving') do |fqdn|
+    ENV["BUSME_BASEHOST"] = fqdn
+  end
   opts.on('-a', '--cluster-address [ADDRESS]', String, 'The hostname/IP address that Busme! Swifty will listen for connections on.') do |address|
     config['cluster_address'] = address
   end
@@ -94,7 +90,6 @@ OptionParser.new do |opts|
   opts.on('-t', '--timeout [SECONDS]', Integer, 'The server unavailable timeout.  Defaults to 3 seconds.') do |timeout|
     config['timeout'] = timeout
   end
-
 end.parse!
 
 # Finish Up.
@@ -128,14 +123,17 @@ end
 
 logger.info "External Host IP: #{hostip}"
 
-@proxy = Backend.new(:master_slug => slug, :host => hostip, :port => config['backend_port'])
+@proxy = Backend.new(:master_slug => slug,
+                     :host => hostip,
+                     :port => config['backend_port'],
+                     :frontend => ENV["BUSME_BASEHOST"])
 @proxy.save
+
 logger.info "Saved #{@proxy} #{@proxy.inspect}"
 logger.info "Running Swift"
 
 begin
   Swiftcore::Swiftiply.run(config)
-  #sleep 234234234234234
   logger.info "Swift Ended Normally, perhaps with a signal."
 rescue Exception => boom
  logger.error "Swift Ended Abnormally: #{boom}"
