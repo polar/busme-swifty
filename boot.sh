@@ -15,7 +15,7 @@ mkdir -p /var/log/swifty
 chown ec2-user:ec2-uesr /var/log/swifty
 
 su - ec2-user <<EOF
-source ~/creds
+source ~/.busme_creds
 cd ./busme-swifty
 bundle install
 
