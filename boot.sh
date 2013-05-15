@@ -34,6 +34,7 @@ bundle install
 # busme.us
 bundle exec ruby rogue.rb --cluster-port 3000 --backend-port 4000 &> /var/log/swifty/busme.log &
 PID=$!
+echo The Process Id is $! and $PID
 echo $PID
 echo $PID > /var/run/swifty/busme.pid
 
