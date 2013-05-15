@@ -96,7 +96,8 @@ case "$1" in
         ;;
     reinstall)
         rh_status_q || exit 7
-        $1
+        upgrade
+        reinstall
         ;;
     status|status_q)
         rh_$1
