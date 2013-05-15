@@ -18,12 +18,12 @@ mkdir -p /var/run/swifty
 chown ec2-user:ec2-user /var/run/swifty
 cd /var/run/swifty
 for i in *.pid; do
-    kill -HUP `cat $i`
-done
+    kill -HUP `cat $i` >& /dev/null
+done >& /dev/null
 sleep 5
 for i in *.pid; do
-    kill -KILL `cat $i`
-    rm $i
-done
+    kill -KILL `cat $i` >& /dev/null
+    rm -f $i
+done >& /dev/null
 
-sudo -n -u ec2-user sh ~/ec2-user/busme-swifty/start_rogues.sh
+sudo -n -u ec2-user sh ~ec2-user/busme-swifty/start_rogues.sh
