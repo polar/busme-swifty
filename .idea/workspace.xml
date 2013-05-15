@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368459184531" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368632775149" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368643146740" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368643253998" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -112,7 +112,7 @@
       <file leaf-file-name="boot.sh" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/boot.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="23" selection-start="396" selection-end="396" vertical-scroll-proportion="0.41717792">
+            <state line="20" column="63" selection-start="330" selection-end="330" vertical-scroll-proportion="0.17995444">
               <folding />
             </state>
           </provider>
@@ -549,7 +549,11 @@
       <created>1368643149486</created>
       <updated>1368643149486</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="update">
+      <created>1368643256107</created>
+      <updated>1368643256107</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -747,7 +751,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/boot.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="23" selection-start="396" selection-end="396" vertical-scroll-proportion="0.41717792">
+        <state line="20" column="63" selection-start="330" selection-end="330" vertical-scroll-proportion="0.17995444">
           <folding />
         </state>
       </provider>
