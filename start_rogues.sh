@@ -4,6 +4,7 @@ source ~/.busme_creds
 cd ~/busme-swifty
 bundle install
 
+echo "Starting Rogues"
 # busme.us
 bundle exec ruby rogue.rb --cluster-port 3000 --backend-port 4000 >& /var/log/swifty/busme.log &
 echo $!
@@ -25,3 +26,5 @@ echo $!
 echo $! > /var/run/swifty/syracuse-university.pid
 
 # apis.busme.us is currently hosted on Heroku due to the SSL validation issue.
+
+echo "Done Starting Rogues"

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stop_rogues.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boot.sh" afterPath="$PROJECT_DIR$/boot.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start_rogues.sh" afterPath="$PROJECT_DIR$/start_rogues.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,7 +29,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368459184531" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368632775149" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368649008614" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368649191882" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -71,8 +73,9 @@
     <file path="$PROJECT_DIR$/../buspass.web/app/models/backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368625110289" ignored="false" />
     <file path="$PROJECT_DIR$/../swiftiply/src/swiftcore/Swiftiply/cluster_protocol.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368630960411" ignored="false" />
     <file path="/cluster_protocol.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368630959382" ignored="false" />
-    <file path="/boot.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368649003150" ignored="false" />
-    <file path="/start_rogues.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368648832609" ignored="false" />
+    <file path="/boot.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368649698429" ignored="false" />
+    <file path="/start_rogues.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368649675961" ignored="false" />
+    <file path="/stop_rogues.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368649642027" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,28 +104,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boot.sh" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="boot.sh" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/boot.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="39" selection-start="456" selection-end="456" vertical-scroll-proportion="-10.8">
+            <state line="5" column="52" selection-start="45" selection-end="45" vertical-scroll-proportion="0.13439636">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="start_rogues.sh" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="start_rogues.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/start_rogues.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="12" selection-start="400" selection-end="400" vertical-scroll-proportion="0.6302521">
+            <state line="29" column="27" selection-start="997" selection-end="997" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="swiftiply" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p392@global/bundler/gems/swiftiply-13a423b27da2/bin/swiftiply">
+      <file leaf-file-name="stop_rogues.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stop_rogues.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="34" selection-start="1105" selection-end="2618" vertical-scroll-proportion="0.0">
+            <state line="15" column="27" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -210,8 +213,9 @@
         <option value="$PROJECT_DIR$/app/models/backend.rb" />
         <option value="$PROJECT_DIR$/rogue.rb" />
         <option value="$PROJECT_DIR$/nginx.conf" />
-        <option value="$PROJECT_DIR$/boot.sh" />
+        <option value="$PROJECT_DIR$/stop_rogues.sh" />
         <option value="$PROJECT_DIR$/start_rogues.sh" />
+        <option value="$PROJECT_DIR$/boot.sh" />
       </list>
     </option>
   </component>
@@ -619,7 +623,11 @@
       <created>1368649010637</created>
       <updated>1368649010637</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="update">
+      <created>1368649194251</created>
+      <updated>1368649194251</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -710,13 +718,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@global/bundler/gems/swiftiply-f617a58a88f8/src/swiftcore/Swiftiply/proxy_bag.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="575" column="13" selection-start="18120" selection-end="18120" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@global/bundler/gems/swiftiply-f617a58a88f8/src/swiftcore/Swiftiply/swiftiply_client.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="17" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0">
@@ -808,16 +809,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/boot.sh">
+    <entry file="file://$PROJECT_DIR$/stop_rogues.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="39" selection-start="456" selection-end="456" vertical-scroll-proportion="-10.8">
+        <state line="15" column="27" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/start_rogues.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="12" selection-start="400" selection-end="400" vertical-scroll-proportion="0.6302521">
+        <state line="29" column="27" selection-start="997" selection-end="997" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boot.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="52" selection-start="45" selection-end="45" vertical-scroll-proportion="0.13439636">
           <folding />
         </state>
       </provider>
