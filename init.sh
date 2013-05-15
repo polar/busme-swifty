@@ -69,6 +69,11 @@ upgrade() {
 EOF
 }
 
+reinstall() {
+    [ -e ~ec2-user/busme-swifty ] || exit 5
+    sh ~ec2-user/busme-swifty/install.sh
+}
+
 case "$1" in
     start)
         rh_status_q && exit 0
@@ -86,6 +91,10 @@ case "$1" in
         upgrade
         ;;
     reload)
+        rh_status_q || exit 7
+        $1
+        ;;
+    reinstall)
         rh_status_q || exit 7
         $1
         ;;
