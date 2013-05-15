@@ -19,9 +19,11 @@
 start() {
     [ -e ~ec2-user/busme-swifty/stop_rogues.sh ] || exit 5
     [ -e ~ec2-user/busme-swifty/start_rogues.sh ] || exit 5
-    echo -n $"Starting Swifty"
+    echo $"Starting Swifty"
+    su - ec2-user <<EOF
     sh ~ec2-user/busme-swifty/stop_rogues.sh
     sh ~ec2-user/busme-swifty/start_rogues.sh
+EOF
     retval=$?
     echo
     [ $retval -eq 0 ] && touch $lockfile
@@ -30,8 +32,10 @@ start() {
 
 stop() {
     [ -e ~ec2-user/busme-swifty/stop_rogues.sh ] || exit 5
-    echo -n $"Stopping Swifty"
+    echo $"Stopping Swifty"
+    su - ec2-user <<EOF
     sh ~ec2-user/busme-swifty/stop_rogues.sh
+EOF
     retval=$?
     echo
     [ $retval -eq 0 ] && rm -f $lockfile
@@ -39,7 +43,6 @@ stop() {
 }
 
 restart() {
-    stop
     start
 }
 
