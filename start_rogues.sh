@@ -1,6 +1,6 @@
 #!/bin/bash
 source ~/.busme_creds
-cd ./busme-swifty
+cd ~/busme-swifty
 bundle install
 
 # busme.us
