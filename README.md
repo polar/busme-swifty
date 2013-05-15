@@ -41,18 +41,26 @@ Commands
 You may do these as root. They will suid down to ec2-user.
 
 Start Rogues
+
     /etc/init.d/swifty start
+
 Stop Rogues
+
     /etc/init.d/swifty stop
+
 Restart Rogues
+
     /etc/init.d/swifty restart
+
 Upgrade
+
     /etc/init.d/swifty upgrade
 
     This directive only does the git pull. You have to manually restart swifty and nginx
     in the event of an update to nginx.conf.
 
 Reinstall
+
     /etc/init.d/swifty reinstall
 
     This directive does the git pull and runs the install.sh script.
