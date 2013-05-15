@@ -44,7 +44,7 @@ restart() {
 }
 
 reload() {
-
+    echo "No reload"
 }
 
 rh_status() {
