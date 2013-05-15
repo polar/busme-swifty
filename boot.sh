@@ -26,4 +26,4 @@ for i in *.pid; do
     rm $i
 done
 
-sudo -n ec2-user ./start_rogues.sh
+sudo -n -u ec2-user ./start_rogues.sh
