@@ -44,6 +44,7 @@ restart() {
 }
 
 reload() {
+
 }
 
 rh_status() {
