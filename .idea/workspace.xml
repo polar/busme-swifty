@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368459184531" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368632775149" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368653316591" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368653450336" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -74,7 +74,7 @@
     <file path="/boot.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368650041118" ignored="false" />
     <file path="/start_rogues.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368649675961" ignored="false" />
     <file path="/stop_rogues.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368649642027" ignored="false" />
-    <file path="/init.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368653420388" ignored="false" />
+    <file path="/init.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368653552665" ignored="false" />
     <file path="/install.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368653110098" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +116,7 @@
       <file leaf-file-name="init.sh" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/init.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="24" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-0.801636">
+            <state line="18" column="9" selection-start="410" selection-end="410" vertical-scroll-proportion="-1.9094827">
               <folding />
             </state>
           </provider>
@@ -665,7 +665,11 @@
       <created>1368653318713</created>
       <updated>1368653318713</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="update">
+      <created>1368653453544</created>
+      <updated>1368653453544</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -863,7 +867,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/init.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="24" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-0.801636">
+        <state line="18" column="9" selection-start="410" selection-end="410" vertical-scroll-proportion="-1.9094827">
           <folding />
         </state>
       </provider>

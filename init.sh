@@ -16,6 +16,8 @@
 # Check that networking is up.
 [ "$NETWORKING" = "no" ] && exit 0
 
+lockfile=/var/lock/subsys/swifty
+
 start() {
     [ -e ~ec2-user/busme-swifty/stop_rogues.sh ] || exit 5
     [ -e ~ec2-user/busme-swifty/start_rogues.sh ] || exit 5
