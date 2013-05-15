@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368459184531" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368632775149" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368643253998" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368643731875" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -71,7 +71,7 @@
     <file path="$PROJECT_DIR$/../buspass.web/app/models/backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368625110289" ignored="false" />
     <file path="$PROJECT_DIR$/../swiftiply/src/swiftcore/Swiftiply/cluster_protocol.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368630960411" ignored="false" />
     <file path="/cluster_protocol.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368630959382" ignored="false" />
-    <file path="/boot.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368643249981" ignored="false" />
+    <file path="/boot.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368644127623" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +112,7 @@
       <file leaf-file-name="boot.sh" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/boot.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="63" selection-start="330" selection-end="330" vertical-scroll-proportion="0.17995444">
+            <state line="43" column="48" selection-start="842" selection-end="842" vertical-scroll-proportion="0.38496584">
               <folding />
             </state>
           </provider>
@@ -553,7 +553,11 @@
       <created>1368643256107</created>
       <updated>1368643256107</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="update">
+      <created>1368643734046</created>
+      <updated>1368643734046</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -751,7 +755,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/boot.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="63" selection-start="330" selection-end="330" vertical-scroll-proportion="0.17995444">
+        <state line="43" column="48" selection-start="842" selection-end="842" vertical-scroll-proportion="0.38496584">
           <folding />
         </state>
       </provider>
