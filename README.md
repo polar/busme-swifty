@@ -8,11 +8,12 @@ Runs on Amazon EC2 Only
 Prerequisites.
 --------------
 
-Install RVM for Ruby 1.9.3
+Install RVM for Ruby 1.9.3 and do it as ec2-user.
 
+  cd ~
   \curl -L https://get.rvm.io | bash -s -- --version 1.9.3
 
-Install Nginx
+Install Nginx as root.
 
   yum install nginx
 
@@ -34,6 +35,11 @@ Install ".busme_creds" with the credentials for running the system.
 Add to ~/.bashrc
 
     source ~/.busme_creds
+
+Snapshot
+--------
+
+At this point, it is probably prudent to snapshot the EC2 instance for further deployments.
 
 Commands
 --------
