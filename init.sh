@@ -67,6 +67,7 @@ upgrade() {
     cd busme-swifty
     git pull
 EOF
+    cp ~ec2-user/busme-swifty/nginx.conf /etc/nginx
 }
 
 reinstall() {
