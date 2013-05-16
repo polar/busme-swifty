@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="update">
+    <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nginx.conf" afterPath="$PROJECT_DIR$/nginx.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start_rogues.sh" afterPath="$PROJECT_DIR$/start_rogues.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
@@ -28,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368459184531" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368632775149" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368676166533" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368676318865" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -163,7 +162,7 @@
       <file leaf-file-name="nginx.conf" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="32" selection-start="1623" selection-end="1635" vertical-scroll-proportion="0.33257404">
+            <state line="263" column="24" selection-start="8093" selection-end="8093" vertical-scroll-proportion="0.6400911">
               <folding />
             </state>
           </provider>
@@ -720,7 +719,11 @@
       <created>1368672029062</created>
       <updated>1368672029062</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="update">
+      <created>1368676321109</created>
+      <updated>1368676321109</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -918,7 +921,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="32" selection-start="1623" selection-end="1635" vertical-scroll-proportion="0.33257404">
+        <state line="263" column="24" selection-start="8093" selection-end="8093" vertical-scroll-proportion="0.6400911">
           <folding />
         </state>
       </provider>
