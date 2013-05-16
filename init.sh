@@ -18,7 +18,7 @@
 
 lockfile=/var/lock/subsys/swifty
 
-echo "$0"
+echo "$*"
 
 start() {
     [ -e ~ec2-user/busme-swifty/stop_rogues.sh ] || exit 5
