@@ -86,7 +86,6 @@ case "$1" in
         relload
         ;;
     reinstall)
-        rh_status_q || exit 7
         upgrade
         reinstall
         ;;
