@@ -55,7 +55,7 @@ reload() {
 }
 
 rh_status() {
-    [ -e ~ec2-user/busme-swifty ]
+    return [ -e ~ec2-user/busme-swifty ]
 }
 
 rh_status_q() {
@@ -80,14 +80,14 @@ reinstall() {
 case "$1" in
     start)
         rh_status_q && exit 0
-        $1
+        start
         ;;
     stop)
         rh_status_q || exit 0
-        $1
+        stop
         ;;
     restart)
-        $1
+        restart
         ;;
     force-reload|upgrade) 
         rh_status_q || exit 7
