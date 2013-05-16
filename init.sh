@@ -54,14 +54,6 @@ reload() {
     echo "No reload"
 }
 
-rh_status() {
-    return [ -e ~ec2-user/busme-swifty ]
-}
-
-rh_status_q() {
-    rh_status >/dev/null 2>&1
-}
-
 # Upgrade with with no downtime. Must physically restart.
 upgrade() {
     [ -e ~ec2-user/busme-swifty ] || exit 5
@@ -79,36 +71,25 @@ reinstall() {
 
 case "$1" in
     start)
-        rh_status_q && exit 0
         start
         ;;
     stop)
-        rh_status_q || exit 0
         stop
         ;;
     restart)
         restart
         ;;
-    force-reload|upgrade) 
-        rh_status_q || exit 7
+    force-reload|upgrade)
         upgrade
         ;;
     reload)
-        rh_status_q || exit 7
-        $1
+        relload
         ;;
     reinstall)
         rh_status_q || exit 7
         upgrade
         reinstall
         ;;
-    status|status_q)
-        rh_$1
-        ;;
-    condrestart|try-restart)
-        rh_status_q || exit 7
-        restart
-	    ;;
     *)
         echo $"Usage: $0 {start|stop|reload|status|force-reload|upgrade|restart}"
         exit 2
