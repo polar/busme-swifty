@@ -25,6 +25,11 @@ bundle exec ruby rogue.rb --master-slug syracuse-university --cluster-port 3030 
 echo $!
 echo $! > /var/run/swifty/syracuse-university.pid
 
+# nploop-new-paltz-ny.busme.us
+bundle exec ruby rogue.rb --master-slug nploop-new-paltz-ny --cluster-port 3030 --backend-port 4030 >& /var/log/swifty/syracuse-university.log &
+echo $!
+echo $! > /var/run/swifty/nploop-new-paltz-ny.pid
+
 # apis.busme.us is currently hosted on Heroku due to the SSL validation issue.
 
 echo "Done Starting Rogues"
