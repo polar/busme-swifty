@@ -3,6 +3,11 @@
 # Assumes git clone into busme-swifty, obviously because this file is here.
 
 cd ~ec2-user/busme-swifty
+cd src
+make
+cd ~ec2-user/busme-swifty
+chown root:root scripts/nginx_cmd
+chmod 4755 scripts/nginx_cmd
 
 cp init.sh /etc/init.d/swifty
 cp nginx.conf /etc/nginx

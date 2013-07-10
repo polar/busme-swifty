@@ -3,7 +3,7 @@
 # swifty - this script starts and stops the swifty rogue daemons
 #
 # chkconfig:   - 85 15
-# description:  Swifty is a set of rogue runners for Busme!
+# description:  Swifty is a set of backends for Busme!
 # processname: swifty
 # pidfile:     /var/run/swifty
 
@@ -21,12 +21,12 @@ lockfile=/var/lock/subsys/swifty
 echo "$*"
 
 start() {
-    [ -e ~ec2-user/busme-swifty/stop_rogues.sh ] || exit 5
-    [ -e ~ec2-user/busme-swifty/start_rogues.sh ] || exit 5
+    [ -e ~ec2-user/busme-swifty/scripts/stop_backends.sh ] || exit 5
+    [ -e ~ec2-user/busme-swifty/scripts/start_backends.sh ] || exit 5
     echo $"Starting Swifty"
     su - ec2-user <<EOF
-    sh ~ec2-user/busme-swifty/stop_rogues.sh
-    sh ~ec2-user/busme-swifty/start_rogues.sh
+    sh ~ec2-user/busme-swifty/scripts/stop_backends.sh
+    sh ~ec2-user/busme-swifty/scripts/start_backends.sh
 EOF
     retval=$?
     echo
@@ -35,10 +35,10 @@ EOF
 }
 
 stop() {
-    [ -e ~ec2-user/busme-swifty/stop_rogues.sh ] || exit 5
+    [ -e ~ec2-user/busme-swifty/scripts/stop_backends.sh ] || exit 5
     echo $"Stopping Swifty"
     su - ec2-user <<EOF
-    sh ~ec2-user/busme-swifty/stop_rogues.sh
+    sh ~ec2-user/busme-swifty/scripts/stop_backends.sh
 EOF
     retval=$?
     echo

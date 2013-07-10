@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# Start Rogue Template
+#
+# This template belongs in ~/busme-swifty/start.d/NAME.sh
+# Need to replace
+#   NAME              Ex.  syracuse-university-syracuse-university.busme.us-127.0.0.1-3000-54.123.11.33-4001
+#   MASTER_SLUG       Ex.  syracuse-university
+#   HOSTNAME          Ex   syracuse-university.busme.us
+#   CLUSTER_ADDRESS   Ex   127.0.0.1
+#   CLUSTER_PORT      Ex   3001   # This is the port the swifty listens for connections from Nginx
+#   BACKEND_ADDRESS   Ex   0.0.0.0
+#   BACKEND_PORT      Ex   4001   # This is the port for which the WebRunners attach.
+#
+# Current Status of this file: ~/busme-swifty/start.d/@NAME.sh
+#
+#   NAME             = @NAME
+#   FRONTEND_NAME    = @FRONTEND_NAME
+#   FRONTEND_ADDRESS = @FRONTEND_ADDRESS
+#   MASTER_SLUG      = @MASTER_SLUG
+#   HOSTNAME         = @HOSTNAME
+#   SERVER_NAME      = @SERVER_NAME
+#   CLUSTER_ADDRESS  = @CLUSTER_ADDRESS
+#   CLUSTER_PORT     = @CLUSTER_PORT
+#   BACKEND_ADDRESS  = @BACKEND_ADDRESS
+#   BACKEND_PORT     = @BACKEND_PORT
+#   SSL_CERT         = @SSL_CERT
+#   SSL_KEY          = @SSL_KEY
+#
+
+cd ~/busme-swifty
+
+# @NAME
+(bundle exec ruby scripts/run_backend.rb --backend-name @NAME; rm -f /var/run/swifty/@NAME.pid)  \
+   >& /var/log/swifty/@NAME.log &
+echo $!
+echo $! > /var/run/swifty/@NAME.pid

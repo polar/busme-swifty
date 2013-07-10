@@ -12,6 +12,6 @@ cp ~ec2-user/busme-swifty/nginx.conf /etc/nginx
 
 # We run as the user.
 su - ec2-user <<EOF
-    sh ./busme-swifty/stop_rogues.sh
-    sh ./busme-swifty/start_rogues.sh
+    sh ./busme-swifty/scripts/stop_backends.sh
+    sh ./busme-swifty/scripts/start_backends.sh
 EOF
