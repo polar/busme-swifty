@@ -61,7 +61,6 @@ class Backend
   end
 
   validates_uniqueness_of :name
-  validates_presence_of :master_slug
   validates_presence_of :frontend_address
   validates_presence_of :cluster_address
   validates_numericality_of :cluster_port
