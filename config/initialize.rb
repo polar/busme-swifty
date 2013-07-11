@@ -10,6 +10,8 @@ require 'optparse'
 # This exists for local development. This file does not exist in production..
 require  File.expand_path('../aa_creds.rb', File.dirname(__FILE__)) if File.exists?(File.expand_path('../aa_creds.rb', File.dirname(__FILE__)))
 
+attr_accessor :logger
+
 logger = Logger.new(STDERR)
 
 require 'net/http'
