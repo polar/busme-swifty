@@ -17,25 +17,25 @@ end.parse!
 
 frontend = Frontend.find_by_name(config["host"])
 if frontend
-  logger.info "Frontend #{frontend.name} already exists."
+  puts "Frontend #{frontend.name} already exists."
 else
   frontend = Frontend.new(config)
 end
 
 if !frontend.configured
-  logger.info "Configuring Frontend #{frontend.name}"
+  puts "Configuring Frontend #{frontend.name}"
   begin
     hostip = Net::HTTP.get(URI.parse('http://myexternalip.com/raw'))
     frontend.hostip = hostip
   rescue Exception => boom1
-    logger.error "Cannot establish external IP: #{boom1}"
+    puts "Cannot establish external IP: #{boom1}"
   end
   frontend.configured = true
 end
 
 if frontend.valid?
   frontend.save
-  logger.info "Frontend #{frontend.name} is configured"
+  puts "Frontend #{frontend.name} is configured"
 end
 
 puts "#{frontend.name}"
