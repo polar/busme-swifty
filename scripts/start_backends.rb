@@ -2,11 +2,10 @@
 require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
 frontend_name = nil
-backend_name = nil
 OptionParser.new do |opts|
-  opts.banner = 'Usage: stop_backends.rb [options]'
+  opts.banner = 'Usage: start_backends.rb [options]'
   opts.separator ''
-  opts.on('--name [NAME]', String, 'The name of this frontend.') do |slug|
+  opts.on('--name [NAME]', String, 'The name of this frontend. It must be configured.') do |slug|
     frontend_name = slug
   end
 end.parse!
@@ -18,10 +17,9 @@ if frontend.nil?
   exit 1
 end
 
+puts "Stopping Backend for Frontend #{frontend.name}."
+
 for be in frontend.backends do
-  processes = Rush.processes.filter(:cmdline => /run_backend.rb.*--name\s*#{be.name}/)
-  for p in processes do
-    puts "Killing #{p} #{be.name}"
-    p.kill()
-  end
+  puts Rush.bash("start.d/#{be.name}.sh")
 end
+
