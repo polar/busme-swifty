@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo $*
+
 cd ~/busme-swifty
 
 NAME=$1
