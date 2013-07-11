@@ -30,7 +30,7 @@
 cd ~/busme-swifty
 
 # @NAME
-(bundle exec ruby scripts/run_backend.rb --backend-name @NAME; rm -f /var/run/swifty/@NAME.pid)  \
+(bundle exec ruby scripts/run_backend.rb --name @NAME; rm -f /var/run/swifty/@NAME.pid)  \
    >& /var/log/swifty/@NAME.log &
 echo $!
 echo $! > /var/run/swifty/@NAME.pid
