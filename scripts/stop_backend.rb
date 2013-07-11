@@ -12,7 +12,7 @@ OptionParser.new do |opts|
 end.parse!
 
 
-backend = Backend.where(:backend_name => backend_name).first
+backend = Backend.find_by_name(backend_name) if backend_name
 
 if backend.nil?
   puts "Backend #{backend_name} does not exist."

@@ -11,7 +11,7 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-frontend = Frontend.find_by_name(frontend_name)
+frontend = Frontend.find_by_name(frontend_name) if frontend_name
 
 if frontend.nil?
   puts "Frontend #{frontend_name} does not exist."
