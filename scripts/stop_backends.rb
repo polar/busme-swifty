@@ -21,5 +21,6 @@ end
 processes = Rush.processes.filter(:cmdline => /run_backend.rb.*--name\s*[AZ]-#{frontend_name}/)
 
 for p in processes do
+  puts "Killing #{p}"
   p.kill()
 end

@@ -50,11 +50,5 @@ config['map'][0]['key']       = ENV["SWIFTIPLY_KEY"]
 
 begin
   Swiftcore::Swiftiply.run(config)
-  puts "Swift Ended Normally, perhaps with a signal."
 rescue Exception => boom
- puts "Swift Ended Abnormally: #{boom}"
- puts boom.backtrace
 end
-
-puts "Busme! Swifty Exiting"
-puts "Done."
