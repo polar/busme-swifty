@@ -23,6 +23,7 @@ else
 end
 
 if !frontend.configured
+  logger.info "Configuring Frontend #{frontend.name}"
   begin
     hostip = Net::HTTP.get(URI.parse('http://myexternalip.com/raw'))
     frontend.hostip = hostip
