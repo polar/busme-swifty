@@ -11,6 +11,8 @@ cd ~ec2-user/busme-swifty
 chown root:root scripts/nginx_cmd
 chmod 4755 scripts/nginx_cmd
 
+chmod +x scripts/*
+
 cp init.sh /etc/init.d/swifty
 cp nginx.conf /etc/nginx
 
