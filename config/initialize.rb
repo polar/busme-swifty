@@ -33,4 +33,5 @@ rescue Exception => boom
   exit 1
 end
 
-require File.expand_path("../app/models/*", File.dirname(__FILE__))
+dir = File.expand_path("../app/models", File.dirname(__FILE__))
+Dir[File.join(dir, "*.rb")].each { |f| require f }
