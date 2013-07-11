@@ -19,6 +19,8 @@ if backend.nil?
   exit 1
 end
 
+puts "Starting Backend #{backend.name}."
+
 if ! backend.configured
   puts "Backend #{backend.name} is not configured."
   exit 1
