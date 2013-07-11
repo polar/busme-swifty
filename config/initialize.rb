@@ -5,6 +5,7 @@ require 'uri'
 require 'mongo'
 require 'mongo_mapper'
 require 'optparse'
+require "rush"
 
 
 # This exists for local development. This file does not exist in production..
