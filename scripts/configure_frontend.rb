@@ -7,6 +7,9 @@ config["host_type"] = "ec2"
 OptionParser.new do |opts|
   opts.banner = 'Usage: configure_frontend.rb [options]'
   opts.separator ''
+  opts.on('--name [FQDN]', String, 'The fqdn or host ip that this is a frontend for swifty clusters') do |fqdn|
+    config["host"] = fqdn
+  end
   opts.on('--host [FQDN]', String, 'The fqdn or host ip that this is a frontend for swifty clusters') do |fqdn|
     config["host"] = fqdn
   end
