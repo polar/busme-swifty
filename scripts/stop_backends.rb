@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require "../config/initialize"
+require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
 frontend_name = nil
 backend_name = nil
@@ -14,7 +14,7 @@ end.parse!
 frontend = Frontend.find_by_name(frontend_name)
 
 if frontend.nil?
-  logger.error "Frontend #{frontend_name} does not exist."
+  puts "Frontend #{frontend_name} does not exist."
   exit 1
 end
 

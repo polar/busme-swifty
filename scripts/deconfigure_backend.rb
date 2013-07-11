@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require "../config/initialize"
+require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
 config = {}
 

@@ -10,12 +10,6 @@ require 'optparse'
 # This exists for local development. This file does not exist in production..
 require  File.expand_path('../aa_creds.rb', File.dirname(__FILE__)) if File.exists?(File.expand_path('../aa_creds.rb', File.dirname(__FILE__)))
 
-@logger = Logger.new(STDERR)
-
-def logger
-  @logger
-end
-
 require 'net/http'
 require "swiftcore/Swiftiply"
 
@@ -33,7 +27,7 @@ begin
   end
   logger.info "Connected to DB #{MongoMapper.database.name}"
 rescue Exception => boom
-  logger.error "Cannot establish connection to DB #{boom}"
+  puts "Cannot establish connection to DB #{boom}"
   exit 1
 end
 

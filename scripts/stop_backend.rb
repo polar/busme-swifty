@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require "../config/initialize"
+require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
 frontend_name = nil
 backend_name = nil
@@ -15,7 +15,7 @@ end.parse!
 backend = Backend.where(:backend_name => backend_name).first
 
 if backend.nil?
-  logger.error "Backend #{backend_name} does not exist."
+  puts "Backend #{backend_name} does not exist."
   exit 1
 end
 

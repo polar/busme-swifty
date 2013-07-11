@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require "../config/initialize"
+require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
 config = {}
 config["frontend_address"] = "0.0.0.0"
@@ -49,22 +49,22 @@ if config["name"].nil?
     begin
       hostip = Net::HTTP.get(URI.parse('http://myexternalip.com/raw'))
     rescue Exception => boom1
-      logger.error "Cannot establish external IP: #{boom1}"
+      puts "Cannot establish external IP: #{boom1}"
       exit 1
     end
 
     if hostip.nil?
-      logger.error "Cannot establish external IP"
+      puts "Cannot establish external IP"
       exit 1
     end
-    logger.info "External Host IP: #{hostip}"
+    puts "External Host IP: #{hostip}"
     config["frontend_name"] = hostip
   end
 
   frontend = Frontend.find_by_name("#{config["frontend_name"]}")
   if frontend.nil?
     # We are already configured.
-    logger.error "Frontend #{frontend.name} does not exist."
+    puts "Frontend #{frontend.name} does not exist."
     exit 1
   end
 
@@ -95,7 +95,7 @@ else
   name = config["name"]
   backend = Backend.find_by_name(name)
   if backend.nil?
-    logger.error "Backend #{name} does not exist."
+    puts "Backend #{name} does not exist."
     exit 1
   end
 end

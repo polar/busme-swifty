@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require "../config/initialize"
+require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
 require 'net/http'
 require "swiftcore/Swiftiply"
@@ -18,12 +18,12 @@ end.parse!
 backend = Backend.where(:backend_name => backend_name).first
 
 if backend.nil?
-  logger.error "Backend #{backend_name} does not exist."
+  puts "Backend #{backend_name} does not exist."
   exit 1
 end
 
 def stop_proxy(signal)
-  logger.info "Stopping due to Signal #{signal}" if @logger
+  puts "Stopping due to Signal #{signal}" if @logger
 end
 
 # Swiftiply catches these signals. However, these are here
@@ -50,11 +50,11 @@ config['map'][0]['key']       = ENV["SWIFTIPLY_KEY"]
 
 begin
   Swiftcore::Swiftiply.run(config)
-  logger.info "Swift Ended Normally, perhaps with a signal."
+  puts "Swift Ended Normally, perhaps with a signal."
 rescue Exception => boom
- logger.error "Swift Ended Abnormally: #{boom}"
- logger.error boom.backtrace
+ puts "Swift Ended Abnormally: #{boom}"
+ puts boom.backtrace
 end
 
-logger.info "Busme! Swifty Exiting"
-logger.info "Done."
+puts "Busme! Swifty Exiting"
+puts "Done."
