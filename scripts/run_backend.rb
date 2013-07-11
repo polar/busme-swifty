@@ -9,7 +9,7 @@ backend_name = nil
 OptionParser.new do |opts|
   opts.banner = 'Usage: run_backend.rb [options]'
   opts.separator ''
-  opts.on('--backend-name [NAME]', String, 'The name of this backend. It must be configured.') do |slug|
+  opts.on('--name [NAME]', String, 'The name of this backend. It must be configured.') do |slug|
     backend_name = slug
   end
 end.parse!
