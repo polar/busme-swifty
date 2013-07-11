@@ -14,7 +14,7 @@ require 'net/http'
 require "swiftcore/Swiftiply"
 
 begin
-  logger.info "Loading DB"
+  #puts "Loading DB"
   if ENV['MONGOLAB_URI']
     # We are on Heroku and using MONGOLAB for a MongoDB
     uri = URI.parse(ENV['MONGOLAB_URI'])
@@ -22,10 +22,11 @@ begin
     MongoMapper.database = (uri.path.gsub(/^\//, ''))
   else
     # Local Configuration for development/testing
+    puts "Using a local Mongo DB! Check your ENV"
     MongoMapper.connection = Mongo::Connection.new('localhost', 27017)
     MongoMapper.database = "#Busme-development"
   end
-  logger.info "Connected to DB #{MongoMapper.database.name}"
+  #puts "Connected to DB #{MongoMapper.database.name}"
 rescue Exception => boom
   puts "Cannot establish connection to DB #{boom}"
   exit 1
