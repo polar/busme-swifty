@@ -20,7 +20,7 @@ if backend.nil?
 end
 
 if ! backend.configured
-  puts "Backend #{backend_name} is not configured."
+  puts "Backend #{backend.name} is not configured."
   exit 1
 end
 
