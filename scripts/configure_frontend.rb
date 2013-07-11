@@ -15,15 +15,6 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-if config["hostip"].nil?
-  config["hostip"] = hostip
-end
-
-if config["host"].nil?  && config["hostip"]
-  logger.info "External Host IP: #{hostip}"
-  config["host"] = hostip
-end
-
 frontend = Frontend.find_by_name(config["host"])
 if frontend
   logger.info "Frontend #{frontend.name} already exists."
