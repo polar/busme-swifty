@@ -19,13 +19,10 @@ if [ "x$SSL_CERT" = "x" ]; then
    SSL_KEY=\\/etc\\/ssl\\/certs\\/busme-us.pem
 fi
 
-if [ "x$MASTER_SLUG" = "x" ]; then
-    FNAME=ZZ-$NAME
-else
-    FNAME=AA-$NAME
-fi
 
 midir -p ./backends.d
+
+echo "Creating ./backends.d/$NAME.conf"
 
 if [ ! -e /etc/nginx/conf.d/$FNAME.conf ]; then
     sed -e "s/@MASTER_SLUG/$MASTER_SLUG/" rouge-nginx.conf.template |\
@@ -37,10 +34,12 @@ if [ ! -e /etc/nginx/conf.d/$FNAME.conf ]; then
     sed -e "s/@BACKEND_ADDRESS/$BACKEND_ADDRESS/" |\
     sed -e "s/@BACKEND_PORT/$BACKEND_PORT/" |\
     sed -e "s/@SSL_CERT/$SSL_CERT/" | \
-    sed -e "s/@SSL_KEY/$SSL_KEY/" > ./backends.d/$FNAME.conf
+    sed -e "s/@SSL_KEY/$SSL_KEY/" > ./backends.d/$NAME.conf
 fi
 
 mkdir -p ./start.d
+
+echo "Creating ./start.d/$NAME.sh"
 
 if [ ! -e ./start.d/$FNAME.sh ];then
     sed -e "s/@MASTER_SLUG/$MASTER_SLUG/" rouge-start.sh.template |\
@@ -52,6 +51,6 @@ if [ ! -e ./start.d/$FNAME.sh ];then
     sed -e "s/@BACKEND_ADDRESS/$BACKEND_ADDRESS/" |\
     sed -e "s/@BACKEND_PORT/$BACKEND_PORT/" |\
     sed -e "s/@SSL_CERT/$SSL_CERT/" | \
-    sed -e "s/@SSL_KEY/$SSL_KEY/" > ./start.d/$FNAME.sh
+    sed -e "s/@SSL_KEY/$SSL_KEY/" > ./start.d/$NAME.sh
 fi
 
