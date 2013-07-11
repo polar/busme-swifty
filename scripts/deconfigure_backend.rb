@@ -14,6 +14,7 @@ end.parse!
 if ! config["name"].nil?
   backend = Backend.find_by_name(config[:name])
   if backend
+    puts "#{backend.inspect}"
     Rush["~ec2-user/busme-swifty/backends.d/#{backend.name}.conf"].destroy
     Rush["~ec2-user/busme-swifty/start.d/#{backend.name}.sh"].destroy
     puts "Backend frontend = #{backend.frontend_id}"
