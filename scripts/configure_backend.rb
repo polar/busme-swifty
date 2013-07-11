@@ -99,9 +99,7 @@ else
     exit 1
   end
 end
-puts "Creating backend config files from #{Dir.pwd}."
 
-puts Rush.bash("ls scripts")
 puts Rush.bash("scripts/create_backend_configfiles.sh '#{backend.name}' '#{backend.master_slug}' '#{backend.frontend_address}' '#{backend.hostname}' '#{backend.server_name}' '#{backend.cluster_address}' '#{backend.cluster_port}' '#{backend.address}' '#{backend.port}'")
 
 backend.configured = true
