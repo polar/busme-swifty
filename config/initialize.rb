@@ -8,7 +8,7 @@ require 'optparse'
 
 
 # This exists for local development. This file does not exist in production..
-require  File.expand_path('../aa_creds.rb', __FILE__) if File.exists?(File.expand_path('../aa_creds.rb', __FILE__))
+require  File.expand_path('../aa_creds.rb', File.dirname(__FILE__)) if File.exists?(File.expand_path('../aa_creds.rb', File.dirname(__FILE__)))
 
 logger = Logger.new(STDERR)
 
@@ -33,5 +33,4 @@ rescue Exception => boom
   exit 1
 end
 
-require "../app/models/frontend"
-require "../app/models/backend"
+require File.expand_path("../app/models/*", File.dirname(__FILE__))
