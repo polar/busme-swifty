@@ -3,6 +3,8 @@
 # Assumes git clone into busme-swifty, obviously because this file is here.
 
 cd ~ec2-user/busme-swifty
+bundle install
+
 cd src
 make
 cd ~ec2-user/busme-swifty

@@ -3,6 +3,7 @@ class Backend
 
   key :frontend_address, String, :default => "0.0.0.0"
   key :master_slug
+  key :frontend_local, Boolean, :default => true
   key :hostname
   key :server_name
   key :cluster_address, String, :default => "127.0.0.1"
@@ -10,6 +11,8 @@ class Backend
   key :address, String, :default => "0.0.0.0"
   key :port
   key :timeout
+
+  key :configured, Boolean, :default => false
 
   key :name
 
@@ -35,7 +38,7 @@ class Backend
   end
 
   def host
-    if address == "0.0.0.0"
+    if frontend_local && address == "0.0.0.0"
       frontend.host
     else
       address

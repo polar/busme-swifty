@@ -79,7 +79,7 @@ if config["name"].nil?
     config["hostname"] = frontend.hostname if config["hostname"].nil?
   end
 
-  if config["master_slug"]
+  if ! config["master_slug"].blank?
     name = "A-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
   else
     name = "Z-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
@@ -101,5 +101,8 @@ else
 end
 
 Rush.bash("scripts/create_backend_configfiles.sh '#{backend.frontend.name}' '#{backend.name}' '#{backend.frontend_address}' '#{backend.master_slug}' '#{backend.hostname}' '#{backend.server_name}' '#{backend.cluster_address}' '#{backend.cluster_port}' '#{backend.address}' '#{backend.port}'")
+
+backend.configured = true
+backend.save
 
 puts "#{backend.name}"
