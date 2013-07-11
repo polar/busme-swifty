@@ -31,6 +31,8 @@ if !frontend.configured
     puts "Cannot establish external IP: #{boom1}"
   end
   frontend.configured = true
+else
+  puts "Frontend #{frontend.name} is already configured."
 end
 
 if frontend.valid?
