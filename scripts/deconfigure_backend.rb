@@ -12,16 +12,10 @@ OptionParser.new do |opts|
 end.parse!
 
 if ! config["name"].nil?
-  backend = Backend.find_by_name(config[:name])
+  backend = Backend.find_by_name(config["name"])
   if backend
-    puts "Backend  id = #{backend.id}"
-    puts "#{backend.inspect}"
     Rush["~ec2-user/busme-swifty/backends.d/#{backend.name}.conf"].destroy
     Rush["~ec2-user/busme-swifty/start.d/#{backend.name}.sh"].destroy
-    puts "Backend frontend = #{backend.frontend_id}"
-    if backend.frontend.nil?
-      puts "Cannot find Frontend"
-    end
     backend.configured = false
     backend.save
   end
