@@ -31,9 +31,8 @@ cd ~/busme-swifty
 
 echo "Starting @NAME"
 # @NAME
-(bundle exec ruby scripts/run_backend.rb --name @NAME; rm -f /var/run/swifty/@NAME.pid)  \
-   2>&1 > /var/log/swifty/@NAME.log &
-echo $!
+bundle exec ruby scripts/run_backend.rb --name @NAME 2>&1 > /var/log/swifty/@NAME.log &
 echo $! > /var/run/swifty/@NAME.pid
-echo PID IS `cat /var/run/swifty/@NAME.pid`
+echo PID IS `$!` >> /var/log/swifty/@NAME.log
+echo PID IS `$!`
 
