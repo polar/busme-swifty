@@ -18,6 +18,7 @@ if ! config["name"].nil?
       frontend.configured = false
       frontend.hostip = nil
       frontend.save
+      puts "Frontend #{frontend.name} is deconfigured."
     else
       puts "Frontend #{frontend.name} still has #{frontend.backends.count} backends."
     end
