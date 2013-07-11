@@ -20,7 +20,7 @@ if [ "x$SSL_CERT" = "x" ]; then
 fi
 
 
-midir -p ./backends.d
+mkdir -p ./backends.d
 
 echo "Creating ./backends.d/$NAME.conf"
 
