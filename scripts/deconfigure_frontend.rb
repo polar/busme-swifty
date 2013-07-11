@@ -14,12 +14,12 @@ end.parse!
 if ! config["name"].nil?
   frontend = Frontend.find_by_name(config[:name])
   if frontend
-    if frontend.backends.count == 0
+    if ! frontend.backends.empty?
       frontend.configured = false
       frontend.hostip = nil
       frontend.save
     else
-      puts "Frontend #{frontend.name} still has #{frontend.backends.count} backends."
+      puts "XFrontend #{frontend.name} still has #{frontend.backends.count} backends."
     end
   else
     puts "Frontend still has backends"
