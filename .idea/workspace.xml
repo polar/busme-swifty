@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/start_backend.sh" afterPath="$PROJECT_DIR$/scripts/start_backend.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/create_backend_configfiles.sh" afterPath="$PROJECT_DIR$/scripts/create_backend_configfiles.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373557434693" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368632775149" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373573831758" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373574306428" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -137,7 +137,7 @@
     <file path="$PROJECT_DIR$/../buspass-web/app/models/frontend_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373552528938" ignored="false" />
     <file path="/frontend_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373552522642" ignored="false" />
     <file path="/deconfigure_frontend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373557929933" ignored="false" />
-    <file path="/create_backend_configfiles.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373571149207" ignored="false" />
+    <file path="/create_backend_configfiles.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373574389627" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/new_base.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373570597073" ignored="false" />
     <file path="/new_base.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373570589560" ignored="false" />
     <file path="/stop_backends.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373571640023" ignored="false" />
@@ -162,15 +162,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="backend-nginx.conf.template" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend-nginx.conf.template">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="36" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="backend-start.sh.template" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend-start.sh.template">
           <provider selected="true" editor-type-id="text-editor">
@@ -243,10 +234,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="start_backend.sh" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="create_backend_configfiles.sh" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/create_backend_configfiles.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="0" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.88041">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="start_backend.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/start_backend.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="39" selection-start="67" selection-end="67" vertical-scroll-proportion="0.034168564">
+            <state line="2" column="39" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -277,7 +277,6 @@
         <option value="$PROJECT_DIR$/config/initialize.rb" />
         <option value="$PROJECT_DIR$/scripts/configure_backend.rb" />
         <option value="$PROJECT_DIR$/scripts/deconfigure_backend.rb" />
-        <option value="$PROJECT_DIR$/scripts/create_backend_configfiles.sh" />
         <option value="$PROJECT_DIR$/backend-nginx.conf.template" />
         <option value="$PROJECT_DIR$/scripts/run_backend.sh" />
         <option value="$PROJECT_DIR$/scripts/stop_backends.rb" />
@@ -286,6 +285,7 @@
         <option value="$PROJECT_DIR$/scripts/run_backend.rb" />
         <option value="$PROJECT_DIR$/scripts/start_backend.rb" />
         <option value="$PROJECT_DIR$/scripts/start_backend.sh" />
+        <option value="$PROJECT_DIR$/scripts/create_backend_configfiles.sh" />
       </list>
     </option>
   </component>
@@ -1091,7 +1091,11 @@
       <created>1373573835024</created>
       <updated>1373573835024</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="update">
+      <created>1373574307448</created>
+      <updated>1373574307448</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1217,13 +1221,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/create_backend_configfiles.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="70" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend-nginx.conf.template">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="36" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.0">
@@ -1289,7 +1286,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/start_backend.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="39" selection-start="67" selection-end="67" vertical-scroll-proportion="0.034168564">
+        <state line="2" column="39" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/create_backend_configfiles.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="0" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.88041">
           <folding />
         </state>
       </provider>

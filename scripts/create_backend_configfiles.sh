@@ -56,3 +56,5 @@ if [ ! -e ./start.d/$NAME.sh ];then
     sed -e "s/@SSL_KEY/$SSL_KEY/" > ./start.d/$NAME.sh
 fi
 
+chmod +x ./start.d/$NAME.sh
+
