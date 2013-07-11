@@ -26,6 +26,7 @@ echo "Creating ./backends.d/$NAME.conf"
 
 if [ ! -e ./backends.d/$NAME.conf ]; then
     sed -e "s/@MASTER_SLUG/$MASTER_SLUG/" backend-nginx.conf.template |\
+    sed -e "s/@NAME/$NAME/" |\
     sed -e "s/@FRONTEND_ADDRESS/$FRONTEND_ADDRESS/" |\
     sed -e "s/@HOSTNAME/$HOSTNAME/" | \
     sed -e "s/@SERVER_NAME/$SERVER_NAME/" | \
@@ -43,6 +44,7 @@ echo "Creating ./start.d/$NAME.sh"
 
 if [ ! -e ./start.d/$NAME.sh ];then
     sed -e "s/@MASTER_SLUG/$MASTER_SLUG/" backend-start.sh.template |\
+    sed -e "s/@NAME/$NAME/" |\
     sed -e "s/@FRONTEND_ADDRESS/$FRONTEND_ADDRESS/" |\
     sed -e "s/@HOSTNAME/$HOSTNAME/" | \
     sed -e "s/@SERVER_NAME/$SERVER_NAME/" | \

@@ -17,7 +17,6 @@
     # Current Status of this file: /etc/nginx/conf.d/@NAME.conf
     #
     #   NAME             = @NAME
-    #   FRONTEND_NAME    = @FRONTEND_NAME
     #   FRONTEND_ADDRESS = @FRONTEND_ADDRESS
     #   MASTER_SLUG      = @MASTER_SLUG
     #   HOSTNAME         = @HOSTNAME
@@ -71,3 +70,5 @@
             proxy_pass        http://@NAME;
         }
     }
+
+

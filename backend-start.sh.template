@@ -15,7 +15,6 @@
 # Current Status of this file: ~/busme-swifty/start.d/@NAME.sh
 #
 #   NAME             = @NAME
-#   FRONTEND_NAME    = @FRONTEND_NAME
 #   FRONTEND_ADDRESS = @FRONTEND_ADDRESS
 #   MASTER_SLUG      = @MASTER_SLUG
 #   HOSTNAME         = @HOSTNAME
@@ -35,3 +34,4 @@ cd ~/busme-swifty
    >& /var/log/swifty/@NAME.log &
 echo $!
 echo $! > /var/run/swifty/@NAME.pid
+
