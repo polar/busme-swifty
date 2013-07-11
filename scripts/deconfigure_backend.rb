@@ -16,6 +16,7 @@ if ! config["name"].nil?
   if backend
     Rush["~ec2-user/busme-swifty/backends.d/#{backend.name}.conf"].destroy
     Rush["~ec2-user/busme-swifty/start.d/#{backend.name}.sh"].destroy
+    puts "Backend frontend = #{backend.frontend}"
     if backend.frontend.nil?
       puts "Cannot find Frontend"
     end
