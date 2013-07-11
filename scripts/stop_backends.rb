@@ -18,9 +18,10 @@ if frontend.nil?
   exit 1
 end
 
-processes = Rush.processes.filter(:cmdline => /run_backend.rb.*--name\s*[AZ]-#{frontend_name}/)
-
-for p in processes do
-  puts "Killing #{p}"
-  p.kill()
+for be in frontend.backends do
+  processes = Rush.processes.filter(:cmdline => /run_backend.rb.*--name\s*#{be.name}/)
+  for p in processes do
+    puts "Killing #{p} #{be.name}"
+    p.kill()
+  end
 end
