@@ -17,6 +17,8 @@ if ! config["name"].nil?
     if frontend.backends.empty?
       frontend.configured = false
       frontend.save
+    else
+      puts "Frontend #{frontend.name} still has #{frontend.backends.count} backends."
     end
   else
     puts "Frontend still has backends"
