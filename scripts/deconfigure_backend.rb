@@ -14,8 +14,8 @@ end.parse!
 if ! config["name"].nil?
   backend = Backend.find_by_name(config["name"])
   if backend
-    Rush["backends.d/#{backend.name}.conf"].destroy
-    Rush["start.d/#{backend.name}.sh"].destroy
+    puts Rush.bash("rm backends.d/#{backend.name}.conf")
+    puts Rush.bash("rm start.d/#{backend.name}.sh")
     backend.configured = false
     backend.save
   end
