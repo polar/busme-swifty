@@ -6,7 +6,7 @@ config = {}
 OptionParser.new do |opts|
   opts.banner = 'Usage: deconfigure_frontend.rb [options]'
   opts.separator ''
-  opts.on('--name [NAME]', String, 'The name of this front') do |fqdn|
+  opts.on('--name [NAME]', String, 'The name of this frontend') do |fqdn|
     config["name"] = fqdn
   end
 end.parse!
@@ -19,10 +19,10 @@ if ! config["name"].nil?
       frontend.hostip = nil
       frontend.save
     else
-      puts "XFrontend #{frontend.name} still has #{frontend.backends.count} backends."
+      puts "Frontend #{frontend.name} still has #{frontend.backends.count} backends."
     end
   else
-    puts "Frontend still has backends"
+    puts "Frontend #{config["name"]} does not exist."
     exit(1)
   end
 end
