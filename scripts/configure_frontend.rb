@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require "../config/initialize"
+require File.expand_path("../config/initialize", __FILE__)
 
 config = {}
 config["host_type"] = "ec2"
