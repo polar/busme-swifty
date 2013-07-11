@@ -13,7 +13,7 @@ chmod 4755 scripts/nginx_cmd
 
 chmod +x scripts/*
 
-cp init.sh /etc/init.d/swifty
+cp swifty.sh /etc/init.d/swifty
 cp nginx.conf /etc/nginx
 
 chmod 0755 /etc/init.d/swifty

@@ -25,6 +25,8 @@ else
     FNAME=AA-$NAME
 fi
 
+midir -p backends.d
+
 if [ ! -e /etc/nginx/conf.d/$FNAME.conf ]; then
     sed -e "s/@MASTER_SLUG/$MASTER_SLUG/" rouge-nginx.conf.template |\
     sed -e "s/@FRONTEND_ADDRESS/$FRONTEND_ADDRESS/" |\
@@ -35,7 +37,7 @@ if [ ! -e /etc/nginx/conf.d/$FNAME.conf ]; then
     sed -e "s/@BACKEND_ADDRESS/$BACKEND_ADDRESS/" |\
     sed -e "s/@BACKEND_PORT/$BACKEND_PORT/" |\
     sed -e "s/@SSL_CERT/$SSL_CERT/" | \
-    sed -e "s/@SSL_KEY/$SSL_KEY/" > /etc/nginx/conf.d/$FNAME.conf
+    sed -e "s/@SSL_KEY/$SSL_KEY/" > ~/busme-swifty/backends.d/$FNAME.conf
 fi
 
 mkdir -p start.d
@@ -50,6 +52,6 @@ if [ ! -e ./start.d/$FNAME.sh ];then
     sed -e "s/@BACKEND_ADDRESS/$BACKEND_ADDRESS/" |\
     sed -e "s/@BACKEND_PORT/$BACKEND_PORT/" |\
     sed -e "s/@SSL_CERT/$SSL_CERT/" | \
-    sed -e "s/@SSL_KEY/$SSL_KEY/" > ./start.d/$FNAME.sh
+    sed -e "s/@SSL_KEY/$SSL_KEY/" > ~/busme-swifty/start.d/$FNAME.sh
 fi
 
