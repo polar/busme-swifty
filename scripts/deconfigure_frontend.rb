@@ -14,7 +14,7 @@ end.parse!
 if ! config["name"].nil?
   frontend = Frontend.find_by_name(config[:name])
   if frontend
-    if frontend.backends.empty?
+    if ! frontend.backends.empty?
       frontend.configured = false
       frontend.save
     else
