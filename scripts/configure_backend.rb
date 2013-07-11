@@ -99,6 +99,7 @@ else
     exit 1
   end
 end
+puts "Creating backend config files."
 
 Rush.bash("scripts/create_backend_configfiles.sh '#{backend.frontend.name}' '#{backend.name}' '#{backend.frontend_address}' '#{backend.master_slug}' '#{backend.hostname}' '#{backend.server_name}' '#{backend.cluster_address}' '#{backend.cluster_port}' '#{backend.address}' '#{backend.port}'")
 
