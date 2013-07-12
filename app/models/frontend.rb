@@ -7,6 +7,9 @@ class Frontend
   key :configured, Boolean, :default => false
   key :log_level, Integer, :default => Logger::INFO
 
+  key :listen_status, Array
+  key :connection_status, Array
+
   belongs_to :deploy_frontend_job, :dependent => :destroy
   one :frontend_log
 

@@ -12,6 +12,9 @@ class Backend
   key :port
   key :timeout
 
+  key :listen_status, Array, :default => []
+  key :connection_status, Array, :default => []
+
   key :configured, Boolean, :default => false
 
   key :name
