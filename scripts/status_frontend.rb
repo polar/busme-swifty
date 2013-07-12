@@ -13,6 +13,7 @@ end.parse!
 
 def eatme(m, xs)
   result = []
+  puts "#{xs.type}"
   for x in xs
     match = m.match(x)
     if (match)
