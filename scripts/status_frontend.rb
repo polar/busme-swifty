@@ -19,7 +19,7 @@ def eatme(m, xs)
     puts "#{x}"
     match = m.match(x)
     if (match)
-      result += match[1]
+      result << match[1]
     end
   end
   return result
