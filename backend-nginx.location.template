@@ -1,0 +1,40 @@
+    #
+    # Rouge Nginx Template
+    #
+    # This template belongs in /etc/nginx/conf.d/@NAME.conf
+    # Need to replace
+    #   NAME              Ex.  syracuse-university.busme.us-127.0.0.1-3000-54.45.23.111-4000
+    #   FRONTEND_NAME     Ex   busme.us
+    #   FRONTEND_ADDRESS  Ex.  54.45.23.111
+    #   MASTER_SLUG       Ex.  syracuse-university
+    #   HOSTNAME          Ex   syracuse-university.busme.us
+    #   SERVER_NAME       Ex   syracuse-university-transit.com  or nothing.
+    #   CLUSTER_ADDRESS   Ex   127.0.0.1
+    #   CLUSTER_PORT      Ex   3001
+    #   SSL_CERT          Ex   /etc/ssl/certs/busme-us.pem
+    #   SSL_KEY           Ex   /etc/ssl/certs/busme-us.pem
+    #
+    # Current Status of this file: /etc/nginx/conf.d/@NAME.conf
+    #
+    #   NAME             = @NAME
+    #   FRONTEND_ADDRESS = @FRONTEND_ADDRESS
+    #   MASTER_SLUG      = @MASTER_SLUG
+    #   HOSTNAME         = @HOSTNAME
+    #   SERVER_NAME      = @SERVER_NAME
+    #   CLUSTER_ADDRESS  = @CLUSTER_ADDRESS
+    #   CLUSTER_PORT     = @CLUSTER_PORT
+    #   BACKEND_ADDRESS  = @BACKEND_ADDRESS
+    #   BACKEND_PORT     = @BACKEND_PORT
+    #   SSL_CERT         = @SSL_CERT
+    #   SSL_KEY          = @SSL_KEY
+    #
+
+        location ^~ /@MASTER_SLUG/ {
+            proxy_set_header  X-Real-IP  $remote_addr;
+            proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header  Host $http_host;
+            proxy_redirect    off;
+            proxy_pass        http://@NAME;
+        }
+
+
