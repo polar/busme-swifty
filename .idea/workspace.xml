@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/create_backend_configfiles.sh" afterPath="$PROJECT_DIR$/scripts/create_backend_configfiles.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/deconfigure_backend.rb" afterPath="$PROJECT_DIR$/scripts/deconfigure_backend.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373602082482" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368632775149" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373659406208" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373659635850" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -131,7 +131,7 @@
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/new.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373493436721" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_frontend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373634012182" ignored="false" />
     <file path="/deploy_frontend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373634000408" ignored="false" />
-    <file path="/deconfigure_backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373659391590" ignored="false" />
+    <file path="/deconfigure_backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373659715664" ignored="false" />
     <file path="/deconfigure_backend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373546265650" ignored="false" />
     <file path="/deconfigure_frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373558923621" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/frontend_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373552528938" ignored="false" />
@@ -209,19 +209,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_backend_configfiles.sh" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="create_backend_configfiles.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/create_backend_configfiles.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="63" selection-start="2177" selection-end="2177" vertical-scroll-proportion="0.37172773">
+            <state line="69" column="63" selection-start="2177" selection-end="2177" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deconfigure_backend.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="deconfigure_backend.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/deconfigure_backend.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="23" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0">
+            <state line="18" column="26" selection-start="569" selection-end="569" vertical-scroll-proportion="0.4712042">
               <folding />
             </state>
           </provider>
@@ -304,8 +304,8 @@
         <option value="$PROJECT_DIR$/app/models/frontend_key.rb" />
         <option value="$PROJECT_DIR$/base-backend-nginx.conf.template" />
         <option value="$PROJECT_DIR$/backend-nginx.location.template" />
-        <option value="$PROJECT_DIR$/scripts/deconfigure_backend.rb" />
         <option value="$PROJECT_DIR$/scripts/create_backend_configfiles.sh" />
+        <option value="$PROJECT_DIR$/scripts/deconfigure_backend.rb" />
       </list>
     </option>
   </component>
@@ -1335,7 +1335,11 @@
       <created>1373659409162</created>
       <updated>1373659409162</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="update">
+      <created>1373659637317</created>
+      <updated>1373659637317</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1524,16 +1528,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/deconfigure_backend.rb">
+    <entry file="file://$PROJECT_DIR$/scripts/create_backend_configfiles.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="23" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0">
+        <state line="69" column="63" selection-start="2177" selection-end="2177" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/create_backend_configfiles.sh">
+    <entry file="file://$PROJECT_DIR$/scripts/deconfigure_backend.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="63" selection-start="2177" selection-end="2177" vertical-scroll-proportion="0.37172773">
+        <state line="18" column="26" selection-start="569" selection-end="569" vertical-scroll-proportion="0.4712042">
           <folding />
         </state>
       </provider>

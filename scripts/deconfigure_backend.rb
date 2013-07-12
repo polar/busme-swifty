@@ -14,9 +14,9 @@ end.parse!
 if ! config["name"].nil?
   backend = Backend.find_by_name(config["name"])
   if backend
-    puts Rush.bash("rm backends.d/#{backend.name}.conf")
-    puts Rush.bash("rm backends.d/#{backend.name}.location")
-    puts Rush.bash("rm start.d/#{backend.name}.sh")
+    puts Rush.bash("rm -f backends.d/#{backend.name}.conf")
+    puts Rush.bash("rm -f backends.d/#{backend.name}.location")
+    puts Rush.bash("rm -f start.d/#{backend.name}.sh")
     backend.configured = false
     backend.save
   end
