@@ -7,11 +7,14 @@ class Frontend
   key :configured, Boolean, :default => false
   key :log_level, Integer, :default => Logger::INFO
 
+  key :git_commit
   key :listen_status, Array
   key :connection_status, Array
 
   belongs_to :deploy_frontend_job, :dependent => :destroy
   one :frontend_log
+
+  one :frontend_key
 
   key :name
 
@@ -62,5 +65,9 @@ class Frontend
 
   def log(s)
     logger.info s
+  end
+
+  def key_exists?
+    frontend_key && frontend_key.exists?
   end
 end
