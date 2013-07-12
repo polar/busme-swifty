@@ -11,7 +11,7 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-def eatme(m, xs)
+def array_match(m, xs)
   result = []
   for x in xs do
     match = m.match(x)
@@ -27,21 +27,21 @@ if ! config["name"].nil?
   netstat = Rush.bash("netstat -tan").split("\n")
   if frontend
     frontend.listen_status = []
-    frontend.listen_status += eatme(/(0.0.0.0:80.*LISTEN)/, netstat)
-    frontend.listen_status += eatme(/(0.0.0.0:443.*LISTEN)/, netstat)
+    frontend.listen_status += array_match(/(0.0.0.0:80.*LISTEN)/, netstat)
+    frontend.listen_status += array_match(/(0.0.0.0:443.*LISTEN)/, netstat)
 
     puts "STATUS LENGTH #{frontend.listen_status.length}"
     if frontend.listen_status.length == 0
       frontend.listen_status = ["DOWN"]
     end
     frontend.connection_status = []
-    frontend.connection_status += eatme(/(0.0.0.0:80.*ESTABLISHED)/, netstat)
-    frontend.connection_status += eatme(/(0.0.0.0:443.*ESTABLISHED)/, netstat)
+    frontend.connection_status += array_match(/(0.0.0.0:80.*ESTABLISHED)/, netstat)
+    frontend.connection_status += array_match(/(0.0.0.0:443.*ESTABLISHED)/, netstat)
     frontend.save
 
     for be in frontend.backends do
-      be.listen_status += eatme(/(#{be.cluster_address}:#{be.cluster_port}.*LISTEN)/, netstat)
-      be.connection_status += eatme(/(#{be.address}:#{be.port}.*ESTABLISHED)/, netstat)
+      be.listen_status = array_match(/(#{be.cluster_address}:#{be.cluster_port}.*LISTEN)/, netstat)
+      be.connection_status = array_match(/(#{be.address}:#{be.port}.*ESTABLISHED)/, netstat)
       be.save
     end
   else
