@@ -41,7 +41,7 @@ if frontend.valid?
 end
 
 for be in frontend.backends do
-  puts Rush.bash("scripts/configure_backend.sh --name #{be.backend}")
+  puts Rush.bash("scripts/configure_backend.sh --name #{be.name}")
 end
 
 puts "#{frontend.name}"
