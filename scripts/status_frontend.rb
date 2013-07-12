@@ -11,21 +11,32 @@ OptionParser.new do |opts|
   end
 end.parse!
 
+def eatme(m, xs)
+  result = []
+  for x in xs
+    match = m.match(x)
+    if (match)
+      result += match[1]
+    end
+  end
+  return result
+end
+
 if ! config["name"].nil?
   frontend = Frontend.find_by_name(config["name"])
   if frontend
     frontend.listen_status = []
-    frontend.listen_status += Rush.bash("netstat -tan | grep '0.0.0.0:80.*LISTEN'").split("\n")
-    frontend.listen_status += Rush.bash("netstat -tan | grep '0.0.0.0:443.*LISTEN'").split("\n")
+    frontend.listen_status += eatme(/0.0.0.0:80.*LISTEN/, Rush.bash("netstat -tan").split("\n"))
+    frontend.listen_status += eatme(/0.0.0.0:443.*LISTEN/, Rush.bash("netstat -tan").split("\n"))
 
     frontend.connection_status = []
-    frontend.connection_status += Rush.bash("netstat -tn | grep '0.0.0.0:80.*ESTABLISHED'").split("\n")
-    frontend.connection_status += Rush.bash("netstat -tn | grep '0.0.0.0:443.*ESTABLISHED'").split("\n")
+    frontend.connection_status += eatme(/0.0.0.0:80.*ESTABLISHED/, Rush.bash("netstat -tan").split("\n"))
+    frontend.connection_status += eatme(/0.0.0.0:443.*ESTABLISHED/, Rush.bash("netstat -tan").split("\n"))
     frontend.save
 
     for be in frontend.backends do
-      be.listen_status = Rush.bash("netstat -tan | grep '#{be.cluster_address}:#{be.cluster_port}.*LISTEN'").split("\n")
-      be.connection_status = Rush.bash("netstat -tn | grep '#{be.address}:#{be.port}.*ESTABLISHED'").split("\n")
+      be.listen_status += eatme(/#{be.cluster_address}:#{be.cluster_port}.*LISTEN/, Rush.bash("netstat -tn").split("\n"))
+      be.connection_status += eatme(/#{be.address}:#{be.port}.*ESTABLISHED/, Rush.bash("netstat -tn").split("\n"))
       be.save
     end
   else
