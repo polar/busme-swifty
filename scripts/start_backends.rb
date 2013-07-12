@@ -20,6 +20,10 @@ end
 puts "Stopping Backend for Frontend #{frontend.name}."
 
 for be in frontend.backends do
-  puts Rush.bash("start.d/#{be.name}.sh")
+  if be.configured
+    puts Rush.bash("start.d/#{be.name}.sh")
+  else
+    puts "Backend #{be.name} is not configured. Starting Ignored."
+  end
 end
 
