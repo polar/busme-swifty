@@ -13,8 +13,7 @@ end.parse!
 
 def eatme(m, xs)
   result = []
-  puts "#{xs.class}"
-  for x in xs
+  for x in xs do
     match = m.match(x)
     if (match)
       result += match[1]
