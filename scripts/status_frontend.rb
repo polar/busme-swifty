@@ -40,7 +40,7 @@ if ! config["name"].nil?
     frontend.save
 
     for be in frontend.backends do
-      be.listen_status = array_match(/(#{be.cluster_address}:#{be.cluster_port}.*LISTEN)/, netstat)
+      be.listen_status = array_match(/(#{be.address}:#{be.port}.*LISTEN)/, netstat)
       be.connection_status = array_match(/(#{be.address}:#{be.port}.*ESTABLISHED)/, netstat)
       be.save
     end
