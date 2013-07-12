@@ -25,6 +25,7 @@ end
 if ! config["name"].nil?
   frontend = Frontend.find_by_name(config["name"])
   netstat = Rush.bash("netstat -tan").split("\n")
+  frontend.git_commit = Rush.bash("git log --max-count=1").split("\n").take(3)
   if frontend
     frontend.listen_status = []
     frontend.listen_status += array_match(/(0.0.0.0:80.*LISTEN)/, netstat)
