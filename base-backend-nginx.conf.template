@@ -39,7 +39,7 @@
         server_name @SERVER_NAME @HOSTNAME;
         access_log  /var/log/nginx/@NAME.log  main;
 
-        include ~ec2-user/busme-swifty/backends.d/*.location
+        include /home/ec2-user/busme-swifty/backends.d/*.location;
 
         location / {
             proxy_set_header  X-Real-IP  $remote_addr;
@@ -65,7 +65,7 @@
         ssl_ciphers  HIGH:!aNULL:!MD5;
         ssl_prefer_server_ciphers   on;
 
-        include ~ec2-user/busme-swifty/backends.d/*.location
+        include /home/ec2-user/busme-swifty/backends.d/*.location;
 
         location / {
             proxy_set_header  X-Real-IP  $remote_addr;
