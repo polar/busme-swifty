@@ -65,7 +65,7 @@ else
     sed -e "s/@BACKEND_ADDRESS/$BACKEND_ADDRESS/g" |\
     sed -e "s/@BACKEND_PORT/$BACKEND_PORT/g" |\
     sed -e "s/@SSL_CERT/$SSL_CERT/g" | \
-    sed -e "s/@SSL_KEY/$SSL_KEY/g" > ./backends.d/$NAME.conf
+    sed -e "s/@SSL_KEY/$SSL_KEY/g" > ./backends.d/$NAME.location
 fi
 
 mkdir -p ./start.d
