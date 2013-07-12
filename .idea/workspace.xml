@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373557434693" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368632775149" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373595187423" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373595563163" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -144,9 +144,9 @@
     <file path="/run_backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373573443745" ignored="false" />
     <file path="/start_backend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373574299732" ignored="false" />
     <file path="/start_backends.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373585519263" ignored="false" />
-    <file path="/status_frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373595537960" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373592538606" ignored="false" />
-    <file path="/status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373592538606" ignored="false" />
+    <file path="/status_frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373595794915" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373595751398" ignored="false" />
+    <file path="/status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373595747706" ignored="false" />
     <file path="/status_frontend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373594144454" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +197,7 @@
       <file leaf-file-name="status_frontend.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/status_frontend.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="57" selection-start="852" selection-end="852" vertical-scroll-proportion="0.57591623">
+            <state line="33" column="37" selection-start="932" selection-end="932" vertical-scroll-proportion="0.62827224">
               <folding />
             </state>
           </provider>
@@ -1192,7 +1192,11 @@
       <created>1373595190972</created>
       <updated>1373595190972</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="update">
+      <created>1373595567539</created>
+      <updated>1373595567540</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1390,7 +1394,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/status_frontend.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="57" selection-start="852" selection-end="852" vertical-scroll-proportion="0.57591623">
+        <state line="33" column="37" selection-start="932" selection-end="932" vertical-scroll-proportion="0.62827224">
           <folding />
         </state>
       </provider>

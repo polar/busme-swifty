@@ -31,7 +31,7 @@ if ! config["name"].nil?
 
     puts "STATUS LENGTH #{frontend.listen_status.length}"
     if frontend.listen_status.length == 0
-      frontend.listen_status = ["NONE"]
+      frontend.listen_status = ["DOWN"]
     end
     frontend.connection_status = []
     frontend.connection_status += eatme(/0.0.0.0:80.*ESTABLISHED/, Rush.bash("netstat -tan").split("\n"))
