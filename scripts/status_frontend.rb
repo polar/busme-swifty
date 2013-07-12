@@ -29,6 +29,10 @@ if ! config["name"].nil?
     frontend.listen_status += eatme(/0.0.0.0:80.*LISTEN/, Rush.bash("netstat -tan").split("\n"))
     frontend.listen_status += eatme(/0.0.0.0:443.*LISTEN/, Rush.bash("netstat -tan").split("\n"))
 
+    puts "STATUS LENGTH #{frontend.listen_status.length}"
+    if frontend.listen_status.length == 0
+      frontend.listen_status = ["NONE"]
+    end
     frontend.connection_status = []
     frontend.connection_status += eatme(/0.0.0.0:80.*ESTABLISHED/, Rush.bash("netstat -tan").split("\n"))
     frontend.connection_status += eatme(/0.0.0.0:443.*ESTABLISHED/, Rush.bash("netstat -tan").split("\n"))
