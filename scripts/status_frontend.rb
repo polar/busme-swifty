@@ -25,6 +25,7 @@ end
 if ! config["name"].nil?
   frontend = Frontend.find_by_name(config["name"])
   netstat = Rush.bash("netstat -tan").split("\n")
+  puts "#{netstat.inspect}"
   if frontend
     frontend.listen_status = []
     frontend.listen_status += eatme(/(0.0.0.0:80.*LISTEN)/, netstat)
