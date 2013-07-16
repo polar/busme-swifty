@@ -1,9 +1,9 @@
-class FrontendLog < Logger::LogDevice
+class InstallationLog < Logger::LogDevice
   include MongoMapper::Document
 
   key :log_content, Array, :default => []
 
-  belongs_to :frontend
+  belongs_to :installation
 
   def write(msg)
     push(:log_content => msg)

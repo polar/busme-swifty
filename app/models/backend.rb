@@ -11,6 +11,7 @@ class Backend
   key :address, String, :default => "0.0.0.0"
   key :port
   key :timeout
+  key :log_level, Integer, :default => Logger::INFO
 
   key :listen_status, Array, :default => []
   key :connection_status, Array, :default => []
@@ -20,6 +21,10 @@ class Backend
   key :name
 
   belongs_to :frontend
+  one :backend_log, :dependent => :destroy
+  one :deploy_backend_job, :dependent => :destroy
+  many :swift_endpoints
+  many :worker_endpoints
 
   before_validation :ensure_hostname, :ensure_name
 
@@ -73,4 +78,38 @@ class Backend
   validates_uniqueness_of :port, :scope => :address
 
 
+
+  class MyLogger < Logger
+    def initialize(log, opts = { })
+      super
+      @joblog = log
+    end
+
+    def to_a
+      @joblog.to_a
+    end
+
+    def segment(x, y)
+      @joblog.segment(x, y)
+    end
+  end
+
+  def logger
+    if @my_logger
+      @my_logger.level = self.log_level
+      return @my_logger
+    end
+    if self.backend_log.nil?
+      self.create_backend_log
+    end
+    @my_logger           = MyLogger.new(self.backend_log)
+    @my_logger.level     = self.log_level
+    @my_logger.formatter = Logger::Formatter.new
+    @my_logger.datetime_format = "%Y-%m-%dT%H:%M:%S."
+    return @my_logger
+  end
+
+  def log(s)
+    logger.info s
+  end
 end

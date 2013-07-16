@@ -1,13 +1,15 @@
 #!/bin/bash
 
+NAME=$1
+
 # Assumes git clone into busme-swifty, obviously because this file is here.
 
-cd ~ec2-user/busme-swifty
+cd "~ec2-user/$NAME"
 bundle install
 
 cd src
 make
-cd ~ec2-user/busme-swifty
+cd "~ec2-user/$NAME"
 chown root:root scripts/nginx_cmd
 chmod 4755 scripts/nginx_cmd
 

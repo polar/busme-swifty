@@ -20,7 +20,11 @@ class Frontend
 
   many :backends, :dependent => :destroy
 
+  belongs_to :installation
+
   before_validation :ensure_host, :ensure_name
+
+  attr_accessible :host, :hostip, :host_type, :installation, :installation_id
 
   def ensure_host
     self.host = "#{hostip}" if host.nil?
@@ -32,6 +36,25 @@ class Frontend
 
   validates_uniqueness_of :host, :allow_nil => false
   validates_uniqueness_of :hostip, :allow_nil => false
+
+  def git_repository
+    installation.frontend_git_repository
+  end
+
+  def git_refspec
+    installation.frontend_git_refspec
+  end
+
+  def git_name
+    installation.frontend_git_name
+  end
+
+  def swift_endpoints
+    backends.all.reduce([]) {|t,be| t + be.swift_endpoints}
+  end
+  def worker_endpoints
+    backends.all.reduce([]) {|t,be| t + be.worker_endpoints}
+  end
 
   class MyLogger < Logger
     def initialize(log, opts = { })

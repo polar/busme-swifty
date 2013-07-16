@@ -1,9 +1,9 @@
-class FrontendLog < Logger::LogDevice
+class BackendLog < Logger::LogDevice
   include MongoMapper::Document
 
   key :log_content, Array, :default => []
 
-  belongs_to :frontend
+  belongs_to :backend
 
   def write(msg)
     push(:log_content => msg)
