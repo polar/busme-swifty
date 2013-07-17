@@ -12,9 +12,9 @@ class Installation
   key :worker_endpoint_git_refspec, :default => "HEAD"
   key :worker_endpoint_git_name, :default => "buspass-workers"
 
-  key :frontend_git_repository, :default => "git://github.com/polar/buspass-swifty.git"
+  key :frontend_git_repository, :default => "git://github.com/polar/busme-swifty.git"
   key :frontend_git_refspec, :default => "HEAD"
-  key :frontend_git_name, :default => "buspass-swifty"
+  key :frontend_git_name, :default => "busme-swifty"
 
   belongs_to :deploy_installation_job, :dependent => :destroy
   one :installation_log
@@ -24,6 +24,10 @@ class Installation
 
   validates_presence_of :name
   validates_uniqueness_of :name
+
+  def job_status
+    deploy_installation_job.get_status if deploy_installation_job
+  end
 
   def backends
     frontends.all.reduce( [] ){ |t,fe| t + fe.backends}

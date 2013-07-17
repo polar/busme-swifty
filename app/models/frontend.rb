@@ -37,6 +37,10 @@ class Frontend
   validates_uniqueness_of :host, :allow_nil => false
   validates_uniqueness_of :hostip, :allow_nil => false
 
+  def job_status
+    deploy_frontend_job.get_status if deploy_frontend_job
+  end
+
   def git_repository
     installation.frontend_git_repository
   end

@@ -32,6 +32,10 @@ class Backend
   attr_accessible :frontend_address, :master_slug, :hostname
   attr_accessible :server_name, :cluster_address, :cluster_port, :address, :port
 
+  def job_status
+    deploy_backend_job.get_status if deploy_backend_job
+  end
+
   def frontend_name
     frontend.name
   end
