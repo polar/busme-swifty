@@ -43,6 +43,10 @@ class DeploySwiftEndpointJob
     swift_endpoint.backend
   end
 
+  def installation
+    backend.installation
+  end
+
   def reset_api
     # We have to reset, because successive connection/SSL failures
     # do not resolve themselves. Ugg.
@@ -228,6 +232,7 @@ class DeploySwiftEndpointJob
       when "Heroku"
         begin
           vars = {
+              "INSTALLATION" => installation.name,
               "HEROKU_API_KEY" => ENV['HEROKU_API_KEY'],
               "AWS_ACCESS_KEY_ID" => ENV['AWS_ACCESS_KEY_ID'],
               "AWS_SECRET_ACCESS_KEY" => ENV['AWS_SECRET_ACCESS_KEY'],
