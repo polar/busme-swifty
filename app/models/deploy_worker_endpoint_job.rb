@@ -114,6 +114,7 @@ class DeployWorkerEndpointJob
   def remote_endpoint_status
     head = __method__
     log "#{head}: START"
+    set_status("RemoteStatus")
     case worker_endpoint.endpoint_type
       when "Heroku"
         begin
@@ -127,22 +128,29 @@ class DeployWorkerEndpointJob
               status = ["DOWN"] if status.length == 0
               worker_endpoint.remote_status = status
               worker_endpoint.save
+              set_status("Success:RemoteStatus")
               return result.data[:body].inspect
             else
+              set_status("Error:RemoteStatus")
+              worker_endpoint.remote_status = ["Not Available"]
+              worker_endpoint.save
               log "#{head}: remote worker endpoint #{app_name} bad status."
               return nil
             end
           else
+            set_status("Error:RemoteStatus")
             status = ["Not Created"]
             worker_endpoint.remote_status = status
             worker_endpoint.save
             return status.inspect
           end
         rescue Heroku::API::Errors::NotFound => boom
+          set_status("Error:RemoteStatus")
           log "#{head}: remote worker endpoint #{app_name} does not exist."
           return nil
         end
       else
+        set_status("Error:RemoteStatus")
         log "#{head}: Unknown Endpoint type #{worker_endpoint.endpoint_type}"
     end
   ensure

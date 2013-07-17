@@ -63,6 +63,25 @@ class DeployInstallationJob
     end
   end
 
+  def null_remote_statuses
+    for fe in installation.frontends do
+      fe.listen_status = nil
+      fe.save
+    end
+    for fe in installation.backends do
+      fe.listen_status = nil
+      fe.save
+    end
+    for fe in installation.swift_endpoints do
+      fe.remote_status = nil
+      fe.save
+    end
+    for fe in installation.worker_endpoints do
+      fe.remote_status = nil
+      fe.save
+    end
+  end
+
   def install_frontends
     head = __method__
     log "#{head}: START"
@@ -331,5 +350,37 @@ class DeployInstallationJob
   ensure
     log "#{head}: DONE"
   end
+
+  def remote_status_installation
+    head = __method__
+    log "#{head}: START"
+    for fe in installation.frontends do
+      if fe.deploy_frontend_job.nil?
+        fe.create_deploy_frontend_job
+      end
+      begin
+        log "#{head}: status_remote_frontend #{fe.name}"
+        fe.deploy_frontend_job.status_remote_frontend
+      rescue Exception => boom
+        log "#{head}: Error in starting frontend #{fe.name} -- #{boom}"
+      end
+    end
+    for be in installation.backends do
+      if be.deploy_backend_job.nil?
+        be.create_deploy_backend_job
+      end
+      begin
+        log "#{head}: status_swift_endpoint_apps #{be.name}"
+        be.deploy_backend_job.status_swift_endpoint_apps
+        log "#{head}: status_worker_endpoint_apps #{be.name}"
+        be.deploy_backend_job.status_worker_endpoint_apps
+      rescue Exception => boom
+        log "#{head}: Error in starting backend #{be.name} -- #{boom}"
+      end
+    end
+  ensure
+    log "#{head}: DONE"
+  end
+
 
 end

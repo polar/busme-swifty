@@ -31,10 +31,6 @@ if ! config["name"].nil?
     frontend.listen_status += array_match(/(0.0.0.0:80.*LISTEN)/, netstat)
     frontend.listen_status += array_match(/(0.0.0.0:443.*LISTEN)/, netstat)
 
-    puts "STATUS LENGTH #{frontend.listen_status.length}"
-    if frontend.listen_status.length == 0
-      frontend.listen_status = ["DOWN"]
-    end
     frontend.connection_status = []
     frontend.connection_status += array_match(/(0.0.0.0:80.*ESTABLISHED)/, netstat)
     frontend.connection_status += array_match(/(0.0.0.0:443.*ESTABLISHED)/, netstat)

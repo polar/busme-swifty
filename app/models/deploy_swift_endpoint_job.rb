@@ -114,6 +114,7 @@ class DeploySwiftEndpointJob
   def remote_endpoint_status
     head = __method__
     log "#{head}: START"
+    set_status("RemoteStatus")
     case swift_endpoint.endpoint_type
       when "Heroku"
         begin
@@ -127,22 +128,29 @@ class DeploySwiftEndpointJob
               status = ["DOWN"] if status.length == 0
               swift_endpoint.remote_status = status
               swift_endpoint.save
+              set_status("Success:RemoteStatus")
               return result.data[:body].inspect
             else
+              swift_endpoint.remote_status = ["Not Available"]
+              swift_endpoint.save
+              set_status("Error:RemoteStatus")
               log "#{head}: remote swift endpoint #{app_name} bad status."
               return nil
             end
           else
+            set_status("Error:RemoteStatus")
             status = ["Not Created"]
             swift_endpoint.remote_status = status
             swift_endpoint.save
             return status.inspect
           end
         rescue Heroku::API::Errors::NotFound => boom
+          set_status("Error:RemoteStatus")
           log "#{head}: remote swift endpoint #{app_name} does not exist."
           return nil
         end
       else
+        set_status("Error:RemoteStatus")
         log "#{head}: Unknown Endpoint type #{swift_endpoint.endpoint_type}"
     end
   ensure
@@ -156,7 +164,9 @@ class DeploySwiftEndpointJob
       when "Heroku"
         begin
           log "#{head}: Starting remote swift endpoint #{app_name}."
-          result = HerokuHeadless.heroku.post_ps_scale(app_name, "work", 1)
+          result = HerokuHeadless.heroku.post_ps_scale(app_name, "web", 0)
+          result = HerokuHeadless.heroku.post_ps_scale(app_name, "work", 0)
+          result = HerokuHeadless.heroku.post_ps_scale(app_name, "swift", 1)
           if result && result.data && result.data[:body]
             log "status is #{result.data[:body].inspect}"
             return result.data[:body].inspect
@@ -184,6 +194,7 @@ class DeploySwiftEndpointJob
           log "#{head}: Stopping remote swift endpoint #{app_name}."
           result = HerokuHeadless.heroku.post_ps_scale(app_name, "web", 0)
           result = HerokuHeadless.heroku.post_ps_scale(app_name, "work", 0)
+          result = HerokuHeadless.heroku.post_ps_scale(app_name, "swift", 0)
           if result && result.data && result.data[:body]
             log "status is #{result.data[:body].inspect}"
             return result.data[:body].inspect
