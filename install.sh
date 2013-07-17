@@ -33,3 +33,5 @@ chown ec2-user:ec2-user /var/log/swifty
 
 mkdir -p /var/run/swifty
 chown ec2-user:ec2-user /var/run/swifty
+
+echo "INSTALL COMPLETE"
