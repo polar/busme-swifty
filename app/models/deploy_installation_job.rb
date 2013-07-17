@@ -53,6 +53,8 @@ class DeployInstallationJob
       end
       fe.deploy_swift_endpoint_job.set_status(nil)
       fe.swift_endpoint_log.clear
+      fe.instance_status = nil
+      fe.save
     end
     for fe in installation.worker_endpoints do
       if fe.deploy_worker_endpoint_job.nil?
@@ -60,6 +62,8 @@ class DeployInstallationJob
       end
       fe.deploy_worker_endpoint_job.set_status(nil)
       fe.worker_endpoint_log.clear
+      fe.instance_status
+      fe.save
     end
   end
 
@@ -354,6 +358,7 @@ class DeployInstallationJob
   def remote_status_installation
     head = __method__
     log "#{head}: START"
+    set_status("RemoteStatus:Frontends")
     for fe in installation.frontends do
       if fe.deploy_frontend_job.nil?
         fe.create_deploy_frontend_job
@@ -365,6 +370,7 @@ class DeployInstallationJob
         log "#{head}: Error in starting frontend #{fe.name} -- #{boom}"
       end
     end
+    set_status("RemoteStatus:Backends")
     for be in installation.backends do
       if be.deploy_backend_job.nil?
         be.create_deploy_backend_job
@@ -378,6 +384,7 @@ class DeployInstallationJob
         log "#{head}: Error in starting backend #{be.name} -- #{boom}"
       end
     end
+    set_status("Done:RemoteStatus")
   ensure
     log "#{head}: DONE"
   end
