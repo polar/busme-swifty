@@ -1,22 +1,23 @@
 #!/bin/bash
 
-NAME=$1
+NAME=${1:-busme-swifty}
 
 # Assumes git clone into busme-swifty, obviously because this file is here.
 
-cd "~ec2-user/$NAME"
+cd ~ec2-user
+cd "$NAME"
 bundle install
 
-cd src
+cd ./src
 make
-cd "~ec2-user/$NAME"
+cd ..
 chown root:root scripts/nginx_cmd
 chmod 4755 scripts/nginx_cmd
 
-chmod +x scripts/*
+chmod +x ./scripts/*
 
-cp swifty.sh /etc/init.d/swifty
-cp nginx.conf /etc/nginx
+cp ./swifty.sh /etc/init.d/swifty
+cp ./nginx.conf /etc/nginx
 
 chmod 0755 /etc/init.d/swifty
 ln -s /etc/init.d/swifty /etc/rc.d/rc0.d/K20swifty   >& /dev/null

@@ -43,8 +43,12 @@ class DeploySwiftEndpointJob
     swift_endpoint.backend
   end
 
+  def frontend
+    backend.frontend
+  end
+
   def installation
-    backend.installation
+    frontend.installation
   end
 
   def reset_api
@@ -233,6 +237,9 @@ class DeploySwiftEndpointJob
         begin
           vars = {
               "INSTALLATION" => installation.name,
+              "FRONTEND" => frontend.name,
+              "BACKEND" => backend.name,
+              "SWIFT_ENDPOINT" => swift_endpoint.name,
               "HEROKU_API_KEY" => ENV['HEROKU_API_KEY'],
               "AWS_ACCESS_KEY_ID" => ENV['AWS_ACCESS_KEY_ID'],
               "AWS_SECRET_ACCESS_KEY" => ENV['AWS_SECRET_ACCESS_KEY'],

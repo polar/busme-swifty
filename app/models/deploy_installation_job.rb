@@ -178,7 +178,7 @@ class DeployInstallationJob
         log "#{head}: stop_remote_frontend #{fe.name}"
         fe.deploy_frontend_job.stop_remote_frontend
         log "#{head}: upgrade_remote_frontend #{fe.name}"
-        job = DeployFrontendJobspec.new(fe.deploy_frontend_job.id, "upgrade_remote_frontend", nil)
+        job = DeployFrontendJobspec.new(fe.deploy_frontend_job.id, "full_upgrade_remote_frontend", nil)
         Delayed::Job.enqueue(job, :queue => "deploy-web")
         #fe.deploy_frontend_job.upgrade_remote_frontend
       rescue Exception => boom
@@ -216,6 +216,7 @@ class DeployInstallationJob
   def start_installation
     head = __method__
     log "#{head}: START"
+    set_status("Start:Frontend")
     for fe in installation.frontends do
       if fe.deploy_frontend_job.nil?
         fe.create_deploy_frontend_job
@@ -227,30 +228,39 @@ class DeployInstallationJob
         log "#{head}: Error in starting frontend #{fe.name} -- #{boom}"
       end
     end
-    for be in installation.backends do
-      if be.deploy_backend_job.nil?
-        be.create_deploy_backend_job
-      end
-      begin
-        if ! be.configured
-          be.deploy_backend_job.configure_remote_backend
+    set_status("Start:Backends")
+    for fe in installation.frontends do
+      for be in fe.backends do
+        if be.deploy_backend_job.nil?
+          be.create_deploy_backend_job
         end
-        log "#{head}: start_remote_backend #{be.name}"
-        be.deploy_backend_job.start_remote_backend
-      rescue Exception => boom
-        log "#{head}: Error in starting backend #{be.name} -- #{boom}"
+        begin
+          if ! be.configured
+            log "#{head}: configure_remote_backend #{be.name}"
+            fe.deploy_frontend_job.configure_remote_backend(be)
+          end
+          log "#{head}: start_remote_backend #{be.name}"
+          set_status("Start:Backend:#{be.name}")
+          fe.deploy_frontend_job.start_remote_backend(be)
+        rescue Exception => boom
+          log "#{head}: Error in starting backend #{be.name} -- #{boom}"
+        end
       end
     end
+    set_status("Start:Endpoints")
     for be in installation.backends do
       begin
         log "#{head}: start_swift_endpoint_apps #{be.name}"
+        set_status("Start:Endpoints:Swift")
         be.deploy_backend_job.start_swift_endpoint_apps
         log "#{head}: start_worker_endpoint_apps #{be.name}"
+        set_status("Start:Endpoints:Worker")
         be.deploy_backend_job.start_worker_endpoint_apps
       rescue Exception => boom
         log "#{head}: Error in starting backend #{be.name} -- #{boom}"
       end
     end
+    set_status("Done:Start")
   ensure
     log "#{head}: DONE"
   end
