@@ -37,7 +37,7 @@ class DeployFrontendJob
     log "#{head}: START"
     case frontend.host_type
       when "ec2"
-        cmd = "ssh -i #{ssh_cert} ec2-user@#{frontend.host} \"git clone -b #{frontend.git_refspec} #{frontend.git_repository} \\\"#{frontend.git_name}\\\" ; cd \\\"#{frontend.git_name}\\\" \\&\\& git pull; sudo bash install.sh \\\"#{frontend.git_name}\\\"\""
+        cmd = "ssh -i #{ssh_cert} ec2-user@#{frontend.host} \"git clone -b #{frontend.git_refspec} #{frontend.git_repository} \\\"#{frontend.git_name}\\\" ; cd \\\"#{frontend.git_name}\\\" \\&\\& git pull; git checkout \\\"#{frontend.git_refspec}\\\" ; sudo bash install.sh \\\"#{frontend.git_name}\\\"\""
         log "#{head}: #{cmd}"
         Open3.popen2e(cmd) do |stdin,out,wait_thr|
           pid = wait_thr.pid
