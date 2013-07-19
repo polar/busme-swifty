@@ -5,9 +5,7 @@ NAME=${1:-busme-swifty}
 # Assumes git clone into busme-swifty, obviously because this file is here.
 
 cd ~ec2-user
-source .bashrc
 cd "$NAME"
-bundle install
 
 cd ./src
 make
@@ -35,4 +33,5 @@ chown ec2-user:ec2-user /var/log/swifty
 mkdir -p /var/run/swifty
 chown ec2-user:ec2-user /var/run/swifty
 
+sudo ec2-user
 echo "INSTALL COMPLETE"

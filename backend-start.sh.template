@@ -28,6 +28,7 @@
 #
 
 cd ~/busme-swifty
+bundle install
 
 # @NAME
 
