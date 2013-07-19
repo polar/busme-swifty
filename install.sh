@@ -5,6 +5,7 @@ NAME=${1:-busme-swifty}
 # Assumes git clone into busme-swifty, obviously because this file is here.
 
 cd ~ec2-user
+source .bashrc
 cd "$NAME"
 bundle install
 
