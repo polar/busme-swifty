@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374177315491" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374198162032" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374238472828" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374238826349" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -75,7 +75,7 @@
     <file path="/start_rogues.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368676209343" ignored="false" />
     <file path="/stop_rogues.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368649642027" ignored="false" />
     <file path="/init.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373405032382" ignored="false" />
-    <file path="/install.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374238588607" ignored="false" />
+    <file path="/install.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374238753039" ignored="false" />
     <file path="/README.md" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368656119865" ignored="false" />
     <file path="/rouge-nginx.conf" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373395804914" ignored="false" />
     <file path="/create_rogue.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373403695592" ignored="false" />
@@ -110,7 +110,7 @@
     <file path="/remove_backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373402980676" ignored="false" />
     <file path="/stop_all_backends.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373404240015" ignored="false" />
     <file path="/start_backends.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373585192115" ignored="false" />
-    <file path="/backend-start.sh.template" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373631243309" ignored="false" />
+    <file path="/backend-start.sh.template" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374238811187" ignored="false" />
     <file path="/restart_frontend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373470297670" ignored="false" />
     <file path="/stop_server.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373404781409" ignored="false" />
     <file path="/start_server.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373404810473" ignored="false" />
@@ -321,7 +321,7 @@
     <file path="$PROJECT_DIR$/../buspass-workers/config/aa_creds.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374164527690" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-workers/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374190339100" ignored="false" />
     <file path="/simulate_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374177438133" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-workers/.idea/workspace.xml" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374238540125" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-workers/.idea/workspace.xml" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374238830736" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-deployer/app/models/deploy_worker_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374187869227" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-deployer/app/assets/javascripts/application.js" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374196567387" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -400,7 +400,7 @@
       <file leaf-file-name="install.sh" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/install.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="14" selection-start="142" selection-end="142" vertical-scroll-proportion="0.18783543">
+            <state line="34" column="0" selection-start="932" selection-end="932" vertical-scroll-proportion="0.8121646">
               <folding />
             </state>
           </provider>
@@ -427,7 +427,7 @@
       <file leaf-file-name="backend-start.sh.template" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend-start.sh.template">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="30" column="14" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -458,7 +458,6 @@
         <option value="$PROJECT_DIR$/backend-nginx.location.template" />
         <option value="$PROJECT_DIR$/scripts/create_backend_configfiles.sh" />
         <option value="$PROJECT_DIR$/scripts/deconfigure_backend.rb" />
-        <option value="$PROJECT_DIR$/backend-start.sh.template" />
         <option value="$PROJECT_DIR$/nginx.conf" />
         <option value="$PROJECT_DIR$/base-backend-nginx.conf.template" />
         <option value="$PROJECT_DIR$/scripts/configure_frontend.rb" />
@@ -466,6 +465,7 @@
         <option value="$PROJECT_DIR$/scripts/configure_frontend_backends.rb" />
         <option value="$PROJECT_DIR$/scripts/status_frontend.rb" />
         <option value="$PROJECT_DIR$/.ruby-version" />
+        <option value="$PROJECT_DIR$/backend-start.sh.template" />
         <option value="$PROJECT_DIR$/install.sh" />
       </list>
     </option>
@@ -1574,7 +1574,15 @@
       <created>1374238474960</created>
       <updated>1374238474960</updated>
     </task>
-    <option name="localTasksCounter" value="202" />
+    <task id="LOCAL-00202" summary="update">
+      <created>1374238595084</created>
+      <updated>1374238595084</updated>
+    </task>
+    <task id="LOCAL-00203" summary="update">
+      <created>1374238827703</created>
+      <updated>1374238827703</updated>
+    </task>
+    <option name="localTasksCounter" value="204" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1711,13 +1719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend-start.sh.template">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/upgrade_frontend.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1760,9 +1761,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend-start.sh.template">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="14" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/install.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="14" selection-start="142" selection-end="142" vertical-scroll-proportion="0.18783543">
+        <state line="34" column="0" selection-start="932" selection-end="932" vertical-scroll-proportion="0.8121646">
           <folding />
         </state>
       </provider>
