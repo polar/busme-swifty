@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/configure_backend.sh" afterPath="$PROJECT_DIR$/scripts/configure_backend.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/configure_frontend.sh" afterPath="$PROJECT_DIR$/scripts/configure_frontend.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/configure_frontend_backends.sh" afterPath="$PROJECT_DIR$/scripts/configure_frontend_backends.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/deconfigure_backend.sh" afterPath="$PROJECT_DIR$/scripts/deconfigure_backend.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/deconfigure_frontend.sh" afterPath="$PROJECT_DIR$/scripts/deconfigure_frontend.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/restart_frontend.sh" afterPath="$PROJECT_DIR$/scripts/restart_frontend.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/start_backend.sh" afterPath="$PROJECT_DIR$/scripts/start_backend.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/start_backends.sh" afterPath="$PROJECT_DIR$/scripts/start_backends.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/start_frontend.sh" afterPath="$PROJECT_DIR$/scripts/start_frontend.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/status_frontend.sh" afterPath="$PROJECT_DIR$/scripts/status_frontend.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/stop_backend.sh" afterPath="$PROJECT_DIR$/scripts/stop_backend.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/stop_backends.sh" afterPath="$PROJECT_DIR$/scripts/stop_backends.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/stop_frontend.sh" afterPath="$PROJECT_DIR$/scripts/stop_frontend.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/upgrade_frontend.sh" afterPath="$PROJECT_DIR$/scripts/upgrade_frontend.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
@@ -39,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374177315491" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374198162032" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374239659915" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374239818539" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -163,7 +151,7 @@
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/status_all.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373930954018" ignored="false" />
     <file path="/status_all.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373930747617" ignored="false" />
     <file path="/temp.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374175840283" ignored="false" />
-    <file path="/upgrade_frontend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374239654735" ignored="false" />
+    <file path="/upgrade_frontend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374240213153" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/uploaders/frontend_key_file_uploader.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373643027230" ignored="false" />
     <file path="/frontend_key_file_uploader.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374012924764" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/frontend_key.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374071057961" ignored="false" />
@@ -333,7 +321,7 @@
     <file path="$PROJECT_DIR$/../buspass-workers/config/aa_creds.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374164527690" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-workers/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374190339100" ignored="false" />
     <file path="/simulate_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374177438133" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-workers/.idea/workspace.xml" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374239666740" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-workers/.idea/workspace.xml" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374239887894" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-deployer/app/models/deploy_worker_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374187869227" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-deployer/app/assets/javascripts/application.js" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374196567387" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -355,10 +343,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="start_backends.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/start_backends.sh">
+      <file leaf-file-name="upgrade_frontend.sh" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/upgrade_frontend.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
+            <state line="5" column="6" selection-start="90" selection-end="90" vertical-scroll-proportion="0.1396648">
               <folding />
             </state>
           </provider>
@@ -436,7 +424,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configure_backend.sh" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="configure_backend.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/configure_backend.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
@@ -465,7 +453,6 @@
       <list>
         <option value="$PROJECT_DIR$/backend-start.sh.template" />
         <option value="$PROJECT_DIR$/install.sh" />
-        <option value="$PROJECT_DIR$/scripts/upgrade_frontend.sh" />
         <option value="$PROJECT_DIR$/scripts/stop_frontend.sh" />
         <option value="$PROJECT_DIR$/scripts/stop_backends.sh" />
         <option value="$PROJECT_DIR$/scripts/stop_backend.sh" />
@@ -479,6 +466,7 @@
         <option value="$PROJECT_DIR$/scripts/configure_frontend_backends.sh" />
         <option value="$PROJECT_DIR$/scripts/configure_frontend.sh" />
         <option value="$PROJECT_DIR$/scripts/configure_backend.sh" />
+        <option value="$PROJECT_DIR$/scripts/upgrade_frontend.sh" />
       </list>
     </option>
   </component>
@@ -1610,7 +1598,11 @@
       <created>1374239663390</created>
       <updated>1374239663390</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="update">
+      <created>1374239820066</created>
+      <updated>1374239820066</updated>
+    </task>
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1701,13 +1693,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/upgrade_frontend.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/stop_frontend.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
@@ -1809,6 +1794,13 @@
     <entry file="file://$PROJECT_DIR$/scripts/configure_backend.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/upgrade_frontend.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="6" selection-start="90" selection-end="90" vertical-scroll-proportion="0.1396648">
           <folding />
         </state>
       </provider>
