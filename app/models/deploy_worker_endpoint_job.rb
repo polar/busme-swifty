@@ -59,6 +59,7 @@ class DeployWorkerEndpointJob
       config.pre_deploy_git_commands = [
           "script/dist-config \"#{worker_endpoint.git_repository}\" \"#{worker_endpoint.git_name}\" \"#{worker_endpoint.git_refspec}\" /tmp"
       ]
+      config.force_push = true
       config.repository_location = File.join("/", "tmp", worker_endpoint.git_name)
     end
   end
@@ -164,7 +165,7 @@ class DeployWorkerEndpointJob
       when "Heroku"
         begin
           log "#{head}: Starting remote worker endpoint #{app_name}."
-          result = HerokuHeadless.heroku.post_ps_scale(app_name, "work", 1)
+          result = HerokuHeadless.heroku.post_ps_scale(app_name, "fork", 1)
           if result && result.data && result.data[:body]
             log "status is #{result.data[:body].inspect}"
             return result.data[:body].inspect
@@ -192,6 +193,7 @@ class DeployWorkerEndpointJob
           log "#{head}: Stopping remote worker endpoint #{app_name}."
           result = HerokuHeadless.heroku.post_ps_scale(app_name, "web", 0)
           result = HerokuHeadless.heroku.post_ps_scale(app_name, "work", 0)
+          result = HerokuHeadless.heroku.post_ps_scale(app_name, "fork", 0)
           if result && result.data && result.data[:body]
             log "status is #{result.data[:body].inspect}"
             return result.data[:body].inspect
@@ -266,6 +268,7 @@ class DeployWorkerEndpointJob
         begin
           set_status("Deploying")
           HerokuHeadless::Deployer.logger = self
+          log "#{head}: Deploying #{app_name} refspec #{worker_endpoint.git_refspec}."
           result = HerokuHeadless::Deployer.deploy(app_name, worker_endpoint.git_refspec)
           if result
             commit = ["#{worker_endpoint.git_repository} #{worker_endpoint.git_refspec}"]
