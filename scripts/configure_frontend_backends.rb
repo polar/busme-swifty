@@ -44,4 +44,5 @@ for be in frontend.backends do
   puts Rush.bash("scripts/configure_backend.sh --name #{be.name}")
 end
 
+puts Rush.bash("scripts/restart_frontend.sh")
 puts "#{frontend.name}"
