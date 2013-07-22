@@ -97,6 +97,11 @@ if config["name"].nil?
 else
   name = config["name"]
   backend = Backend.find_by_name(name)
+  master = Master.find_by_slug(backend.master_slug)
+  if master
+    master_id = master.id
+    puts "This is a Master based Backend for #{config["master_slug"]} with id #{master_id}"
+  end
   if backend.nil?
     puts "Backend #{name} does not exist."
     exit 1
