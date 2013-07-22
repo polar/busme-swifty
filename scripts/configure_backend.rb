@@ -82,6 +82,8 @@ if config["name"].nil?
   if ! config["master_slug"].blank?
     name = "A-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
   else
+    master = Master.find_by_slug(config["master_slug"])
+    master_id = master.id if master
     name = "Z-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
   end
   backend = Backend.find_by_name(name)
@@ -100,7 +102,7 @@ else
   end
 end
 
-puts Rush.bash("scripts/create_backend_configfiles.sh '#{backend.name}' '#{backend.master_slug}' '#{backend.frontend_address}' '#{backend.hostname}' '#{backend.server_name}' '#{backend.cluster_address}' '#{backend.cluster_port}' '#{backend.address}' '#{backend.port}'")
+puts Rush.bash("scripts/create_backend_configfiles.sh '#{backend.name}' '#{backend.master_slug}' '#{master_id}' '#{backend.frontend_address}' '#{backend.hostname}' '#{backend.server_name}' '#{backend.cluster_address}' '#{backend.cluster_port}' '#{backend.address}' '#{backend.port}'")
 
 backend.configured = true
 backend.save
