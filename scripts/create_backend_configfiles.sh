@@ -1,6 +1,6 @@
 #!/bin/sh -x
 
-echo $*
+echo $0 $*
 
 cd ~/busme-swifty
 
