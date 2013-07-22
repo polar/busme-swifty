@@ -82,6 +82,7 @@ if config["name"].nil?
   if ! config["master_slug"].blank?
     master = Master.find_by_slug(config["master_slug"])
     master_id = master.id if master
+    puts "This is a Master based Backend for #{config["master_slug"]} with id #{master_id}"
     name = "A-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
   else
     name = "Z-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
