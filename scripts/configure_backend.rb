@@ -80,10 +80,10 @@ if config["name"].nil?
   end
 
   if ! config["master_slug"].blank?
-    name = "A-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
-  else
     master = Master.find_by_slug(config["master_slug"])
     master_id = master.id if master
+    name = "A-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
+  else
     name = "Z-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
   end
   backend = Backend.find_by_name(name)
