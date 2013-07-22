@@ -40,6 +40,9 @@ if frontend.valid?
   puts "Frontend #{frontend.name} is configured"
 end
 
+puts Rush.bash("rm -rf backends.d/*.conf")
+puts Rush.bash("rm -rf backends.d/*.location")
+puts Rush.bash("rm -rf start.d/*.sh")
 for be in frontend.backends do
   puts Rush.bash("scripts/configure_backend.sh --name #{be.name}")
 end
