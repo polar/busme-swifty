@@ -19,6 +19,7 @@ class Backend
   key :configured, Boolean, :default => false
 
   key :name
+  timestamps!
 
   belongs_to :frontend
   one :backend_log, :dependent => :destroy
@@ -36,6 +37,10 @@ class Backend
     deploy_backend_job.get_status if deploy_backend_job
   end
 
+  def installation
+    frontend.installation
+  end
+
   def frontend_name
     frontend.name
   end
@@ -43,7 +48,9 @@ class Backend
   def ensure_hostname
     if ! master_slug.blank?
       self.hostname = "#{master_slug}.#{frontend.host}"
-    else
+    end
+
+    if hostname.blank?
       self.hostname    = "#{frontend.host}"
       self.server_name = "*.#{frontend.host}" if server_name.blank?
     end

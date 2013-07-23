@@ -11,6 +11,7 @@ class WorkerEndpoint
   key :git_commit, Array
 
   key :log_level, Integer, :default => Logger::INFO
+  timestamps!
 
   # Worker endpoints are organized on backends because
   # backends are organized around masters within the
@@ -63,7 +64,7 @@ class WorkerEndpoint
                                  :backend => backend)
     ucount = 0
     while !endpoint.valid? && ucount < 26 do
-      u = "ABCDEFGHIJKLMNOPQUSTUVWXYZ"[ucount]
+      u = "abcdefghijklmnopqrstuvwxyz"[ucount]
       remote_name = "busme-w#{u}#{count}-#{name.gsub(".", "-")}"[0..29]
       endpoint = WorkerEndpoint.new(:name => remote_name,
                                    :endpoint_type => endpoint_type,
