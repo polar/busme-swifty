@@ -2,6 +2,7 @@ class DeployFrontendJob
   include MongoMapper::Document
 
   one :frontend, :autosave => false
+  many :delayed_jobs, :autosave => false
 
   key :status_content
 

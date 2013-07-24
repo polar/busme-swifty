@@ -2,6 +2,7 @@ class DeployBackendJob
   include MongoMapper::Document
 
   belongs_to :backend, :autosave => false
+  many :delayed_jobs, :autosave => false
 
   key :status_content
 

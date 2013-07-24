@@ -10,6 +10,7 @@ class DeploySwiftEndpointJob
   include MongoMapper::Document
 
   belongs_to :swift_endpoint
+  many :delayed_jobs, :autosave => false
 
 
   key :status_content

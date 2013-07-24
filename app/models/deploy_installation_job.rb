@@ -2,6 +2,7 @@ class DeployInstallationJob
   include MongoMapper::Document
 
   one :installation, :autosave => false
+  many :delayed_jobs, :autosave => false
 
   key :status_content
 
