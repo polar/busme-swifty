@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
+    <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/deploy_backend_job.rb" afterPath="$PROJECT_DIR$/app/models/deploy_backend_job.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/deploy_backend_jobspec.rb" afterPath="$PROJECT_DIR$/app/models/deploy_backend_jobspec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/deploy_frontend_job.rb" afterPath="$PROJECT_DIR$/app/models/deploy_frontend_job.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/deploy_frontend_jobspec.rb" afterPath="$PROJECT_DIR$/app/models/deploy_frontend_jobspec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/deploy_installation_job.rb" afterPath="$PROJECT_DIR$/app/models/deploy_installation_job.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/deploy_swift_endpoint_job.rb" afterPath="$PROJECT_DIR$/app/models/deploy_swift_endpoint_job.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/deploy_worker_endpoint_job.rb" afterPath="$PROJECT_DIR$/app/models/deploy_worker_endpoint_job.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/deploy_swift_endpoint_jobspec.rb" afterPath="$PROJECT_DIR$/app/models/deploy_swift_endpoint_jobspec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/deploy_worker_endpoint_jobspec.rb" afterPath="$PROJECT_DIR$/app/models/deploy_worker_endpoint_jobspec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/swift_endpoint.rb" afterPath="$PROJECT_DIR$/app/models/swift_endpoint.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/worker_endpoint.rb" afterPath="$PROJECT_DIR$/app/models/worker_endpoint.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
@@ -23,15 +27,15 @@
     <file path="$PROJECT_DIR$/../buspass.web/app/helpers/application_helper.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368190510311" ignored="false" />
     <file path="/application_helper.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368190510311" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass.web/app/controllers/activements_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368190556137" ignored="false" />
-    <file path="/activements_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374177326600" ignored="false" />
+    <file path="/activements_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695691068" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass.web/config/application.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368191006303" ignored="false" />
     <file path="/application.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373828729177" ignored="false" />
     <file path="$PROJECT_DIR$/../centro-data/script/evented_mongrel_rails" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368191913007" ignored="false" />
     <file path="/evented_mongrel_rails" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368191913007" ignored="false" />
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
-    <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374501106861" ignored="false" />
+    <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374694393516" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374263834242" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690997993" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374696152917" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -86,23 +90,23 @@
     <file path="/rogue-start.sh.template" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373398890523" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/script/ec2_create_backend" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373300991034" ignored="false" />
     <file path="/ec2_create_backend" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373300988960" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_frontend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690860904" ignored="false" />
-    <file path="/deploy_frontend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690792731" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_frontend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695107654" ignored="false" />
+    <file path="/deploy_frontend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695045533" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374688955364" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374589733795" ignored="false" />
     <file path="/frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374589733364" ignored="false" />
     <file path="/start_rogue.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373303985614" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/config/routes.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
     <file path="/routes.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374615041582" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/frontends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
-    <file path="/frontends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374504665732" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/frontends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695390058" ignored="false" />
+    <file path="/frontends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695390058" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/index.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373711299075" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/new.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374237834541" ignored="false" />
     <file path="/new.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374241677656" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/show.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374502565840" ignored="false" />
     <file path="/show.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374675946780" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/backends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
-    <file path="/backends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374506809047" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/backends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374694921628" ignored="false" />
+    <file path="/backends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695490714" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/backends/new.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373490133318" ignored="false" />
     <file path="/base-rouge-nginx.conf" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373388396635" ignored="false" />
     <file path="/initialize.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373651301331" ignored="false" />
@@ -130,11 +134,11 @@
     <file path="/stop_backends.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374239743186" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/controllers/frontend_backends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373487105777" ignored="false" />
     <file path="/frontend_backends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373487024777" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/frontends/backends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/frontends/backends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695490415" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/index.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/new.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_frontend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374499761368" ignored="false" />
-    <file path="/deploy_frontend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374499757440" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_frontend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695167366" ignored="false" />
+    <file path="/deploy_frontend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695165263" ignored="false" />
     <file path="/deconfigure_backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373659715664" ignored="false" />
     <file path="/deconfigure_backend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374239786525" ignored="false" />
     <file path="/deconfigure_frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373558923621" ignored="false" />
@@ -169,18 +173,18 @@
     <file path="/backend-nginx.location.template" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374487308354" ignored="false" />
     <file path="/configure_frontend_backends.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374504112272" ignored="false" />
     <file path="/configure_frontend_backends.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374239804654" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/frontends/backends/swift_endpoint_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374676057788" ignored="false" />
-    <file path="/swift_endpoint_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374673380339" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/frontends/backends/swift_endpoint_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695594616" ignored="false" />
+    <file path="/swift_endpoint_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695545474" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/swift_endpoint/index.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
-    <file path="/swift_endpoint.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374590212885" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/swift_endpoint.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374590213580" ignored="false" />
+    <file path="/swift_endpoint.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374696036317" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/swift_endpoint.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374696102697" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/show.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
     <file path="/swift_endpoint_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373820040455" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/swift_endpoint_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373820042741" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_swift_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690860904" ignored="false" />
-    <file path="/deploy_swift_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690843058" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_swift_endpoint_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374499141223" ignored="false" />
-    <file path="/deploy_swift_endpoint_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374499138794" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_swift_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374693181287" ignored="false" />
+    <file path="/deploy_swift_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374693181287" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_swift_endpoint_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695528038" ignored="false" />
+    <file path="/deploy_swift_endpoint_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695527624" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/swift_endpoint/new.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373718765125" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/swift_endpoint/show.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374675950219" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/Gemfile.lock" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373923016687" ignored="false" />
@@ -192,10 +196,10 @@
     <file path="/usr/local/rvm/gems/ruby-1.9.3-p194@global/bundler/gems/heroku-headless-413731de198f/lib/heroku-headless/deployer.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373817061523" ignored="false" />
     <file path="/backend_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373752599196" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/backend_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373752599196" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_backend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690693815" ignored="false" />
-    <file path="/deploy_backend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690684502" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_backend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374503006383" ignored="false" />
-    <file path="/deploy_backend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374502996610" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_backend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695800580" ignored="false" />
+    <file path="/deploy_backend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695761470" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_backend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374694906158" ignored="false" />
+    <file path="/deploy_backend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374694905372" ignored="false" />
     <file path="/usr/local/rvm/gems/ruby-1.9.3-p194@global/bundler/gems/heroku-headless-413731de198f/lib/heroku-headless.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373814151369" ignored="false" />
     <file path="/heroku-headless.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373817118393" ignored="false" />
     <file path="/usr/local/rvm/gems/ruby-1.9.3-p194@global/bundler/gems/heroku-headless-413731de198f/lib/heroku-headless/documents_actions.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373814151369" ignored="false" />
@@ -231,16 +235,16 @@
     <file path="/installation.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374590167871" ignored="false" />
     <file path="/worker.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373898533402" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/worker.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373898535085" ignored="false" />
-    <file path="/worker_endpoint.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374590233551" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/worker_endpoint.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374590235116" ignored="false" />
+    <file path="/worker_endpoint.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374696092393" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/worker_endpoint.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374696148748" ignored="false" />
     <file path="/worker_endpoint_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373898945116" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/worker_endpoint_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373898945116" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/worker_endpoint_remote_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373898980452" ignored="false" />
     <file path="/worker_endpoint_remote_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373898980452" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_worker_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690860904" ignored="false" />
-    <file path="/deploy_worker_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690858521" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_worker_endpoint_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374499141223" ignored="false" />
-    <file path="/deploy_worker_endpoint_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374499114528" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_worker_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374693263621" ignored="false" />
+    <file path="/deploy_worker_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374693260614" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_worker_endpoint_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695663005" ignored="false" />
+    <file path="/deploy_worker_endpoint_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695661732" ignored="false" />
     <file path="/installations_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374615025053" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/controllers/installations_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/installations/index.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374098068254" ignored="false" />
@@ -252,16 +256,16 @@
     <file path="/edit_swift_endpoint_git.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373911623826" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/installations/edit_frontend_git.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373911726740" ignored="false" />
     <file path="/edit_frontend_git.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373911726740" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/frontends/backends/worker_endpoint_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
-    <file path="/worker_endpoint_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374094122286" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/frontends/backends/worker_endpoint_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695749832" ignored="false" />
+    <file path="/worker_endpoint_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695710428" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/worker_endpoint/show.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374599929395" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/worker_endpoint/index.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374607298762" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/worker_endpoint/remote_log.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373913452279" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/worker_endpoint/_update_log.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374599123108" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/worker_endpoint/partial_status.js.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374599481187" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/worker_endpoint/new.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373913452279" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_installation_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690860904" ignored="false" />
-    <file path="/deploy_installation_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690820322" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_installation_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695512153" ignored="false" />
+    <file path="/deploy_installation_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695512153" ignored="false" />
     <file path="/deploy_installation_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373988849968" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/deploy_installation_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374090710959" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/installations/status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373988658202" ignored="false" />
@@ -275,7 +279,7 @@
     <file path="$PROJECT_DIR$/../buspass-deployer/app/models/deploy_installation_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374688744582" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-workers/Gemfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374176629302" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-workers/script/delayed_job" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373998271198" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/activements_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/controllers/activements_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374695692028" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/controllers/masters/active_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374177348083" ignored="false" />
     <file path="/active_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374177347127" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/controllers/masters/activement_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374177355960" ignored="false" />
@@ -329,10 +333,10 @@
     <file path="$PROJECT_DIR$/../buspass-deployer/app/models/deploy_worker_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374688796166" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-deployer/app/assets/javascripts/application.js" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374196567387" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-workers/app/models/backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374688979932" ignored="false" />
-    <file path="/perform.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374529705197" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-deployer/script/perform.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374529706112" ignored="false" />
+    <file path="/perform.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374691616181" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-deployer/script/perform.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374691616181" ignored="false" />
     <file path="/backend-nginx.master_id_location.template" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374487826547" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-workers/app/models/deploy_backend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374688862568" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-workers/app/models/deploy_backend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374691430991" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-deployer/app/models/deploy_swift_endpoint_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374687571747" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/websites/_form_edit.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374595066032" ignored="false" />
     <file path="/_form_edit.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374595061616" ignored="false" />
@@ -346,8 +350,8 @@
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/_endpoint_remote_status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374601018228" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/config/newrelic.yml" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
     <file path="/newrelic.yml" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374611739003" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/views/installations/_deploy_table_status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690947519" ignored="false" />
-    <file path="/_deploy_table_status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374690936239" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/views/installations/_deploy_table_status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374693384871" ignored="false" />
+    <file path="/_deploy_table_status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374693370323" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/installations/deploy_status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374634911435" ignored="false" />
     <file path="/deploy_status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374615082638" ignored="false" />
     <file path="/_update_deploy_status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374614971252" ignored="false" />
@@ -396,15 +400,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="configure_frontend.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/configure_frontend.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="configure_frontend_backends.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/configure_frontend_backends.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -468,8 +463,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deploy_worker_endpoint_job.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="deploy_worker_endpoint_job.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/deploy_worker_endpoint_job.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="worker_endpoint.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/worker_endpoint.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -1723,7 +1727,11 @@
       <created>1374690315141</created>
       <updated>1374690315141</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <task id="LOCAL-00226" summary="update">
+      <created>1374691038871</created>
+      <updated>1374691038871</updated>
+    </task>
+    <option name="localTasksCounter" value="227" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1814,13 +1822,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/create_backend_configfiles.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="10" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/restart_frontend.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1920,6 +1921,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/deploy_worker_endpoint_job.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/worker_endpoint.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
