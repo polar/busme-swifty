@@ -27,11 +27,17 @@ class DeployBackendJobspec < Struct.new(:deploy_backend_job_id, :action, :endpoi
       when "start_swift_endpoint_apps"
         job.start_swift_endpoint_apps
 
+      when "stop_swift_endpoint_apps"
+        job.stop_swift_endpoint_apps
+
       when "deploy_swift_endpoint_apps"
         job.deploy_swift_endpoint_apps
 
       when "destroy_swift_endpoint_apps"
         job.destroy_swift_endpoint_apps
+
+      when "destroy_swift_endpoints"
+        job.destroy_swift_endpoints
 
       when "status_swift_endpoint_apps"
         job.status_swift_endpoint_apps
@@ -45,14 +51,23 @@ class DeployBackendJobspec < Struct.new(:deploy_backend_job_id, :action, :endpoi
       when "start_worker_endpoint_apps"
         job.start_worker_endpoint_apps
 
+      when "stop_worker_endpoint_apps"
+        job.stop_worker_endpoint_apps
+
       when "deploy_worker_endpoint_apps"
         job.deploy_worker_endpoint_apps
 
       when "destroy_worker_endpoint_apps"
         job.destroy_worker_endpoint_apps
 
+      when "destroy_worker_endpoints"
+        job.destroy_worker_endpoints
+
       when "status_worker_endpoint_apps"
         job.status_worker_endpoint_apps
+
+      when "destroy_backend"
+        job.destroy_backend
       else
         job.log "Unknown action #{action}."
     end

@@ -9,7 +9,7 @@ end
 class DeployWorkerEndpointJob
   include MongoMapper::Document
 
-  belongs_to :worker_endpoint
+  belongs_to :worker_endpoint, :autosave => false
 
   
   key :status_content
@@ -64,21 +64,76 @@ class DeployWorkerEndpointJob
     end
   end
 
+  def get_deploy_status
+    head = __method__
+    log "#{head}: START"
+    set_status("DeployStatus")
+    worker_endpoint.reload
+    case worker_endpoint.endpoint_type
+      when "Heroku"
+        begin
+          log "#{head}: Getting deploy swift endpoint #{app_name} status."
+          result = HerokuHeadless.heroku.get_releases(app_name)
+          log "#{head}: Result #{result} status."
+          if result
+            release = result.data[:body].select {|x| x["commit"]}.last
+            if release
+              Rush.bash("script/dist-config \"#{worker_endpoint.git_repository}\" \"#{worker_endpoint.git_name}\" \"#{worker_endpoint.git_refspec}\" /tmp")
+              log "#{head}: Release #{release.inspect}"
+              commit = [ "#{release["name"]} #{release["descr"]} created_at #{release["created_at"]} by #{release["user"]}"]
+              commit += Rush.bash("cd \"/tmp/#{worker_endpoint.git_name}\"; git log --max-count=1 `git rev-parse #{release["commit"]}`").split("\n").take(3)
+              commit += ["#{worker_endpoint.git_repository} #{worker_endpoint.git_refspec}"]
+
+              commit += Rush.bash("cd \"/tmp/#{worker_endpoint.git_name}\"; git log --max-count=1 `git rev-parse #{worker_endpoint.git_refspec}`").split("\n").take(3)
+              worker_endpoint.reload
+              worker_endpoint.git_commit = commit
+              set_status("Success:DeployStatus")
+              log "#{head}: Swift endpoint #{app_name} - #{commit.inspect}"
+            else
+              worker_endpoint.reload
+              set_status("Error:DeployStatus")
+              log "#{head}: No commit releases"
+            end
+          else
+            set_status("Error:DeployStatus")
+            status = ["Not Created"]
+            worker_endpoint.reload
+            worker_endpoint.remote_status = status
+            worker_endpoint.save
+            return status.inspect
+          end
+        rescue Heroku::API::Errors::NotFound => boom
+          set_status("Error:DeployStatus")
+          log "#{head}: remote swift endpoint #{app_name} does not exist."
+          return nil
+        end
+      else
+        set_status("Error:DeployStatus")
+        log "#{head}: Unknown Endpoint type #{worker_endpoint.endpoint_type}"
+    end
+  ensure
+    log "#{head}: DONE"
+  end
+
   def create_remote_endpoint
     head = __method__
     log "#{head}: START"
+    worker_endpoint.reload
     case worker_endpoint.endpoint_type
       when "Heroku"
         begin
           set_status("Creating")
           result = HerokuHeadless.heroku.post_app(:name => app_name)
+          worker_endpoint.reload
           set_status("Success:Create")
         rescue Exception => boom
           log "#{head}: error Heroku.post_app(:name => #{app_name}) -- #{boom}"
+          worker_endpoint.reload
           set_status("Error:Create")
           return nil
         end
       else
+        worker_endpoint.reload
         set_status("Error:Create")
         log "#{head}: Unknown Endpoint type #{worker_endpoint.endpoint_type}"
     end
@@ -89,6 +144,7 @@ class DeployWorkerEndpointJob
   def remote_endpoint_exists?
     head = __method__
     log "#{head}: START"
+    worker_endpoint.reload
     case worker_endpoint.endpoint_type
       when "Heroku"
         begin
@@ -116,6 +172,7 @@ class DeployWorkerEndpointJob
   def remote_endpoint_status
     head = __method__
     log "#{head}: START"
+    worker_endpoint.reload
     set_status("RemoteStatus")
     case worker_endpoint.endpoint_type
       when "Heroku"
@@ -124,27 +181,36 @@ class DeployWorkerEndpointJob
           result = HerokuHeadless.heroku.get_app(app_name)
           if result
             result = HerokuHeadless.heroku.get_ps(app_name)
+            worker_endpoint.reload
             if result && result.data && result.data[:body]
               log "#{head}: status is #{result.data[:body].inspect}"
               status = result.data[:body].map {|s| "#{s["process"]}: #{s["pretty_state"]}" }
               status = ["DOWN"] if status.length == 0
+              worker_endpoint.remote_status = status
+              worker_endpoint.save
               set_status("Success:RemoteStatus")
+              get_deploy_status
               return result.data[:body].inspect
             else
+              worker_endpoint.remote_status = ["Not Available"]
+              worker_endpoint.save
               set_status("Error:RemoteStatus")
               log "#{head}: remote worker endpoint #{app_name} bad status."
               return nil
             end
           else
+            worker_endpoint.reload
             set_status("Error:RemoteStatus")
             return status.inspect
           end
         rescue Heroku::API::Errors::NotFound => boom
+          worker_endpoint.reload
           set_status("Error:RemoteStatus")
           log "#{head}: remote worker endpoint #{app_name} does not exist."
           return nil
         end
       else
+        worker_endpoint.reload
         set_status("Error:RemoteStatus")
         log "#{head}: Unknown Endpoint type #{worker_endpoint.endpoint_type}"
     end
@@ -155,12 +221,14 @@ class DeployWorkerEndpointJob
   def start_remote_endpoint
     head = __method__
     log "#{head}: START"
+    worker_endpoint.reload
     set_status("Starting")
     case worker_endpoint.endpoint_type
       when "Heroku"
         begin
           log "#{head}: Starting remote worker endpoint #{app_name}."
           result = HerokuHeadless.heroku.post_ps_scale(app_name, "fork", 1)
+          worker_endpoint.reload
           if result && result.data && result.data[:body]
             set_status("Success:Start")
             log "status is #{result.data[:body].inspect}"
@@ -171,11 +239,13 @@ class DeployWorkerEndpointJob
             return nil
           end
         rescue Heroku::API::Errors::NotFound => boom
+          worker_endpoint.reload
           set_status("Error:Start")
           log "#{head}: remote worker endpoint #{app_name} does not exist."
           return nil
         end
       else
+        worker_endpoint.reload
         set_status("Error:Start")
         log "#{head}: Unknown Endpoint type #{worker_endpoint.endpoint_type}"
     end
@@ -186,6 +256,7 @@ class DeployWorkerEndpointJob
   def stop_remote_endpoint
     head = __method__
     log "#{head}: START"
+    worker_endpoint.reload
     set_status("Stopping")
     case worker_endpoint.endpoint_type
       when "Heroku"
@@ -194,6 +265,7 @@ class DeployWorkerEndpointJob
           result = HerokuHeadless.heroku.post_ps_scale(app_name, "web", 0)
           result = HerokuHeadless.heroku.post_ps_scale(app_name, "work", 0)
           result = HerokuHeadless.heroku.post_ps_scale(app_name, "fork", 0)
+          worker_endpoint.reload
           if result && result.data && result.data[:body]
             set_status("Success:Stop")
             log "status is #{result.data[:body].inspect}"
@@ -204,11 +276,13 @@ class DeployWorkerEndpointJob
             return nil
           end
         rescue Heroku::API::Errors::NotFound => boom
+          worker_endpoint.reload
           set_status("Error:Stop")
           log "#{head}: remote worker endpoint #{app_name} does not exist."
           return nil
         end
       else
+        worker_endpoint.reload
         set_status("Error:Stop")
         log "#{head}: Unknown Endpoint type #{worker_endpoint.endpoint_type}"
     end
@@ -219,6 +293,7 @@ class DeployWorkerEndpointJob
   def configure_remote_endpoint
     head = __method__
     log "#{head}: START"
+    worker_endpoint.reload
     set_status("Configuring")
     case worker_endpoint.endpoint_type
       when "Heroku"
@@ -244,6 +319,7 @@ class DeployWorkerEndpointJob
           }
           log "#{head}: Setting configuration variables for worker endpoint #{app_name}."
           result = HerokuHeadless.heroku.put_config_vars(app_name, vars)
+          worker_endpoint.reload
           if result && result.data[:body]
             vars_set = result.data[:body].keys
             log "#{head}: Remote Configuration Variables #{vars_set.join(", ")} have been set for worker endpoint #{app_name}."
@@ -253,11 +329,13 @@ class DeployWorkerEndpointJob
           end
           return result
         rescue Exception => boom
+          worker_endpoint.reload
           log "#{head}: Cannot configure worker endpoint #{app_name} - #{boom}"
           set_status("Error:Configure")
           return nil
         end
       else
+        worker_endpoint.reload
         set_status("Error:Configure")
         log "#{head}: Unknown Endpoint type #{worker_endpoint.endpoint_type}"
     end
@@ -268,6 +346,7 @@ class DeployWorkerEndpointJob
   def deploy_to_remote_endpoint
     head = __method__
     log "#{head}: START"
+    worker_endpoint.reload
     set_status("Deploying")
     case worker_endpoint.endpoint_type
       when "Heroku"
@@ -275,13 +354,12 @@ class DeployWorkerEndpointJob
           HerokuHeadless::Deployer.logger = self
           log "#{head}: Deploying #{app_name} refspec #{worker_endpoint.git_refspec}."
           result = HerokuHeadless::Deployer.deploy(app_name, worker_endpoint.git_refspec)
+          worker_endpoint.reload
           if result
-            commit = ["#{worker_endpoint.git_repository} #{worker_endpoint.git_refspec}"]
-            commit += Rush.bash("cd \"/tmp/#{worker_endpoint.git_name}\"; git log --max-count=1 `git rev-parse #{worker_endpoint.git_refspec}`").split("\n").take(3)
-            worker_endpoint.git_commit = commit
-            log "#{head}: Created worker endpoint #{app_name}"
+            log "#{head}: Created worker endpoint #{app_name} - #{result.inspect}"
             set_status("Success:Deployed")
             HerokuHeadless.heroku.post_ps_scale(app_name, "web", 0)
+            get_deploy_status
             return result
           else
             set_status("Error:Deploy")
@@ -303,20 +381,24 @@ class DeployWorkerEndpointJob
   def destroy_remote_endpoint
     head = __method__
     log "#{head}: START"
+    worker_endpoint.reload
     set_status("Deleting")
     case worker_endpoint.endpoint_type
       when "Heroku"
         begin
           log "Deleting worker endpoint #{app_name}"
           result = HerokuHeadless.heroku.delete_app(app_name)
+          worker_endpoint.reload
           set_status("Success:Delete")
           return result
         rescue Exception => boom
+          worker_endpoint.reload
           log "#{head}: Could not delete worker endpoint #{worker_endpoint.endpoint_type} #{app_name} : #{boom}"
           set_status("Error:Delete")
           return nil
         end
       else
+        worker_endpoint.reload
         set_status("Error:Delete")
         log "#{head}: Unknown Endpoint type #{worker_endpoint.endpoint_type}"
     end
@@ -334,12 +416,14 @@ class DeployWorkerEndpointJob
   def logs_remote_endpoint
     head = __method__
     log "#{head}: START"
+    worker_endpoint.reload
     set_status("Logs")
     case worker_endpoint.endpoint_type
       when "Heroku"
         begin
-          log "Deleting #{app_name}"
+          log "Logs #{app_name}"
           result = HerokuHeadless.heroku.get_logs(app_name, :num => 500)
+          worker_endpoint.reload
           if result && result.status == 200
             log "#{head}: Log available at #{result.data[:body]}"
             if worker_endpoint.worker_endpoint_remote_log.nil?
@@ -352,14 +436,18 @@ class DeployWorkerEndpointJob
             set_status("Success:Logs")
             return result.data[:body]
           else
+            worker_endpoint.reload
+            set_status("Error:Logs")
             return nil
           end
         rescue Exception => boom
+          worker_endpoint.reload
           log "#{head}: Could not get remote logs for #{worker_endpoint.endpoint_type} #{app_name} : #{boom}"
           set_status("Error:Logs")
           return nil
         end
       else
+        worker_endpoint.reload
         set_status("Error:Logs")
         log "#{head}: Unknown Endpoint type #{worker_endpoint.endpoint_type}"
     end
@@ -370,6 +458,7 @@ class DeployWorkerEndpointJob
   def job_create_and_deploy_remote_endpoint
     head = __method__
     log "#{head}: START"
+    worker_endpoint.reload
     result = remote_endpoint_exists?
     result = create_remote_endpoint if not result
     result = configure_remote_endpoint if result

@@ -21,11 +21,11 @@ class Backend
   key :name
   timestamps!
 
-  belongs_to :frontend
-  one :backend_log, :dependent => :destroy
-  one :deploy_backend_job, :dependent => :destroy
-  many :swift_endpoints
-  many :worker_endpoints
+  belongs_to :frontend, :autosave => false
+  one :backend_log, :dependent => :destroy, :autosave => false
+  one :deploy_backend_job, :dependent => :destroy, :autosave => false
+  many :swift_endpoints, :autosave => false
+  many :worker_endpoints, :autosave => false
 
   before_validation :ensure_hostname, :ensure_name
 
