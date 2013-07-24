@@ -10,7 +10,6 @@ class DeployWorkerEndpointJob
   include MongoMapper::Document
 
   belongs_to :worker_endpoint, :autosave => false
-  many :delayed_jobs, :autosave => false
 
   
   key :status_content
@@ -50,6 +49,12 @@ class DeployWorkerEndpointJob
 
   def installation
     frontend.installation
+  end
+
+  def delayed_jobs
+    Delayed::Job.where(:queue => "deploy-web", :failed_at => nil).select do |job|
+      job.payload_object.deploy_worker_endpoint_job_id == self.id
+    end
   end
 
   def reset_api

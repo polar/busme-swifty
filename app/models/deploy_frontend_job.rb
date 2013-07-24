@@ -2,7 +2,6 @@ class DeployFrontendJob
   include MongoMapper::Document
 
   one :frontend, :autosave => false
-  many :delayed_jobs, :autosave => false
 
   key :status_content
 
@@ -31,6 +30,12 @@ class DeployFrontendJob
 
   def log(s)
     frontend.log s
+  end
+
+  def delayed_jobs
+    Delayed::Job.where(:queue => "deploy-web", :failed_at => nil).select do |job|
+      job.payload_object.deploy_frontend_job_id == self.id
+    end
   end
 
   def ssh_cmd(cmd)

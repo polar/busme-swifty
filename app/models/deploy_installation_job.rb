@@ -2,7 +2,6 @@ class DeployInstallationJob
   include MongoMapper::Document
 
   one :installation, :autosave => false
-  many :delayed_jobs, :autosave => false
 
   key :status_content
 
@@ -29,6 +28,12 @@ class DeployInstallationJob
 
   def segment(i, n)
     log_content.drop(i).take(n)
+  end
+
+  def delayed_jobs
+    Delayed::Job.where(:queue => "deploy-web", :failed_at => nil).select do |job|
+      job.payload_object.deploy_installation_job_id == self.id
+    end
   end
 
   def null_all_statuses

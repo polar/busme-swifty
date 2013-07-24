@@ -10,7 +10,6 @@ class DeploySwiftEndpointJob
   include MongoMapper::Document
 
   belongs_to :swift_endpoint
-  many :delayed_jobs, :autosave => false
 
 
   key :status_content
@@ -50,6 +49,12 @@ class DeploySwiftEndpointJob
 
   def installation
     frontend.installation
+  end
+
+  def delayed_jobs
+    Delayed::Job.where(:queue => "deploy-web", :failed_at => nil).select do |job|
+      job.payload_object.deploy_swift_endpoint_job_id == self.id
+    end
   end
 
   def reset_api

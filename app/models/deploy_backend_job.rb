@@ -2,7 +2,6 @@ class DeployBackendJob
   include MongoMapper::Document
 
   belongs_to :backend, :autosave => false
-  many :delayed_jobs, :autosave => false
 
   key :status_content
 
@@ -45,6 +44,12 @@ class DeployBackendJob
 
   def frontend
     backend.frontend
+  end
+
+  def delayed_jobs
+    Delayed::Job.where(:queue => "deploy-web", :failed_at => nil).select do |job|
+       job.payload_object.deploy_backend_job_id == self.id
+    end
   end
 
   def destroy_backend
