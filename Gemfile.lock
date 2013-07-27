@@ -1,39 +1,74 @@
 GIT
-  remote: git://github.com/polar/swiftiply.git
-  revision: 96b47a514bac7eb85c69d7449296304c6d3179f6
+  remote: git://github.com/polar/delayed_job
+  revision: d866b881f82047ed1d36934adeded9eee7ea8353
   specs:
-    swiftiply (0.6.4)
+    delayed_job (3.0.3)
+      activesupport (~> 3.0)
+
+GIT
+  remote: git://github.com/polar/delayed_job_mongo_mapper.git
+  revision: 8f1f516ca33fd1a3cbadfb4de6f47b780d4b5874
+  specs:
+    delayed_job_mongo_mapper (1.1.0)
+      delayed_job (~> 3.0.1)
+      mongo_mapper (~> 0.11.0)
+
+GIT
+  remote: git://github.com/polar/swiftiply.git
+  revision: 7b2f751f5cf2d68f1657c5dcb101b5bb7f5627a4
+  specs:
+    swiftiply (0.7.0.pre)
       eventmachine (>= 0.8.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (3.2.13)
-      activesupport (= 3.2.13)
+    activemodel (3.2.14)
+      activesupport (= 3.2.14)
       builder (~> 3.0.0)
-    activesupport (3.2.13)
-      i18n (= 0.6.1)
+    activesupport (3.2.14)
+      i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
-    bson (1.8.5)
-    bson_ext (1.8.5)
-      bson (~> 1.8.5)
+    bson (1.9.1)
+    bson_ext (1.9.1)
+      bson (~> 1.9.1)
     builder (3.0.4)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+    daemons (1.1.9)
     eventmachine (1.0.3)
-    i18n (0.6.1)
-    mongo (1.8.5)
-      bson (~> 1.8.5)
-    mongo_mapper (0.12.0)
+    fattr (2.2.1)
+    i18n (0.6.4)
+    json (1.8.0)
+    mm-carrierwave (0.0.2)
+      carrierwave (~> 0.5)
+      mongo_mapper (~> 0.9)
+    mongo (1.9.1)
+      bson (~> 1.9.1)
+    mongo_mapper (0.11.1)
       activemodel (~> 3.0)
       activesupport (~> 3.0)
-      plucky (~> 0.5.2)
-    multi_json (1.7.3)
-    plucky (0.5.2)
+      plucky (~> 0.4.0)
+    multi_json (1.7.7)
+    plucky (0.4.4)
       mongo (~> 1.5)
+    rush (0.6.8)
+      session
+    session (3.1.0)
+      fattr
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bson_ext
+  carrierwave
+  daemons
+  delayed_job!
+  delayed_job_mongo_mapper!
+  mm-carrierwave
   mongo_mapper
+  rush
   swiftiply!
