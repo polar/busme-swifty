@@ -22,7 +22,7 @@ else
   frontend = Frontend.new(config)
 end
 
-puts Rush.bash("script/configure_frontend.sh --name #{frontend.name}")
+puts Rush.bash("scripts/configure_frontend.sh --name #{frontend.name}")
 
 puts Rush.bash("rm -rf backends.d/*.conf")
 puts Rush.bash("rm -rf backends.d/*.location")
