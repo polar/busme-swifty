@@ -7,6 +7,8 @@ NAME=${1:-busme-swifty}
 cd ~ec2-user
 cd "$NAME"
 
+cp ./bashrc.sh ~ec2-user/.bashrc
+
 cd ./src
 make
 cd ..
