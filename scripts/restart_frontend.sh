@@ -1,3 +1,3 @@
 #!/bin/sh -x
 cd ~/busme-swifty
-scripts/nginx_cmd restart
+sudo /etc/init.d/nginx restart
