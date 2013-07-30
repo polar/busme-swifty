@@ -28,8 +28,7 @@ begin
     MongoMapper.database = "#Busme-development"
   end
   MongoMapper::Plugins::IdentityMap.enabled = true
-
-    #puts "Connected to DB #{MongoMapper.database.name}"
+  #puts "Connected to DB #{MongoMapper.database.name}"
 rescue Exception => boom
   puts "Cannot establish connection to DB #{boom}"
   exit 1
