@@ -22,7 +22,6 @@ else
   frontend = Frontend.new(config)
 end
 
-if !frontend.configured
   puts "Configuring Frontend #{frontend.name}"
   begin
     hostip = Net::HTTP.get(URI.parse('http://myexternalip.com/raw'))
@@ -31,13 +30,15 @@ if !frontend.configured
     puts "Cannot establish external IP: #{boom1}"
   end
   frontend.configured = true
-else
-  puts "Frontend #{frontend.name} is already configured."
-end
+
+frontend.git_commit = Rush.bash("cd ~/busme-swifty; git log --max-count=1 `git rev-parse #{frontend.git_refspec}`").split("\n")
 
 if frontend.valid?
   frontend.save
   puts "Frontend #{frontend.name} is configured"
+else
+  puts "frontend #{frontend.name} is not valid!"
+  puts "#{frontend.errors.inspect}"
 end
 
 puts "#{frontend.name}"

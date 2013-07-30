@@ -15,30 +15,7 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-frontend = Frontend.find_by_name(config["host"])
-if frontend
-  puts "Frontend #{frontend.name} already exists."
-else
-  frontend = Frontend.new(config)
-end
-
-if !frontend.configured
-  puts "Configuring Frontend #{frontend.name}"
-  begin
-    hostip = Net::HTTP.get(URI.parse('http://myexternalip.com/raw'))
-    frontend.hostip = hostip
-  rescue Exception => boom1
-    puts "Cannot establish external IP: #{boom1}"
-  end
-  frontend.configured = true
-else
-  puts "Frontend #{frontend.name} is already configured."
-end
-
-if frontend.valid?
-  frontend.save
-  puts "Frontend #{frontend.name} is configured"
-end
+puts Rush.bash("script/configure_frontend.sh --name #{frontend.name}")
 
 puts Rush.bash("rm -rf backends.d/*.conf")
 puts Rush.bash("rm -rf backends.d/*.location")
