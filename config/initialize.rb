@@ -27,6 +27,7 @@ begin
     MongoMapper.connection = Mongo::Connection.new('localhost', 27017)
     MongoMapper.database = "#Busme-development"
   end
+  MongoMapper::Plugins::IdentityMap.enabled = true
   #puts "Connected to DB #{MongoMapper.database.name}"
 rescue Exception => boom
   puts "Cannot establish connection to DB #{boom}"
