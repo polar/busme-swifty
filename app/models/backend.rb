@@ -24,8 +24,8 @@ class Backend
   belongs_to :frontend, :autosave => false
   one :backend_log, :dependent => :destroy, :autosave => false
   one :deploy_backend_job, :dependent => :destroy, :autosave => false
-  many :swift_endpoints, :autosave => false
-  many :worker_endpoints, :autosave => false
+  many :swift_endpoints, :dependent => :destroy, :autosave => false
+  many :worker_endpoints, :dependent => :destroy, :autosave => false
 
   before_validation :ensure_hostname, :ensure_name
 

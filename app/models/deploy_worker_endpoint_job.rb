@@ -53,7 +53,7 @@ class DeployWorkerEndpointJob
 
   def delayed_jobs
     Delayed::Job.where(:queue => "deploy-web", :failed_at => nil).select do |job|
-      job.payload_object.deploy_worker_endpoint_job_id == self.id
+      job.payload_object.is_a?(DeployWorkerEndpointJobspec) && job.payload_object.deploy_worker_endpoint_job_id == self.id
     end
   end
 
@@ -94,7 +94,7 @@ class DeployWorkerEndpointJob
               worker_endpoint.reload
               worker_endpoint.git_commit = commit
               set_status("Success:DeployStatus")
-              log "#{head}: Swift endpoint #{app_name} - #{commit.inspect}"
+              log "#{head}: Worker endpoint #{app_name} - #{worker_endpoint.git_commit.inspect} - updated_at #{worker_endpoint.updated_at}"
             else
               worker_endpoint.reload
               set_status("Error:DeployStatus")
@@ -259,6 +259,41 @@ class DeployWorkerEndpointJob
     log "#{head}: DONE"
   end
 
+  def restart_remote_endpoint
+    head = __method__
+    log "#{head}: START"
+    worker_endpoint.reload
+    set_status("Restarting")
+    case worker_endpoint.endpoint_type
+      when "Heroku"
+        begin
+          log "#{head}: Restarting remote worker endpoint #{app_name}."
+          result = HerokuHeadless.heroku.post_ps_restart(app_name)
+          worker_endpoint.reload
+          if result && result.data && result.data[:body]
+            set_status("Success:Restart")
+            log "status is #{result.data[:body].inspect}"
+            return result.data[:body].inspect
+          else
+            set_status("Error:Restart")
+            log "#{head}: remote worker endpoint #{app_name} bad result."
+            return nil
+          end
+        rescue Heroku::API::Errors::NotFound => boom
+          worker_endpoint.reload
+          set_status("Error:Restart")
+          log "#{head}: remote worker endpoint #{app_name} does not exist."
+          return nil
+        end
+      else
+        worker_endpoint.reload
+        set_status("Error:Restart")
+        log "#{head}: Unknown Endpoint type #{worker_endpoint.endpoint_type}"
+    end
+  ensure
+    log "#{head}: DONE"
+  end
+
   def stop_remote_endpoint
     head = __method__
     log "#{head}: START"
@@ -315,6 +350,7 @@ class DeployWorkerEndpointJob
               "S3_BUCKET_NAME" => ENV['S3_BUCKET_NAME'],
               "FOG_PROVIDER" => ENV['FOG_PROVIDER'],
               "FOG_DIRECTORY" => ENV['FOG_DIRECTORY'],
+              "ASSET_DIRECTORY" => ENV['ASSET_DIRECTORY'],
               "ASSET_HOST" => ENV['ASSET_HOST'],
               "MONGOLAB_URI" => ENV['MONGOLAB_URI'],
               "INTERCOM_APPID" => ENV['INTERCOM_APPID'],
@@ -469,7 +505,7 @@ class DeployWorkerEndpointJob
     result = create_remote_endpoint if not result
     result = configure_remote_endpoint if result
     result = deploy_to_remote_endpoint if result
-    result = restart_remote_endpoint if result
+    result = start_remote_endpoint if result
     return result
   ensure
     log "#{head}: DONE"

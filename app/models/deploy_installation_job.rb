@@ -205,6 +205,8 @@ class DeployInstallationJob
         log "#{head}: #{line}"
       end
     end
+    null_all_statuses
+    null_remote_statuses
     for fe in installation.frontends do
       if fe.deploy_frontend_job.nil?
         fe.create_deploy_frontend_job
@@ -227,10 +229,6 @@ class DeployInstallationJob
         be.create_deploy_backend_job
       end
       begin
-        if ! be.configured
-          log "#{head}: configure_remote_backend #{be.name}"
-          be.deploy_backend_job.configure_remote_backend
-        end
         log "#{head}: deploy_swift_endpoint_apps #{be.name}"
         job = DeployBackendJobspec.new(be.deploy_backend_job.id, be.name, "deploy_swift_endpoint_apps", nil)
         Delayed::Job.enqueue(job, :queue => "deploy-web")

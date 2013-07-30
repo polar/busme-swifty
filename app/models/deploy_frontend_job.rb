@@ -42,6 +42,10 @@ class DeployFrontendJob
     "ssh -o StrictHostKeychecking=no -o CheckHostIP=no -o UserKnownHostsFile=/dev/null -i #{ssh_cert} ec2-user@#{frontend.host} #{cmd}"
   end
 
+  def scp_cmd(path, remote_path)
+    "scp -o StrictHostKeychecking=no -o CheckHostIP=no -o UserKnownHostsFile=/dev/null -i #{ssh_cert} #{path} ec2-user@#{frontend.host}:#{remote_path}"
+  end
+
   def install_remote_frontend
     head = __method__
     log "#{head}: START"
@@ -99,6 +103,20 @@ class DeployFrontendJob
     log "#{head}: DONE"
   end
 
+  def frontend_busme_creds
+    vars = {
+        "INSTALLATION" => frontend.installation.name,
+        "MONGOLAB_URI" => ENV['MONGOLAB_URI'],
+        "SWIFTIPLY_KEY" => ENV['SWIFTIPLY_KEY'],
+    }
+    file = File.open("/tmp/busme_creds", "w+")
+    vars.each_pair do |k,v|
+      file.write("export #{k}='#{v}'\n")
+    end
+    file.close
+    file
+  end
+
   def configure_remote_frontend_backends
     head = __method__
     log "#{head}: START"
@@ -119,6 +137,14 @@ class DeployFrontendJob
     log "#{head}: START"
     case frontend.host_type
       when "ec2"
+        credsfile = frontend_busme_creds
+        cmd = scp_cmd(credsfile.path, ".busme_creds")
+        log "#{head}: #{cmd}"
+        Open3.popen2e(cmd) do |stdin,out,wait_thr|
+          pid = wait_thr.pid
+          out.each {|line| log("#{head}: #{line}")}
+        end
+        File.delete(credsfile.path)
         cmd = ssh_cmd "\\\"#{frontend.git_name}/scripts/configure_frontend.sh\\\" --name \\\"#{frontend.name}\\\""
         log "#{head}: #{cmd}"
         Open3.popen2e(cmd) do |stdin,out,wait_thr|
@@ -371,6 +397,29 @@ class DeployFrontendJob
             job = DeployBackendJobspec.new(be.deploy_backend_job.id, be.name, "start_swift_endpoint_apps", nil)
             Delayed::Job.enqueue(job, :queue => "deploy-web")
             job = DeployBackendJobspec.new(be.deploy_backend_job.id, be.name, "start_worker_endpoint_apps", nil)
+            Delayed::Job.enqueue(job, :queue => "deploy-web")
+          rescue Exception => boom
+            log "#{head}: Error creating endpoint apps for backend #{be.name} - #{boom}"
+          end
+        end
+    end
+  ensure
+    log "#{head}: DONE"
+  end
+
+  def restart_all_endpoint_apps
+    head = __method__
+    log "#{head}: START"
+    case frontend.host_type
+      when "ec2"
+        for be in frontend.backends do
+          begin
+            if be.deploy_backend_job.nil?
+              be.create_deploy_backend_job
+            end
+            job = DeployBackendJobspec.new(be.deploy_backend_job.id, be.name, "restart_swift_endpoint_apps", nil)
+            Delayed::Job.enqueue(job, :queue => "deploy-web")
+            job = DeployBackendJobspec.new(be.deploy_backend_job.id, be.name, "restart_worker_endpoint_apps", nil)
             Delayed::Job.enqueue(job, :queue => "deploy-web")
           rescue Exception => boom
             log "#{head}: Error creating endpoint apps for backend #{be.name} - #{boom}"
