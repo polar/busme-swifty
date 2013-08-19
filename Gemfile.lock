@@ -7,11 +7,11 @@ GIT
 
 GIT
   remote: git://github.com/polar/delayed_job_mongo_mapper.git
-  revision: 8f1f516ca33fd1a3cbadfb4de6f47b780d4b5874
+  revision: ecddebc029e6142fa19a29a72b3af39f0c1f9dfc
   specs:
     delayed_job_mongo_mapper (1.1.0)
       delayed_job (~> 3.0.1)
-      mongo_mapper (~> 0.11.0)
+      mongo_mapper (>= 0.11)
 
 GIT
   remote: git://github.com/polar/swiftiply.git
@@ -23,11 +23,11 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (3.2.14)
-      activesupport (= 3.2.14)
+    activemodel (3.2.11)
+      activesupport (= 3.2.11)
       builder (~> 3.0.0)
-    activesupport (3.2.14)
-      i18n (~> 0.6, >= 0.6.4)
+    activesupport (3.2.11)
+      i18n (~> 0.6)
       multi_json (~> 1.0)
     bson (1.9.1)
     bson_ext (1.9.1)
@@ -40,19 +40,19 @@ GEM
     daemons (1.1.9)
     eventmachine (1.0.3)
     fattr (2.2.1)
-    i18n (0.6.4)
+    i18n (0.6.5)
     json (1.8.0)
     mm-carrierwave (0.0.2)
       carrierwave (~> 0.5)
       mongo_mapper (~> 0.9)
     mongo (1.9.1)
       bson (~> 1.9.1)
-    mongo_mapper (0.11.1)
+    mongo_mapper (0.12.0)
       activemodel (~> 3.0)
       activesupport (~> 3.0)
-      plucky (~> 0.4.0)
-    multi_json (1.7.7)
-    plucky (0.4.4)
+      plucky (~> 0.5.2)
+    multi_json (1.7.9)
+    plucky (0.5.2)
       mongo (~> 1.5)
     rush (0.6.8)
       session
@@ -63,12 +63,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemodel (= 3.2.11)
   bson_ext
   carrierwave
   daemons
   delayed_job!
   delayed_job_mongo_mapper!
-  mm-carrierwave
-  mongo_mapper
+  mm-carrierwave (~> 0.0.2)
+  mongo_mapper (= 0.12.0)
   rush
   swiftiply!
