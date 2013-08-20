@@ -38,7 +38,7 @@ if ! config["name"].nil?
 
     for be in frontend.backends do
       be.listen_status = array_match(/(#{be.address}:#{be.port}.*LISTEN)/, netstat)
-      be.connection_status = array_match(/(#{be.address}:#{be.port}.*ESTABLISHED)/, netstat)
+      be.connection_status = array_match(/:#{be.port}.*ESTABLISHED)/, netstat)
       be.save
     end
   else

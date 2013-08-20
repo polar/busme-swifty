@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/backend.rb" afterPath="$PROJECT_DIR$/app/models/backend.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/status_frontend.rb" afterPath="$PROJECT_DIR$/scripts/status_frontend.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1375188484726" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374263834242" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1376958734733" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1376959140309" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -461,8 +461,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deploy_installation_jobspec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/deploy_installation_jobspec.rb">
+      <file leaf-file-name="backend.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/backend.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="74" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deploy_frontend_job.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/deploy_frontend_job.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -470,19 +479,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configure_frontend_backends.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/configure_frontend_backends.rb">
+      <file leaf-file-name="status_frontend.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/status_frontend.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="36" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backend.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/backend.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="74" selection-start="512" selection-end="512" vertical-scroll-proportion="0.53956836">
+            <state line="40" column="42" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.6744604">
               <folding />
             </state>
           </provider>
@@ -547,7 +547,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/backend-nginx.master_id_location.template" />
         <option value="$PROJECT_DIR$/scripts/configure_backend.sh" />
         <option value="$PROJECT_DIR$/scripts/configure_frontend_backends.sh" />
         <option value="$PROJECT_DIR$/scripts/configure_frontend.sh" />
@@ -563,6 +562,7 @@
         <option value="$PROJECT_DIR$/scripts/configure_frontend_backends.rb" />
         <option value="$PROJECT_DIR$/config/initialize.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/scripts/status_frontend.rb" />
       </list>
     </option>
   </component>
@@ -1843,13 +1843,18 @@
       <created>1375201799847</created>
       <updated>1375201799847</updated>
     </task>
-    <option name="localTasksCounter" value="237" />
+    <task id="LOCAL-00237" summary="update">
+      <created>1376959146974</created>
+      <updated>1376959146974</updated>
+    </task>
+    <option name="localTasksCounter" value="238" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="82" y="127" width="1280" height="1024" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1864,7 +1869,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3289183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1934,18 +1938,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/aa_creds.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="14" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/boot.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -2037,7 +2029,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/backend.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="74" selection-start="512" selection-end="512" vertical-scroll-proportion="0.53956836">
+        <state line="20" column="74" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/deploy_frontend_job.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/status_frontend.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="42" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.6744604">
           <folding />
         </state>
       </provider>
