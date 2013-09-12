@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: git://github.com/polar/swiftiply.git
-  revision: 7b2f751f5cf2d68f1657c5dcb101b5bb7f5627a4
+  revision: dc63d5b43b6859eccd9abb53684cb6e94c11c9a7
   specs:
     swiftiply (0.7.0.pre)
       eventmachine (>= 0.8.1)
@@ -29,9 +29,9 @@ GEM
     activesupport (3.2.11)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    bson (1.9.1)
-    bson_ext (1.9.1)
-      bson (~> 1.9.1)
+    bson (1.9.2)
+    bson_ext (1.9.2)
+      bson (~> 1.9.2)
     builder (3.0.4)
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
@@ -45,13 +45,13 @@ GEM
     mm-carrierwave (0.0.2)
       carrierwave (~> 0.5)
       mongo_mapper (~> 0.9)
-    mongo (1.9.1)
-      bson (~> 1.9.1)
+    mongo (1.9.2)
+      bson (~> 1.9.2)
     mongo_mapper (0.12.0)
       activemodel (~> 3.0)
       activesupport (~> 3.0)
       plucky (~> 0.5.2)
-    multi_json (1.7.9)
+    multi_json (1.8.0)
     plucky (0.5.2)
       mongo (~> 1.5)
     rush (0.6.8)
