@@ -28,18 +28,17 @@ if ! config["name"].nil?
   frontend.git_commit = Rush.bash("git log --max-count=1").split("\n").take(3)
   if frontend
     frontend.listen_status = []
-    frontend.listen_status += array_match(/(0.0.0.0:80.*LISTEN)/, netstat)
-    frontend.listen_status += array_match(/(0.0.0.0:443.*LISTEN)/, netstat)
+    frontend.listen_status += array_match(/([0-9a-f\:\.]*:80.*LISTEN)/, netstat)
+    frontend.listen_status += array_match(/([0-9a-f\:\.]*:443.*LISTEN)/, netstat)
 
     frontend.connection_status = []
-    frontend.connection_status += array_match(/(0.0.0.0:80.*ESTABLISHED)/, netstat)
-    frontend.connection_status += array_match(/(0.0.0.0:443.*ESTABLISHED)/, netstat)
+    frontend.connection_status += array_match(/([0-9a-f\:\.]*:80.*ESTABLISHED)/, netstat)
+    frontend.connection_status += array_match(/([0-9a-f\:\.]*:443.*ESTABLISHED)/, netstat)
     frontend.save
 
     for be in frontend.backends do
-      # TODO: This approach is IPv4 centric
       be.listen_status = array_match(/(#{be.cluster_address}:#{be.cluster_port}).*LISTEN/, netstat)
-      be.connection_status = array_match(/([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:#{be.port}.*ESTABLISHED)/, netstat)
+      be.connection_status = array_match(/([0-9a-f\:\.]*:#{be.port}.*ESTABLISHED)/, netstat)
       be.save
     end
   else
