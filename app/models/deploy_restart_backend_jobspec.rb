@@ -11,7 +11,7 @@ class DeployRestartBackendJobspec < Struct.new(:queue, :backend_id, :period)
 
   def perform
     MongoMapper::Plugins::IdentityMap.clear
-    backend = Backends.find(backend_id)
+    backend = Backend.find(backend_id)
     if backend
       @frontend = backend.frontend
       job = DeployFrontendJobspec.new(@frontend.deploy_frontend_job.id, @frontend.host, "restart_remote_backend", backend.id, backend.name)

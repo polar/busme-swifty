@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1381851501907" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374263834242" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1382379365993" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1382383367175" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -493,7 +493,7 @@
       <file leaf-file-name="deploy_restart_backend_jobspec.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/deploy_restart_backend_jobspec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="21" selection-start="126" selection-end="126" vertical-scroll-proportion="0.079768784">
+            <state line="14" column="31" selection-start="405" selection-end="405" vertical-scroll-proportion="0.37225434">
               <folding />
             </state>
           </provider>
@@ -2040,7 +2040,11 @@
       <created>1382379332794</created>
       <updated>1382379332794</updated>
     </task>
-    <option name="localTasksCounter" value="250" />
+    <task id="LOCAL-00250" summary="update">
+      <created>1382383371259</created>
+      <updated>1382383371259</updated>
+    </task>
+    <option name="localTasksCounter" value="251" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2238,7 +2242,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/deploy_restart_backend_jobspec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="21" selection-start="126" selection-end="126" vertical-scroll-proportion="0.079768784">
+        <state line="14" column="31" selection-start="405" selection-end="405" vertical-scroll-proportion="0.37225434">
           <folding />
         </state>
       </provider>
