@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
+require 'delayed_job'
+require 'delayed_job_mongo_mapper'
 require 'net/http'
 require "swiftcore/Swiftiply"
 
@@ -20,6 +22,11 @@ backend = Backend.find_by_name(backend_name) if backend_name
 if backend.nil?
   puts "Backend #{backend_name} does not exist."
   exit 1
+end
+
+def schedule_restart(backend, period)
+  job = DeployRestartBackendJobspec.new("deploy-web", backend.frontend.id, backend.id, period)
+  Delayed::Job.enqueue(job, :queue => "deploy-web")
 end
 
 def stop_proxy(signal)
@@ -49,6 +56,7 @@ config['map'][0]['key']       = ENV["SWIFTIPLY_KEY"]
 
 
 begin
+  schedule_restart(backend, 4.hours)
   Swiftcore::Swiftiply.run(config)
 rescue Exception => boom
 end
