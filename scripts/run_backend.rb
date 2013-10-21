@@ -25,7 +25,7 @@ if backend.nil?
 end
 
 def schedule_restart(backend, period)
-  job = DeployRestartBackendJobspec.new("deploy-web", backend.frontend.id, backend.id, period)
+  job = DeployRestartBackendJobspec.new("deploy-web", backend.id, period)
   Delayed::Job.enqueue(job, :queue => "deploy-web")
 end
 
