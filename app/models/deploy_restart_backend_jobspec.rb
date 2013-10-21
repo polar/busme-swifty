@@ -1,7 +1,7 @@
 class DeployRestartBackendJobspec < Struct.new(:queue, :backend_id, :period)
 
   def enqueue(delayed_job)
-    backend = Backends.find(backend_id)
+    backend = Backend.find(backend_id)
     if backend
       puts "Backend #{backend.name} will be restarted every #{period} seconds."
     else
