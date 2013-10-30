@@ -28,7 +28,7 @@ def schedule_restart(backend, period)
   job = DeployRestartBackendJobspec.new("deploy-web", backend.id, period)
   Delayed::Job.enqueue(job, :queue => "deploy-web")
 
-  keepalive = KeepAliveRestartBackendJob.new("deploy-web", backend.id, 180)
+  keepalive = KeepaliveRestartBackendJob.new("deploy-web", backend.id, 180)
   Delayed::Job.enqueue(keepalive, :queue => "deploy-web")
 end
 
