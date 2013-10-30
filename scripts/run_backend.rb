@@ -29,7 +29,7 @@ def schedule_restart(backend, period)
   Delayed::Job.enqueue(job, :queue => "deploy-web")
 
   keepalive = KeepaliveRestartBackendJob.new("deploy-web", backend.id, 180)
-  Delayed::Job.enqueue(keepalive, :queue => "deploy-web")
+  Delayed::Job.enqueue(keepalive, :queue => "deploy-web", :run_at => Time.now + 180.seconds)
 end
 
 def stop_proxy(signal)
