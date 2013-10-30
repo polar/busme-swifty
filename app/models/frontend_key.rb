@@ -9,7 +9,8 @@ class FrontendKey
   # so if we don't have it, we don't need it.
   begin
   mount_uploader :ssh_key, FrontendKeyFileUploader
-  rescue NameError
+  rescue NameError  => boom
+    puts "NameError #{boom} CarrierWave???"
   end
 
 
