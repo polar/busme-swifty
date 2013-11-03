@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/keepalive_restart_backend_job.rb" afterPath="$PROJECT_DIR$/app/models/keepalive_restart_backend_job.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
@@ -27,7 +26,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1381851501907" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374263834242" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383169923881" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383397825860" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -60,7 +59,7 @@
     <file path="$PROJECT_DIR$/../thin/lib/thin/backends/swiftiply_client.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374773173927" ignored="false" />
     <file path="$PROJECT_DIR$/../thin/.idea/dictionaries/polar.xml" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368537168687" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass.web/Gemfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368538093297" ignored="false" />
-    <file path="/*.regexp" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1375199659357" ignored="false" />
+    <file path="/*.regexp" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383350958319" ignored="false" />
     <file path="/fragment.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1379097691624" ignored="false" />
     <file path="/nginx.conf" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1381248612969" ignored="false" />
     <file path="/creds" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368672692302" ignored="false" />
@@ -154,8 +153,8 @@
     <file path="/upgrade_frontend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1375185868670" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/uploaders/frontend_key_file_uploader.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373643027230" ignored="false" />
     <file path="/frontend_key_file_uploader.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374012924764" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/frontend_key.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374071057961" ignored="false" />
-    <file path="/frontend_key.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374071045256" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/frontend_key.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383172329475" ignored="false" />
+    <file path="/frontend_key.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383172679274" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/upload_key.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373644546407" ignored="false" />
     <file path="/upload_key.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373644544450" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/Gemfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1379018430659" ignored="false" />
@@ -412,7 +411,7 @@
     <file path="$PROJECT_DIR$/../buspass-web/app/models/mongo_mapper_database_repair_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1375212568638" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/network_compile_service_table_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1375212582736" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/models/restart2_daemon_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1375212620185" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/vehicle_journey_simulate_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1382385483233" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/vehicle_journey_simulate_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383397594894" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-workers/app/models/create_site_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1375213901233" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/config/application.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1375218797923" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/frontends/backends/_update_backends_status.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1377021674364" ignored="false" />
@@ -449,9 +448,9 @@
     <file path="$PROJECT_DIR$/../buspass-workers/log/newrelic_agent.log" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1379341434239" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-deployer/script/unix_endpoint_config.bash" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1379085232987" ignored="false" />
     <file path="/unix_endpoint_config.bash" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1379085200574" ignored="false" />
-    <file path="$PROJECT_DIR$/../buspass-web/app/models/vehicle_journey.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1381254542707" ignored="false" />
-    <file path="/vehicle_journey.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1381254534337" ignored="false" />
-    <file path="/vehicle_journey_simulate_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1382385483832" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/models/vehicle_journey.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383397482945" ignored="false" />
+    <file path="/vehicle_journey.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383397811090" ignored="false" />
+    <file path="/vehicle_journey_simulate_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383397720415" ignored="false" />
     <file path="/local_worker.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1379094280197" ignored="false" />
     <file path="/usr/local/rvm/gems/ruby-1.9.3-p194@global/gems/newrelic_mongo-0.0.4/lib/newrelic_mongo/instrumentation/mongo.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1379100571402" ignored="false" />
     <file path="/mongo.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1379100570581" ignored="false" />
@@ -463,8 +462,16 @@
     <file path="/restart_backend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1382374657620" ignored="false" />
     <file path="/deploy_restart_backend_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1382378150928" ignored="false" />
     <file path="/keepalive_restart_backend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383169868232" ignored="false" />
-    <file path="$PROJECT_DIR$/../busme-web-master/app/models/vehicle_journey_simulate_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383168624386" ignored="false" />
+    <file path="$PROJECT_DIR$/../busme-web-master/app/models/vehicle_journey_simulate_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383397720415" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-deployer/app/models/keepalive_restart_backend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383169918631" ignored="false" />
+    <file path="$PROJECT_DIR$/../busme-web-master/app/models/keepalive_restart_backend_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383172303669" ignored="false" />
+    <file path="$PROJECT_DIR$/../busme-web-master/app/models/frontend_key.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383353212169" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-workers/app/models/simulate_automatic_restart_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383174959379" ignored="false" />
+    <file path="/simulate_automatic_restart_jobspec.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383174959039" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-workers/app/models/simulate_job.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383174294500" ignored="false" />
+    <file path="$PROJECT_DIR$/../buspass-web/app/assets/javascripts/LocationMapViewController.js.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383252772581" ignored="false" />
+    <file path="/LocationMapViewController.js.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383252768725" ignored="false" />
+    <file path="$PROJECT_DIR$/../busme-web-master/app/models/vehicle_journey.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1383397818695" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -484,10 +491,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="run_backend.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="run_backend.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/run_backend.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="62" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0">
+            <state line="47" column="62" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.8226371">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="initialize.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/initialize.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -497,24 +513,6 @@
         <entry file="file://$PROJECT_DIR$/app/models/deploy_restart_backend_jobspec.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="15" column="128" selection-start="405" selection-end="580" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deploy_backend_jobspec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/deploy_backend_jobspec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="43" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deploy_backend_job.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/deploy_backend_job.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -556,10 +554,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="keepalive_restart_backend_job.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="keepalive_restart_backend_job.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/keepalive_restart_backend_job.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frontend_key.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/frontend_key.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="50" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -597,7 +604,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/scripts/configure_frontend.rb" />
         <option value="$PROJECT_DIR$/bashrc.sh" />
         <option value="$PROJECT_DIR$/install.sh" />
         <option value="$PROJECT_DIR$/scripts/configure_frontend_backends.rb" />
@@ -613,6 +619,7 @@
         <option value="$PROJECT_DIR$/app/models/deploy_restart_backend_jobspec.rb" />
         <option value="$PROJECT_DIR$/app/models/keepalive_restart_backend_job.rb" />
         <option value="$PROJECT_DIR$/scripts/run_backend.rb" />
+        <option value="$PROJECT_DIR$/app/models/frontend_key.rb" />
       </list>
     </option>
   </component>
@@ -2067,12 +2074,16 @@
       <created>1383168733828</created>
       <updated>1383168733828</updated>
     </task>
-    <option name="localTasksCounter" value="256" />
+    <task id="LOCAL-00256" summary="update">
+      <created>1383172757588</created>
+      <updated>1383172757588</updated>
+    </task>
+    <option name="localTasksCounter" value="257" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1917" y="-3" width="1286" height="1031" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2158,16 +2169,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/stop_backend.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="5" selection-start="0" selection-end="725" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/start_backends.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/start_backend.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -2250,9 +2251,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/run_backend.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/frontend_key.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="62" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0">
+        <state line="6" column="50" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initialize.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -2260,6 +2268,13 @@
     <entry file="file://$PROJECT_DIR$/app/models/keepalive_restart_backend_job.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/run_backend.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="62" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.8226371">
           <folding />
         </state>
       </provider>
