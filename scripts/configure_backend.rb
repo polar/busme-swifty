@@ -1,116 +1,117 @@
 #!/usr/bin/env ruby
 require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
-config = {}
-config["frontend_address"] = "0.0.0.0"
-config["backend_address"]  = "0.0.0.0"
-config["cluster_address"]  = "127.0.0.1"
 
-OptionParser.new do |opts|
-  opts.banner = 'Usage: configure_backend.rb [options]'
-  opts.separator ''
-  opts.on('--name [NAME]', String, 'The name of this backend') do |fqdn|
-    config["name"] = fqdn
-  end
-  opts.on('--frontend-name [NAME]', String, 'The name of the frontend that is fronting for this backend') do |fqdn|
-    config["frontend_name"] = fqdn
-  end
-  opts.on('--frontend-address [ADDRESS]', String, 'The IP address that nginx will listen for connections on. Ports will be 80/443. Default 0.0.0.0') do |address|
-    config['address'] = address
-  end
-  opts.on('--master-slug [NAME]', String, 'The slug of master that this backend is serving.') do |address|
-    config['master_slug'] = address
-  end
-  opts.on('--base_hostname [NAME]', String, 'The hostname that matches this backend. If master master_slug it should be master_slug.hostname') do |address|
-    config['base_hostname'] = address
-  end
-  opts.on('--server-name [name]', String, 'The alternate hostname that matches this backend.') do |address|
-    config['server_name'] = address
-  end
-  opts.on('--cluster-address [ADDRESS]', String, 'The hostname/IP address that Busme! Swifty will listen for connections on. Default 127.0.0.1') do |address|
-    config['cluster_address'] = address
-  end
-  opts.on('--cluster-port [PORT]', String, 'The port that Busme! Swifty will listen for connections on.') do |port|
-    config['cluster_port'] = port
-  end
-  opts.on('--backend-address [ADDRESS]', String, 'The hostname/IP address to which Busme! swifty web runners connect. Default 0.0.0.0') do |address|
-    config['address'] = address
-  end
-  opts.on('--backend-port [PORT]', String, 'The port to which Busme! swifty web runners connect.') do |address|
-    config['port'] = port
-  end
-  opts.on('-t', '--timeout [SECONDS]', String, 'The server unavailable timeout.  Defaults to 3 seconds.') do |timeout|
-    config['timeout'] = timeout
-  end
-end.parse!
+  def configuration_nginx(backend)
+    nginx_servers = backend.proxy_addresses.map { |addr| "server #{addr};" }
+    upstream      =
+    "
+       upstream #{backend.name} {
+       #{nginx_servers.join("\n        ")}
+       }
+    "
 
-if config["name"].nil?
-  if config["frontend-name"].nil?
-    begin
-      hostip = Net::HTTP.get(URI.parse('http://myexternalip.com/raw'))
-    rescue Exception => boom1
-      puts "Cannot establish external IP: #{boom1}"
-      exit 1
+    locations = backend.locations.map do |location|
+    "
+          location ^~ /#{location}/ {
+              proxy_set_header  X-Real-IP  $remote_addr;
+              proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header  Host $http_host;
+              proxy_redirect    off;
+              proxy_pass        http://#{backend.name};
+          }
+    "
     end
 
-    if hostip.nil?
-      puts "Cannot establish external IP"
-      exit 1
-    end
-    puts "External Host IP: #{hostip}"
-    config["frontend_name"] = hostip
+    nginx_servernames = "server_name #{backend.hostnames.join(" ")}"
+
+    "
+    #{upstream}
+
+      server {
+          listen       80;
+          #{nginx_servernames};
+          access_log  /var/log/nginx/@NAME.log  main;
+
+    #{locations}
+
+          location / {
+              proxy_set_header  X-Real-IP  $remote_addr;
+              proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header  Host $http_host;
+              proxy_redirect    off;
+              proxy_pass        http://#{backend.name};
+          }
+      }
+
+      server {
+          listen       443;
+          #{nginx_servernames};
+          access_log  /var/log/nginx/@NAME.log  main;
+
+          ssl                  on;
+          ssl_certificate      /etc/ssl/certs/web-host.pem;
+          ssl_certificate_key  /etc/ssl/private/web-host.key;
+
+          ssl_session_timeout  5m;
+
+          ssl_protocols  SSLv2 SSLv3 TLSv1;
+          ssl_ciphers  HIGH:!aNULL:!MD5;
+          ssl_prefer_server_ciphers   on;
+
+    #{locations}
+
+          location / {
+              proxy_set_header  X-Real-IP  $remote_addr;
+              proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header  Host $http_host;
+              proxy_redirect    off;
+              proxy_pass        http://#{backend.name};
+          }
+      }
+  "
   end
 
-  frontend = Frontend.find_by_name("#{config["frontend_name"]}")
-  if frontend.nil?
-    # We are already configured.
-    puts "Frontend #{frontend.name} does not exist."
-    exit 1
-  end
+  def configure_start(backend)
+    case backend.deployment_type
+      when "swift"
+        "
+cd ~/#{frontend.git_name}
+bundle install
 
-  config["frontend"] = frontend
-  if config["base_hostname"]
-    if config["master_slug"]
-      config["hostname"] = "#{config["master_slug"].config["base_hostname"]}"
-    else
-      config["hostname"] = config["base_hostname"] if config["hostname"].nil?
-    end
-  else
-    config["hostname"] = frontend.hostname if config["hostname"].nil?
-  end
+# @NAME
 
-  if ! config["master_slug"].blank?
-    master = Master.find_by_slug(config["master_slug"])
-    master_id = master.id if master
-    puts "This is a Master based Backend for #{config["master_slug"]} with id #{master_id}"
-    name = "A-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
-  else
-    name = "Z-#{frontend.name}-#{config["hostname"]}-#{config["frontend_address"]}-#{config["cluster_address"]}-#{config["cluster_port"]}-#{config["backend_address"]}-#{config["backend-port"]}"
-  end
-  backend = Backend.find_by_name(name)
-  if backend.nil?
-    backend = Backend.new(config)
-    if backend.valid?
-      backend.save
+echo \"Starting #{backend.name}\" > /var/log/swifty/#{backend.name}.log
+bundle exec ruby scripts/run_backend.rb #{backend.name} >> /var/log/swifty/#{backend.name}.log 2>&1  &
+echo $! > /var/run/swifty/#{backend.name}.pid
+ps alx | grep `cat /var/run/swifty#{backend.name}.pid` >> /var/log/swifty/#{backend.name}.log
+echo PID IS `cat /var/run/swifty/#{backend.name}.pid` >> /var/log/swifty/#{backend.name}.log
+echo Backend #{backend.name} started with PID `cat /var/run/swifty/#{backend.name}.pid`
+"
     end
   end
-else
-  name = config["name"]
-  backend = Backend.find_by_name(name)
-  master = Master.find_by_slug(backend.master_slug)
-  if master
-    master_id = master.id
-    puts "This is a Master based Backend for #{config["master_slug"]} with id #{master_id}"
+
+  def configure_nginx(backend)
+    conf = configuration_nginx(backend)
+    fname = File.expand_path("../backends.d/#{backend.name}", File.dirname(__FILE__))
+    file = File.open(fname, "w+")
+    file.write(conf)
+    file.close
   end
-  if backend.nil?
-    puts "Backend #{name} does not exist."
-    exit 1
-  end
+
+# The only argument is the name of the Backend.
+
+backend = Backend.find_by_name(ARGV[1])
+if backend.nil?
+  puts "Backend #{backend.name} does not exist."
+  exit 1
 end
 
-puts Rush.bash("scripts/create_backend_configfiles.sh '#{backend.name}' '#{backend.master_slug}' '#{master_id}' '#{backend.frontend_address}' '#{backend.hostname}' '#{backend.server_name}' '#{backend.cluster_address}' '#{backend.cluster_port}' '#{backend.address}' '#{backend.port}'")
+case backend.frontend.deployment_type
+  when "ec2"
+    configure_nginx(backend)
+  when "unix"
+    configure_nginx(backend)
+end
 
-backend.configured = true
-backend.save
-
-puts "#{backend.name}"
+puts "Backend #{backend.name} is configured."
