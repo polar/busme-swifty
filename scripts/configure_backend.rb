@@ -6,8 +6,8 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
     nginx_servers = backend.proxy_addresses.map { |addr| "server #{addr};" }
     upstream      =
     "
-       upstream #{backend.name} {
-       #{nginx_servers.join("\n        ")}
+      upstream #{backend.name} {
+          #{nginx_servers.join("\n          ")}
        }
     "
 
@@ -33,7 +33,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
           #{nginx_servernames};
           access_log  /var/log/nginx/@NAME.log  main;
 
-    #{locations}
+    #{locations.join("\n")}
 
           location / {
               proxy_set_header  X-Real-IP  $remote_addr;
@@ -59,7 +59,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
           ssl_ciphers  HIGH:!aNULL:!MD5;
           ssl_prefer_server_ciphers   on;
 
-    #{locations}
+    #{locations.join("\n")}
 
           location / {
               proxy_set_header  X-Real-IP  $remote_addr;
