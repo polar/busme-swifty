@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initialize.rb" afterPath="$PROJECT_DIR$/config/initialize.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/configure_backend.rb" afterPath="$PROJECT_DIR$/scripts/configure_backend.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/configure_frontend.rb" afterPath="$PROJECT_DIR$/scripts/configure_frontend.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/deconfigure_backend.rb" afterPath="$PROJECT_DIR$/scripts/deconfigure_backend.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/deconfigure_frontend.rb" afterPath="$PROJECT_DIR$/scripts/deconfigure_frontend.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
@@ -27,7 +30,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1381851501907" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374263834242" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384477115537" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384477237399" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -646,15 +649,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="start_frontend.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/start_frontend.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="stop_backend.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/stop_backend.sh">
           <provider selected="true" editor-type-id="text-editor">
@@ -673,8 +667,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deconfigure_backend.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/deconfigure_backend.sh">
+      <file leaf-file-name="configure_backend.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/configure_backend.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="102" column="44" selection-start="3024" selection-end="3024" vertical-scroll-proportion="0.51377636">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deconfigure_backend.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/deconfigure_backend.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="21" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deconfigure_frontend.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/deconfigure_frontend.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="27" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deconfigure_frontend.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/deconfigure_frontend.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state line="1" column="17" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
               <folding />
@@ -691,10 +712,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="initialize.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="initialize.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/initialize.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="69" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.9254967">
+            <state line="38" column="69" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="configure_frontend.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/configure_frontend.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="25" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -704,33 +734,6 @@
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
             <state line="15" column="19" selection-start="456" selection-end="475" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="status_frontend.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/status_frontend.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deconfigure_frontend.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/deconfigure_frontend.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="17" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="start_backend.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/start_backend.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="17" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -759,14 +762,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/scripts/status_frontend.rb" />
-        <option value="$PROJECT_DIR$/scripts/stop_frontend.sh" />
         <option value="$PROJECT_DIR$/scripts/status_frontend.sh" />
         <option value="$PROJECT_DIR$/scripts/start_backends.sh" />
         <option value="$PROJECT_DIR$/install.sh" />
-        <option value="$PROJECT_DIR$/scripts/configure_backend.rb" />
         <option value="$PROJECT_DIR$/.ruby-version" />
-        <option value="$PROJECT_DIR$/scripts/configure_frontend.rb" />
         <option value="$PROJECT_DIR$/scripts/configure_frontend.sh" />
         <option value="$PROJECT_DIR$/scripts/configure_backend.sh" />
         <option value="$PROJECT_DIR$/scripts/deconfigure_backend.sh" />
@@ -775,6 +774,10 @@
         <option value="$PROJECT_DIR$/scripts/stop_backend.sh" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/initialize.rb" />
+        <option value="$PROJECT_DIR$/scripts/configure_backend.rb" />
+        <option value="$PROJECT_DIR$/scripts/deconfigure_backend.rb" />
+        <option value="$PROJECT_DIR$/scripts/deconfigure_frontend.rb" />
+        <option value="$PROJECT_DIR$/scripts/configure_frontend.rb" />
       </list>
     </option>
   </component>
@@ -2225,7 +2228,11 @@
       <created>1384477118210</created>
       <updated>1384477118210</updated>
     </task>
-    <option name="localTasksCounter" value="255" />
+    <task id="LOCAL-00255" summary="update">
+      <created>1384477240923</created>
+      <updated>1384477240923</updated>
+    </task>
+    <option name="localTasksCounter" value="256" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2316,34 +2323,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nginx.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/configure_frontend.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="37" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/configure_backend.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="93" selection-start="2543" selection-end="2543" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/frontend.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/configure_frontend.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="17" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
@@ -2359,13 +2338,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/deconfigure_backend.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="17" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/deconfigure_frontend.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="17" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
           <folding />
@@ -2423,7 +2395,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initialize.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="69" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.9254967">
+        <state line="38" column="69" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/deconfigure_frontend.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="17" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/deconfigure_frontend.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="27" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/deconfigure_backend.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="21" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/configure_frontend.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="25" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/configure_backend.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="44" selection-start="3024" selection-end="3024" vertical-scroll-proportion="0.51377636">
           <folding />
         </state>
       </provider>

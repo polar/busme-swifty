@@ -101,7 +101,7 @@ echo Backend #{backend.name} started with PID `cat /var/run/swifty/#{backend.nam
 
 # The only argument is the name of the Backend.
 
-backend = Backend.find_by_name(ARGV[1])
+backend = Backend.find_by_name(ARGV[0])
 if backend.nil?
   puts "Backend #{backend.name} does not exist."
   exit 1
