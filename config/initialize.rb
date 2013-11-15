@@ -6,6 +6,7 @@ require 'mongo'
 require 'mongo_mapper'
 require 'optparse'
 require "rush"
+require "require_all"
 
 
 # This exists for local development. This file does not exist in production..
