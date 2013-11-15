@@ -16,3 +16,4 @@ for p in processes do
   puts "Killing #{p.pid}."
   p.kill("QUIT")
 end
+exit 0

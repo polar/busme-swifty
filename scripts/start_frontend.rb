@@ -14,3 +14,4 @@ frontend.backends.each do |backend|
   puts "Starting Backend #{backend.name}"
   puts Rush.bash("#{backend.start_command} #{backend.name}")
 end
+exit 0
