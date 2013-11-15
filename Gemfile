@@ -11,3 +11,5 @@ gem "mm-carrierwave", "~> 0.0.2" # Using the MongoMapper ORM
 gem "delayed_job", :git => "git://github.com/polar/delayed_job"
 gem "delayed_job_mongo_mapper", :git => "git://github.com/polar/delayed_job_mongo_mapper.git"
 gem "daemons"
+
+gem "require_all"

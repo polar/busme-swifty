@@ -35,4 +35,4 @@ rescue Exception => boom
 end
 
 dir = File.expand_path("../app/models", File.dirname(__FILE__))
-Dir[File.join(dir, "*.rb")].each { |f| require f }
+autoload_all File.join(dir, "/*.rb")
