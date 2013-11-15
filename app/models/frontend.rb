@@ -13,10 +13,10 @@ class Frontend
   key :remote_user, :default => "busme"
   key :admin_user, :default => "uadmin"
 
-  key :start_command, :default => "script/start_frontend.sh"
-  key :stop_command, :default => "script/stop_frontend.sh"
-  key :restart_command, :default => "script/restart_frontend.sh"
-  key :configure_command, :default => "script/configure_frontend.sh"
+  key :start_command, :default => "scripts/start_frontend.sh"
+  key :stop_command, :default => "scripts/stop_frontend.sh"
+  key :restart_command, :default => "scripts/restart_frontend.sh"
+  key :configure_command, :default => "scripts/configure_frontend.sh"
 
   key :git_commit, Array
 
