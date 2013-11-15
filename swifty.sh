@@ -18,15 +18,18 @@
 
 lockfile=/var/lock/subsys/swifty
 
+USER=ec2-user
+HOME=~$USER/busme-swifty
+
 echo "$*"
 
 start() {
-    [ -e ~ec2-user/busme-swifty/scripts/stop_backends.sh ] || exit 5
-    [ -e ~ec2-user/busme-swifty/scripts/start_backends.sh ] || exit 5
+    [ -e $HOME/scripts/stop_backends.sh ] || exit 5
+    [ -e $HOME/scripts/start_backends.sh ] || exit 5
     echo $"Starting Swifty"
-    su - ec2-user <<EOF
-    sh ~ec2-user/busme-swifty/scripts/stop_backends.sh
-    sh ~ec2-user/busme-swifty/scripts/start_backends.sh
+    su - $USER <<EOF
+    sh $HOME/scripts/stop_backends.sh
+    sh $HOME/scripts/start_backends.sh
 EOF
     retval=$?
     echo
@@ -35,10 +38,10 @@ EOF
 }
 
 stop() {
-    [ -e ~ec2-user/busme-swifty/scripts/stop_backends.sh ] || exit 5
+    [ -e $HOME/scripts/stop_backends.sh ] || exit 5
     echo $"Stopping Swifty"
-    su - ec2-user <<EOF
-    sh ~ec2-user/busme-swifty/scripts/stop_backends.sh
+    su - $USER <<EOF
+    sh $HOME/scripts/stop_backends.sh
 EOF
     retval=$?
     echo
@@ -56,17 +59,17 @@ reload() {
 
 # Upgrade with with no downtime. Must physically restart.
 upgrade() {
-    [ -e ~ec2-user/busme-swifty ] || exit 5
-    su - ec2-user <<EOF
-    cd busme-swifty
+    [ -e $HOME ] || exit 5
+    su - $USER <<EOF
+    cd $HOME
     git pull
 EOF
-    cp ~ec2-user/busme-swifty/nginx.conf /etc/nginx
+    cp $HOME/nginx.conf /etc/nginx
 }
 
 reinstall() {
-    [ -e ~ec2-user/busme-swifty ] || exit 5
-    sh ~ec2-user/busme-swifty/install.sh
+    [ -e $HOME ] || exit 5
+    sh $HOME/install.sh
 }
 
 case "$1" in
@@ -83,7 +86,7 @@ case "$1" in
         upgrade
         ;;
     reload)
-        relload
+        reload
         ;;
     reinstall)
         upgrade

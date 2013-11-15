@@ -15,6 +15,7 @@ end
 
 def stop_proxy(signal)
   puts "Stopping due to Signal #{signal}"
+  File.delete("tmp/pids/backend-#{backend.name}.pid")
 end
 
 backend.remote_configuration.each_pair {|k,v| ENV[k] = v}
@@ -36,6 +37,7 @@ backend.remote_configuration.each_pair {|k,v| ENV[k] = v}
       # if we receive them before we start Swiftiply.
       trap("HUP") { stop_proxy("HUP") }
       trap("INT") { stop_proxy("INT") }
+      trap("QUIT") { stop_proxy("QUIT") }
       trap("TERM") { stop_proxy("TERM") }
 
       config = {}

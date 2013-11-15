@@ -79,12 +79,12 @@ bundle install
 
 # Backend #{backend.name}
 
-echo \"Starting #{backend.name}\" > /var/log/swifty/#{backend.name}.log
-bundle exec ruby scripts/run_backend.rb #{backend.name} >> /var/log/swifty/#{backend.name}.log 2>&1  &
-echo $! > /var/run/swifty/#{backend.name}.pid
-ps alx | grep `cat /var/run/swifty#{backend.name}.pid` >> /var/log/swifty/#{backend.name}.log
-echo PID IS `cat /var/run/swifty/#{backend.name}.pid` >> /var/log/swifty/#{backend.name}.log
-echo Backend #{backend.name} started with PID `cat /var/run/swifty/#{backend.name}.pid`
+echo \"Starting #{backend.name}\" > log/backend-#{backend.name}.log
+bundle exec ruby scripts/run_backend.rb #{backend.name} >> log/backend-#{backend.name}.log 2>&1  &
+echo $! > tmp/pids/backend-#{backend.name}.pid
+ps alx | grep `cat tmp/pids/backend-#{backend.name}.pid` >> log/backend-#{backend.name}.log
+echo PID IS `cat tmp/pids/#{backend.name}.pid` >> log/backend-#{backend.name}.log
+echo Backend #{backend.name} started with PID `cat log/backend-#{backend.name}.pid`
 "
   end
 

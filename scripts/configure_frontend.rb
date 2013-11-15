@@ -27,6 +27,8 @@ end
 
 FileUtils.mkdir_p "backends.d"
 FileUtils.mkdir_p "start.d"
+FileUtils.mkdir_p "log"
+FileUtils.mkdir_p "tmp/pids"
 
 frontend.backends.each do |backend|
   puts "Configuring backend #{backend.name}"
