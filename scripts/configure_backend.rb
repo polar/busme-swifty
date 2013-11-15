@@ -121,10 +121,10 @@ end
 case backend.frontend.deployment_type
   when "unix-nginx"
     configure_nginx(backend)
-    confgiure_start(backend)
+    configure_start(backend)
   when "unix"
     configure_nginx(backend)
-    confgiure_start(backend)
+    configure_start(backend)
 end
 
 puts "Backend #{backend.name} is configured."
