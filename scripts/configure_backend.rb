@@ -93,7 +93,7 @@ echo Backend #{backend.name} started with PID `cat /var/run/swifty/#{backend.nam
 
   def configure_nginx(backend)
     conf = configuration_nginx(backend)
-    fname = File.expand_path("../backends.d/#{backend.name}", File.dirname(__FILE__))
+    fname = File.expand_path("../backends.d/backend-#{backend.name}.conf", File.dirname(__FILE__))
     file = File.open(fname, "w+")
     file.write(conf)
     file.close
@@ -108,7 +108,7 @@ if backend.nil?
 end
 
 case backend.frontend.deployment_type
-  when "ec2"
+  when "unix-nginx"
     configure_nginx(backend)
   when "unix"
     configure_nginx(backend)
