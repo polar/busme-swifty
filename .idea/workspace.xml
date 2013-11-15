@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1381851501907" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374263834242" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384476877212" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384477001338" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -101,7 +101,7 @@
     <file path="/backends_controller.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384360229139" ignored="false" />
     <file path="$PROJECT_DIR$/../buspass-web/app/views/backends/new.html.erb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373490133318" ignored="false" />
     <file path="/base-rouge-nginx.conf" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1373388396635" ignored="false" />
-    <file path="/initialize.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384476996533" ignored="false" />
+    <file path="/initialize.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384477112037" ignored="false" />
     <file path="/configure_frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384473662257" ignored="false" />
     <file path="/configure_backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384133649052" ignored="false" />
     <file path="/start_backend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384116305528" ignored="false" />
@@ -694,7 +694,7 @@
       <file leaf-file-name="initialize.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/initialize.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="65" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.9437086">
+            <state line="39" column="8" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.95033115">
               <folding />
             </state>
           </provider>
@@ -2217,7 +2217,11 @@
       <created>1384476880240</created>
       <updated>1384476880240</updated>
     </task>
-    <option name="localTasksCounter" value="253" />
+    <task id="LOCAL-00253" summary="update">
+      <created>1384477003907</created>
+      <updated>1384477003907</updated>
+    </task>
+    <option name="localTasksCounter" value="254" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2415,7 +2419,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initialize.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="65" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.9437086">
+        <state line="39" column="8" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.95033115">
           <folding />
         </state>
       </provider>
