@@ -24,3 +24,7 @@ else
   puts "frontend #{frontend.name} is not valid!"
   puts "#{frontend.errors.inspect}"
 end
+
+frontend.backends.each do |backend|
+  Rush.bash("#{backend.configure_command} #{backend.name}")
+end
