@@ -26,12 +26,12 @@ backend.remote_configuration.each_pair {|k,v| ENV[k] = v}
   if server_proxy
       puts "Starting Swift Cluster Proxy on #{server_proxy.local_proxy_address} with backend #{server_proxy.local_backend_address}"
       proxy_address = server_proxy.local_proxy_address
-      /((.*):)?(.*)/.match proxy_address
+      match = /((.*):)?(.*)/.match proxy_address
       cluster_address = match[2] || "127.0.0.1"
       cluster_port = match[3]
 
       connect_address = server_proxy.local_backend_address
-      /((.*):)?(.*)/.match connect_address
+      match = /((.*):)?(.*)/.match connect_address
       backend_address = match[2] || "0.0.0.0"
       backend_port = match[3]
       # Swiftiply catches these signals. However, these are here
