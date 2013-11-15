@@ -83,8 +83,8 @@ echo \"Starting #{backend.name}\" > log/backend-#{backend.name}.log
 bundle exec ruby scripts/run_backend.rb #{backend.name} >> log/backend-#{backend.name}.log 2>&1  &
 echo $! > tmp/pids/backend-#{backend.name}.pid
 ps alx | grep `cat tmp/pids/backend-#{backend.name}.pid` >> log/backend-#{backend.name}.log
-echo PID IS `cat tmp/pids/#{backend.name}.pid` >> log/backend-#{backend.name}.log
-echo Backend #{backend.name} started with PID `cat log/backend-#{backend.name}.pid`
+echo PID IS `cat tmp/pids/backend-#{backend.name}.pid` >> log/backend-#{backend.name}.log
+echo Backend #{backend.name} started with PID `cat tmp/pid/backend-#{backend.name}.pid`
 "
   end
 
