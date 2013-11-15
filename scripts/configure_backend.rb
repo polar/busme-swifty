@@ -31,7 +31,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
       server {
           listen       80;
           #{nginx_servernames};
-          access_log  /var/log/nginx/@NAME.log  main;
+          access_log  /var/log/nginx/#{backend.name}.log  main;
 
     #{locations.join("\n")}
 
@@ -79,7 +79,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 cd ~/#{frontend.git_name}
 bundle install
 
-# @NAME
+# Backend #{backend.name}
 
 echo \"Starting #{backend.name}\" > /var/log/swifty/#{backend.name}.log
 bundle exec ruby scripts/run_backend.rb #{backend.name} >> /var/log/swifty/#{backend.name}.log 2>&1  &

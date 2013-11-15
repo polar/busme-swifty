@@ -10,7 +10,7 @@ class ServerEndpoint < Endpoint
   # For ServerEndpoint only.
 
   def backend_address
-    @backend_address || server_proxy.backend_address
+    @backend_address || (server_proxy.backend_address if server_proxy)
   end
 
   def backend_address=(addr)
@@ -84,14 +84,20 @@ class ServerEndpoint < Endpoint
           addr = proxy.local_proxy_address
         end
       else
-        proxy = backend.server_proxies.select {|x| x.proxy_type == "Swift" && x.server_endpoint.nil? }.first
+        proxy = backend.server_proxies.select {|x| x.proxy_type == "Swift"}.first
         if proxy
-          proxy.server_endpoint = self
+          proxy = backend.server_proxies.build(
+              :proxy_type => "Swift",
+              :server_endpoint => self,
+              :local_proxy_address => proxy.local_proxy_address,
+              :local_backend_address => proxy.local_backend_address,
+              :external_backend_address => proxy.external_backend_address
+          )
           proxy.save
         else
           swift_proxy_port   = (proxy_ports.max || 2999) + 1
           swift_backend_port = (backend_ports.max || 3999) + 1
-          backend.server_proxies.build(
+          proxy = backend.server_proxies.build(
               :proxy_type => "Swift",
               :server_endpoint => self,
               :local_proxy_address => "127.0.0.1:#{swift_proxy_port}",
