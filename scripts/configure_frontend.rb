@@ -26,5 +26,6 @@ else
 end
 
 frontend.backends.each do |backend|
-  Rush.bash("#{backend.configure_command} #{backend.name}")
+  puts "Configuring backend #{backend.name}"
+  puts Rush.bash("#{backend.configure_command} #{backend.name}")
 end
