@@ -24,6 +24,7 @@ backend.remote_configuration.each_pair {|k,v| ENV[k] = v}
   # differ in their server_endpoints.
   server_proxy = backend.server_proxies.where(:proxy_type => "Swift").first
   if server_proxy
+      puts "Starting Swift Cluster Proxy on #{server_proxy.local_proxy_address} with backend #{server_proxy.local_backend_address}"
       proxy_address = server_proxy.local_proxy_address
       /((.*):)?(.*)/.match proxy_address
       cluster_address = match[2] || "127.0.0.1"
