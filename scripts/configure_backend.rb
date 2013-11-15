@@ -73,10 +73,8 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
   end
 
   def configuration_start(backend)
-    case backend.deployment_type
-      when "swift"
         "
-cd ~/#{frontend.git_name}
+cd ~/#{backend.frontend.git_name}
 bundle install
 
 # Backend #{backend.name}
@@ -88,7 +86,6 @@ ps alx | grep `cat /var/run/swifty#{backend.name}.pid` >> /var/log/swifty/#{back
 echo PID IS `cat /var/run/swifty/#{backend.name}.pid` >> /var/log/swifty/#{backend.name}.log
 echo Backend #{backend.name} started with PID `cat /var/run/swifty/#{backend.name}.pid`
 "
-    end
   end
 
   def configure_start(backend)
