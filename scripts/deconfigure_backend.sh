@@ -1,2 +1,2 @@
 #!/bin/sh -x
-bundle exec scripts/deconfigure_backend.rb $*
+bundle exec ruby scripts/deconfigure_backend.rb $*

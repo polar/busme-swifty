@@ -1,2 +1,2 @@
 #!/bin/sh -x
-bundle exec scripts/start_backend.rb $*
+bundle exec ruby scripts/start_backend.rb $*

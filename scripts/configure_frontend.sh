@@ -1,2 +1,2 @@
 #!/bin/sh -x
-bundle exec scripts/configure_frontend.rb $*
+bundle exec ruby scripts/configure_frontend.rb $*
