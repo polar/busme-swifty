@@ -9,6 +9,8 @@ if frontend.nil?
   exit 1
 end
 
+puts "Frontend #{frontend.name} has #{frontend.backends.count} Backends"
 frontend.backends.each do |backend|
+  puts "Starting Backend #{backend.name}"
   puts Rush.bash("#{backend.start_command} #{backend.name}")
 end

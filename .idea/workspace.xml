@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b40ba3e1-bd82-4f21-bdfe-522294d728b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/stop_frontend.rb" afterPath="$PROJECT_DIR$/scripts/stop_frontend.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/start_frontend.rb" afterPath="$PROJECT_DIR$/scripts/start_frontend.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="busme.swifty.iws" />
@@ -27,7 +27,7 @@
     <file path="/swiftiplyctl" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368194770260" ignored="false" />
     <file path="/a.dummy" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1381851501907" ignored="false" />
     <file path="/Procfile" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1374263834242" ignored="false" />
-    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384533001714" ignored="false" />
+    <file path="/Dummy.txt" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384533027695" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/net/http.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/generic.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
     <file path="/usr/lib/ruby/1.9.1/uri/common.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1368240310178" ignored="false" />
@@ -628,7 +628,7 @@
     <file path="/deploy_log.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384371528434" ignored="false" />
     <file path="/deploy_heroku_endpoint_job_impl.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384378015351" ignored="false" />
     <file path="/swifty.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384529890410" ignored="false" />
-    <file path="/start_frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384532996166" ignored="false" />
+    <file path="/start_frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384533435713" ignored="false" />
     <file path="/restart_frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384531129631" ignored="false" />
     <file path="/stop_frontend.rb" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384533024094" ignored="false" />
     <file path="/create_frontend.sh" changelist="b40ba3e1-bd82-4f21-bdfe-522294d728b0" time="1384531884886" ignored="false" />
@@ -669,19 +669,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="start_backend.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/start_backend.sh">
+      <file leaf-file-name="start_backend.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/start_backend.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="17" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
+            <state line="11" column="0" selection-start="0" selection-end="261" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="start_frontend.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="start_backend.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/start_backend.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="start_frontend.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/start_frontend.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="48" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0">
+            <state line="13" column="40" selection-start="414" selection-end="414" vertical-scroll-proportion="0.31604537">
               <folding />
             </state>
           </provider>
@@ -696,28 +705,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stop_frontend.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="stop_frontend.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/stop_frontend.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="7" selection-start="308" selection-end="308" vertical-scroll-proportion="0.2917342">
+            <state line="12" column="7" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="status_frontend.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/status_frontend.sh">
+      <file leaf-file-name="stop_backend.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/stop_backend.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="restart_frontend.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/restart_frontend.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="21" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -764,7 +764,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/scripts/deconfigure_backend.rb" />
         <option value="$PROJECT_DIR$/scripts/deconfigure_frontend.rb" />
         <option value="$PROJECT_DIR$/app/models/server_endpoint.rb" />
         <option value="$PROJECT_DIR$/scripts/start_backend.rb" />
@@ -778,8 +777,9 @@
         <option value="$PROJECT_DIR$/scripts/create_frontend.sh" />
         <option value="$PROJECT_DIR$/scripts/start_frontend.sh" />
         <option value="$PROJECT_DIR$/scripts/stop_frontend.sh" />
-        <option value="$PROJECT_DIR$/scripts/start_frontend.rb" />
         <option value="$PROJECT_DIR$/scripts/stop_frontend.rb" />
+        <option value="$PROJECT_DIR$/scripts/start_backend.sh" />
+        <option value="$PROJECT_DIR$/scripts/start_frontend.rb" />
       </list>
     </option>
   </component>
@@ -2282,7 +2282,11 @@
       <created>1384533006670</created>
       <updated>1384533006670</updated>
     </task>
-    <option name="localTasksCounter" value="268" />
+    <task id="LOCAL-00268" summary="update">
+      <created>1384533030254</created>
+      <updated>1384533030254</updated>
+    </task>
+    <option name="localTasksCounter" value="269" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2373,23 +2377,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/configure_backend.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="45" selection-start="2722" selection-end="2722" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/run_backend.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="49" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/start_backend.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="0" selection-end="261" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -2422,21 +2412,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/start_backend.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="17" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/status_frontend.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/status_frontend.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -2464,6 +2440,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/stop_frontend.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="7" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/stop_backend.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/status_frontend.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/start_backend.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="0" selection-end="261" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/start_backend.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/start_frontend.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="17" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0">
@@ -2473,14 +2484,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/start_frontend.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="48" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/stop_frontend.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="7" selection-start="308" selection-end="308" vertical-scroll-proportion="0.2917342">
+        <state line="13" column="40" selection-start="414" selection-end="414" vertical-scroll-proportion="0.31604537">
           <folding />
         </state>
       </provider>
