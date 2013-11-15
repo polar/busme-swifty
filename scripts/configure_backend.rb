@@ -72,7 +72,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
   "
   end
 
-  def configure_start(backend)
+  def configuration_start(backend)
     case backend.deployment_type
       when "swift"
         "
@@ -90,6 +90,17 @@ echo Backend #{backend.name} started with PID `cat /var/run/swifty/#{backend.nam
 "
     end
   end
+
+  def configure_start(backend)
+    conf = configuration_start(backend)
+    if conf
+      fname = File.expand_path("../start.d/backend-#{backend.name}.sh", File.dirname(__FILE__))
+      file = File.open(fname, "w+")
+      file.write(conf)
+      file.close
+    end
+  end
+
 
   def configure_nginx(backend)
     conf = configuration_nginx(backend)
@@ -110,8 +121,10 @@ end
 case backend.frontend.deployment_type
   when "unix-nginx"
     configure_nginx(backend)
+    confgiure_start(backend)
   when "unix"
     configure_nginx(backend)
+    confgiure_start(backend)
 end
 
 puts "Backend #{backend.name} is configured."

@@ -10,4 +10,4 @@ if backend.nil?
   exit 1
 end
 
-puts Rush.bash("backends.d/#{backend.name}.sh")
+puts Rush.bash("start.d/backend-#{backend.name}.sh")
