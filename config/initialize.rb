@@ -36,5 +36,4 @@ rescue Exception => boom
 end
 
 dir = File.expand_path("../app/models", File.dirname(__FILE__))
-$DEBUG=true
-autoload_all File.join(dir, "*.rb"), :base_dir => dir
+require_all Dir.glob(File.join(dir, "*.rb"))
