@@ -25,6 +25,9 @@ else
   puts "#{frontend.errors.inspect}"
 end
 
+FileUtils.mkdir_p "backends.d"
+FileUtils.mkdir_p "start.d"
+
 frontend.backends.each do |backend|
   puts "Configuring backend #{backend.name}"
   puts Rush.bash("#{backend.configure_command} #{backend.name}")
