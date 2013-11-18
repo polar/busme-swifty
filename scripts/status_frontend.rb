@@ -20,20 +20,27 @@ if frontend.nil?
   exit(1)
 end
 
+state = FrontendState.where(:frontend_id => frontend.id).first
+if state
+
   netstat = Rush.bash("netstat -tan").split("\n")
   frontend.git_commit = Rush.bash("git log --max-count=1").split("\n").take(3)
 
-  frontend.listen_status = []
-  frontend.listen_status += array_match(/([0-9a-f\:\.]*:80.*LISTEN)/, netstat)
-  frontend.listen_status += array_match(/([0-9a-f\:\.]*:443.*LISTEN)/, netstat)
+  state.listen_status = []
+  state.listen_status += array_match(/([0-9a-f\:\.]*:80.*LISTEN)/, netstat)
+  state.listen_status += array_match(/([0-9a-f\:\.]*:443.*LISTEN)/, netstat)
 
-  frontend.connection_status = []
-  frontend.connection_status += array_match(/([0-9a-f\:\.]*:80.*ESTABLISHED)/, netstat)
-  frontend.connection_status += array_match(/([0-9a-f\:\.]*:443.*ESTABLISHED)/, netstat)
-  frontend.save
+  state.connection_status = []
+  state.connection_status += array_match(/([0-9a-f\:\.]*:80.*ESTABLISHED)/, netstat)
+  state.connection_status += array_match(/([0-9a-f\:\.]*:443.*ESTABLISHED)/, netstat)
+  state.save
 
   for be in frontend.backends do
-    be.listen_status = array_match(/(#{be.cluster_address}:#{be.cluster_port}).*LISTEN/, netstat)
-    be.connection_status = array_match(/([0-9a-f\:\.]*:#{be.port}.*ESTABLISHED)/, netstat)
-    be.save
+    be_state = BackendState.where(:backend_id => be.id).first
+    if be_state
+      be_state.listen_status = array_match(/(#{be.cluster_address}:#{be.cluster_port}).*LISTEN/, netstat)
+      be_state.connection_status = array_match(/([0-9a-f\:\.]*:#{be.port}.*ESTABLISHED)/, netstat)
+      be_state.save
+    end
   end
+end

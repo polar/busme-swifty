@@ -10,6 +10,6 @@ if frontend.nil?
 end
 
 frontend.backends.each do |backend|
-  puts Rush.bash("#{backend.stop_command} #{backend.name}")
+  puts Rush.bash("bash #{backend.stop_command} #{backend.name}")
 end
 exit 0
