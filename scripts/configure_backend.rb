@@ -116,6 +116,9 @@ if backend.nil?
 end
 
 case backend.frontend.deployment_type
+  when "ec2-nginx"
+    configure_nginx(backend)
+    configure_start(backend)
   when "unix-nginx"
     configure_nginx(backend)
     configure_start(backend)
