@@ -44,31 +44,31 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
           }
       }
 
-      server {
-          listen       443;
-          #{nginx_servernames};
-          access_log  /var/log/nginx/@NAME.log  main;
-
-          ssl                  on;
-          ssl_certificate      /etc/ssl/certs/web-host.pem;
-          ssl_certificate_key  /etc/ssl/private/web-host.key;
-
-          ssl_session_timeout  5m;
-
-          ssl_protocols  SSLv2 SSLv3 TLSv1;
-          ssl_ciphers  HIGH:!aNULL:!MD5;
-          ssl_prefer_server_ciphers   on;
-
-    #{locations.join("\n")}
-
-          location / {
-              proxy_set_header  X-Real-IP  $remote_addr;
-              proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-              proxy_set_header  Host $http_host;
-              proxy_redirect    off;
-              proxy_pass        http://#{backend.name};
-          }
-      }
+    #  server {
+    #      listen       443;
+    #      #{nginx_servernames};
+    #      access_log  /var/log/nginx/#{backend.name}.log  main;
+    #
+    #      ssl                  on;
+    #      ssl_certificate      /etc/ssl/certs/web-host.pem;
+    #      ssl_certificate_key  /etc/ssl/private/web-host.key;
+    #
+    #      ssl_session_timeout  5m;
+    #
+    #      ssl_protocols  SSLv2 SSLv3 TLSv1;
+    #      ssl_ciphers  HIGH:!aNULL:!MD5;
+    #      ssl_prefer_server_ciphers   on;
+    #
+    ##{locations.join("\n")}
+    #
+    #      location / {
+    #          proxy_set_header  X-Real-IP  $remote_addr;
+    #          proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+    #          proxy_set_header  Host $http_host;
+    #          proxy_redirect    off;
+    #          proxy_pass        http://#{backend.name};
+    #      }
+    #  }
   "
   end
 
