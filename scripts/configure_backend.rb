@@ -134,6 +134,7 @@ case backend.frontend.deployment_type
     configure_start(backend)
 end
 
-system("sudo /etc/init.d/nginx restart")
+puts Rush.bash("sudo /etc/init.d/nginx restart")
 
 puts "Backend #{backend.name} is configured."
+exit 0
