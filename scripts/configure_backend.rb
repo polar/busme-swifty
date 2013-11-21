@@ -66,7 +66,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
     #      ssl_ciphers  HIGH:!aNULL:!MD5;
     #      ssl_prefer_server_ciphers   on;
     #
-    ##{locations.join("\n")}
+    ##{locations.join("\n  #      ")}
     #
     #      location / {
     #          proxy_set_header  X-Real-IP  $remote_addr;
@@ -133,5 +133,7 @@ case backend.frontend.deployment_type
     configure_nginx(backend)
     configure_start(backend)
 end
+
+system("sudo /etc/init.d/nginx restart")
 
 puts "Backend #{backend.name} is configured."
