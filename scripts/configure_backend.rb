@@ -20,7 +20,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
     locations = backend.locations.map do |location|
     "
-          location ^~ /#{location}/ {
+          location ^~ /#{location.gsub("/", "\\/")}/ {
               proxy_set_header  X-Real-IP  $remote_addr;
               proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
               proxy_set_header  Host $http_host;
@@ -66,7 +66,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
     #      ssl_ciphers  HIGH:!aNULL:!MD5;
     #      ssl_prefer_server_ciphers   on;
     #
-    ##{locations.join("\n  #      ")}
+    ##{locations.map {|x| x.split("\n    ").join("\n    #")}.join("\n    #")}
     #
     #      location / {
     #          proxy_set_header  X-Real-IP  $remote_addr;
