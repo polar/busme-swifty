@@ -18,7 +18,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
        }
     "
 
-    locations = backend.frontend.backends.each do |be|
+    locations = backend.frontend.backends.map do |be|
       be.locations.map do |location|
     "
           location ^~ /#{location.gsub("/", "\\/")}/ {
