@@ -2,7 +2,7 @@
 require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
 
-  def configuration_nginx(backend, frontend)
+  def configuration_nginx(backend)
     nginx_servers = backend.proxy_addresses.reduce([]) do |servers, address|
       # We ignore "http or https servers because they are Heroku and we can't use them here."
       if /http/ =~ address
