@@ -42,7 +42,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
           #{nginx_servernames};
           access_log  /var/log/nginx/#{backend.name}.log  main;
 
-    #{locations.join("\n")}
+    #{locations.flatten.join("\n")}
 
           location / {
               proxy_set_header  X-Real-IP  $remote_addr;
