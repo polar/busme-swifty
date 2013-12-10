@@ -92,7 +92,7 @@
       <file leaf-file-name="configure_backend.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/configure_backend.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="70" selection-start="630" selection-end="630" vertical-scroll-proportion="0.36756125" vertical-offset="0" max-vertical-offset="2205">
+            <state line="67" column="49" selection-start="2032" selection-end="2032" vertical-scroll-proportion="0.5950992" vertical-offset="495" max-vertical-offset="2205">
               <folding />
             </state>
           </provider>
@@ -1615,7 +1615,11 @@
       <created>1386710709397</created>
       <updated>1386710709397</updated>
     </task>
-    <option name="localTasksCounter" value="287" />
+    <task id="LOCAL-00287" summary="update&#10;">
+      <created>1386710820269</created>
+      <updated>1386710820269</updated>
+    </task>
+    <option name="localTasksCounter" value="288" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1910,7 +1914,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/configure_backend.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="70" selection-start="630" selection-end="630" vertical-scroll-proportion="0.36756125" vertical-offset="0" max-vertical-offset="2205">
+        <state line="67" column="49" selection-start="2032" selection-end="2032" vertical-scroll-proportion="0.5950992" vertical-offset="495" max-vertical-offset="2205">
           <folding />
         </state>
       </provider>
