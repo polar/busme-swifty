@@ -68,7 +68,7 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
     #      ssl_ciphers  HIGH:!aNULL:!MD5;
     #      ssl_prefer_server_ciphers   on;
     #
-    ##{locations.map {|x| x.split("\n    ").join("\n    #")}.join("\n    #")}
+    ##{locations.flatten.map {|x| x.split("\n    ").join("\n    #")}.join("\n    #")}
     #
     #      location / {
     #          proxy_set_header  X-Real-IP  $remote_addr;
