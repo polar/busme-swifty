@@ -2,7 +2,7 @@
 require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
 
 
-  def configuration_nginx(backend)
+  def configuration_nginx(backend, frontend)
     nginx_servers = backend.proxy_addresses.reduce([]) do |servers, address|
       # We ignore "http or https servers because they are Heroku and we can't use them here."
       if /http/ =~ address
@@ -18,16 +18,18 @@ require File.expand_path("../config/initialize.rb", File.dirname(__FILE__))
        }
     "
 
-    locations = backend.locations.map do |location|
+    locations = backend.frontend.backends.each do |be|
+      be.locations.map do |location|
     "
           location ^~ /#{location.gsub("/", "\\/")}/ {
               proxy_set_header  X-Real-IP  $remote_addr;
               proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
               proxy_set_header  Host $http_host;
               proxy_redirect    off;
-              proxy_pass        http://#{backend.name};
+              proxy_pass        http://#{be.name};
           }
     "
+        end
     end
 
     nginx_servernames = "server_name #{backend.hostnames.join(" ")}"
